@@ -8,16 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0852FCE2FAAA005C841B0E3D /* Pods_Heartbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B374891C8429332D1B91D3F /* Pods_Heartbeat.framework */; };
+		383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D40CA1FE18FAC00438A9B /* R.generated.swift */; };
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E23C1FE0D0B6007241CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E23B1FE0D0B6007241CB /* ViewController.swift */; };
 		38F2E23F1FE0D0B6007241CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E23D1FE0D0B6007241CB /* Main.storyboard */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
-		875FDD5FC304FAC94DE4F0F3 /* Pods_Fritz_Labs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fritz_Labs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		383D40CA1FE18FAC00438A9B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Heartbeat/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		38F2E2361FE0D0B6007241CB /* Heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartbeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2E2391FE0D0B6007241CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F2E23B1FE0D0B6007241CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				875FDD5FC304FAC94DE4F0F3 /* Pods_Fritz_Labs.framework in Frameworks */,
 				0852FCE2FAAA005C841B0E3D /* Pods_Heartbeat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +65,58 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		383D40C41FE18EEC00438A9B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				383D40C51FE18EF300438A9B /* Delegate */,
+				383D40C61FE18EFA00438A9B /* Modules */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		383D40C51FE18EF300438A9B /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				38F2E2391FE0D0B6007241CB /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		383D40C61FE18EFA00438A9B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				383D40C91FE18F2300438A9B /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		383D40C71FE18F0400438A9B /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				38F2E2401FE0D0B6007241CB /* Assets.xcassets */,
+				38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		383D40C81FE18F0D00438A9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				383D40CA1FE18FAC00438A9B /* R.generated.swift */,
+				38F2E2451FE0D0B6007241CB /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		383D40C91FE18F2300438A9B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				38F2E23B1FE0D0B6007241CB /* ViewController.swift */,
+				38F2E23D1FE0D0B6007241CB /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		38F2E22D1FE0D0B6007241CB = {
 			isa = PBXGroup;
 			children = (
@@ -86,12 +138,9 @@
 		38F2E2381FE0D0B6007241CB /* Heartbeat */ = {
 			isa = PBXGroup;
 			children = (
-				38F2E2391FE0D0B6007241CB /* AppDelegate.swift */,
-				38F2E23B1FE0D0B6007241CB /* ViewController.swift */,
-				38F2E23D1FE0D0B6007241CB /* Main.storyboard */,
-				38F2E2401FE0D0B6007241CB /* Assets.xcassets */,
-				38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */,
-				38F2E2451FE0D0B6007241CB /* Info.plist */,
+				383D40C41FE18EEC00438A9B /* Source */,
+				383D40C71FE18F0400438A9B /* Media */,
+				383D40C81FE18F0D00438A9B /* Supporting Files */,
 			);
 			path = Heartbeat;
 			sourceTree = "<group>";
@@ -104,6 +153,7 @@
 			buildConfigurationList = 38F2E2481FE0D0B6007241CB /* Build configuration list for PBXNativeTarget "Heartbeat" */;
 			buildPhases = (
 				6A88D3B0715F74B9252C0601 /* [CP] Check Pods Manifest.lock */,
+				383D40C31FE18EA000438A9B /* R.swift */,
 				38F2E2321FE0D0B6007241CB /* Sources */,
 				38F2E2331FE0D0B6007241CB /* Frameworks */,
 				38F2E2341FE0D0B6007241CB /* Resources */,
@@ -167,6 +217,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		383D40C31FE18EA000438A9B /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Heartbeat\"";
+		};
 		54B8FE0EEC1F9A682DE496F4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +293,7 @@
 			files = (
 				38F2E23C1FE0D0B6007241CB /* ViewController.swift in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
+				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
@@ -386,7 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
