@@ -1,0 +1,18 @@
+PODS:
+  - Fritz (1.0.0-beta3)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+
+DEPENDENCIES:
+  - Fritz (~> 1.0.0-beta)
+  - R.swift (~> 4.0)
+
+SPEC CHECKSUMS:
+  Fritz: 73f9be07d4f7a4e464c45c04db6bcceda6b01df1
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+
+PODFILE CHECKSUM: 98cd497380acafb4012967c71ff8de1011701ed8
+
+COCOAPODS: 1.3.1

@@ -12,9 +12,11 @@
 		38F2E23F1FE0D0B6007241CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E23D1FE0D0B6007241CB /* Main.storyboard */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
+		875FDD5FC304FAC94DE4F0F3 /* Pods_Fritz_Labs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fritz_Labs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2E2361FE0D0B6007241CB /* Fritz Labs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fritz Labs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2E2391FE0D0B6007241CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F2E23B1FE0D0B6007241CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		38F2E2401FE0D0B6007241CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F2E2431FE0D0B6007241CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38F2E2451FE0D0B6007241CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D9E203C8DFF0FCBC382E3F4 /* Pods-Fritz Labs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fritz Labs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs.debug.xcconfig"; sourceTree = "<group>"; };
+		D75B7A65DDD86C94184055D7 /* Pods-Fritz Labs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fritz Labs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875FDD5FC304FAC94DE4F0F3 /* Pods_Fritz_Labs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C822E0D872EB0CD54187153 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D9E203C8DFF0FCBC382E3F4 /* Pods-Fritz Labs.debug.xcconfig */,
+				D75B7A65DDD86C94184055D7 /* Pods-Fritz Labs.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2FC7A5C3AE45A108FFECDBD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		38F2E22D1FE0D0B6007241CB = {
 			isa = PBXGroup;
 			children = (
 				38F2E2381FE0D0B6007241CB /* Fritz Labs */,
 				38F2E2371FE0D0B6007241CB /* Products */,
+				0C822E0D872EB0CD54187153 /* Pods */,
+				2FC7A5C3AE45A108FFECDBD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38F2E2481FE0D0B6007241CB /* Build configuration list for PBXNativeTarget "Fritz Labs" */;
 			buildPhases = (
+				6A88D3B0715F74B9252C0601 /* [CP] Check Pods Manifest.lock */,
 				38F2E2321FE0D0B6007241CB /* Sources */,
 				38F2E2331FE0D0B6007241CB /* Frameworks */,
 				38F2E2341FE0D0B6007241CB /* Resources */,
+				B1F75F4AD434494BA9821A45 /* [CP] Embed Pods Frameworks */,
+				54B8FE0EEC1F9A682DE496F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +123,7 @@
 				TargetAttributes = {
 					38F2E2351FE0D0B6007241CB = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -130,6 +157,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54B8FE0EEC1F9A682DE496F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A88D3B0715F74B9252C0601 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fritz Labs-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1F75F4AD434494BA9821A45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs-frameworks.sh",
+				"${PODS_ROOT}/Fritz/Framework/Fritz.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fritz.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		38F2E2321FE0D0B6007241CB /* Sources */ = {
@@ -272,13 +355,16 @@
 		};
 		38F2E2491FE0D0B6007241CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D9E203C8DFF0FCBC382E3F4 /* Pods-Fritz Labs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Fritz Labs/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fritz.Fritz-Labs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,13 +372,16 @@
 		};
 		38F2E24A1FE0D0B6007241CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D75B7A65DDD86C94184055D7 /* Pods-Fritz Labs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Fritz Labs/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fritz.Fritz-Labs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
