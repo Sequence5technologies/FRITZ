@@ -153,6 +153,7 @@
 			buildConfigurationList = 38F2E2481FE0D0B6007241CB /* Build configuration list for PBXNativeTarget "Heartbeat" */;
 			buildPhases = (
 				6A88D3B0715F74B9252C0601 /* [CP] Check Pods Manifest.lock */,
+				383D40CC1FE1901700438A9B /* Swift Lint */,
 				383D40C31FE18EA000438A9B /* R.swift */,
 				38F2E2321FE0D0B6007241CB /* Sources */,
 				38F2E2331FE0D0B6007241CB /* Frameworks */,
@@ -181,7 +182,7 @@
 				TargetAttributes = {
 					38F2E2351FE0D0B6007241CB = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -230,6 +231,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Heartbeat\"";
+		};
+		383D40CC1FE1901700438A9B /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		54B8FE0EEC1F9A682DE496F4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -431,8 +446,9 @@
 			baseConfigurationReference = 52591443A794526A11587A3B /* Pods-Heartbeat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T3RGJF7P9D;
 				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -449,8 +465,9 @@
 			baseConfigurationReference = A41FBB8312BD693D91AF47F1 /* Pods-Heartbeat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T3RGJF7P9D;
 				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

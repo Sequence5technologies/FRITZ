@@ -1,5 +1,8 @@
 included:
-  - Source
+  - Heartbeat/Source
+excluded:
+  - Pods
+  - Supporting Files
 opt_in_rules:
   - attributes
   - closure_end_indentation
@@ -7,4 +10,5 @@ opt_in_rules:
   - explicit_top_level_acl
   - force_unwrapping
 disabled_rules:
+  - explicit_top_level_acl
   - line_length
