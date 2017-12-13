@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0852FCE2FAAA005C841B0E3D /* Pods_Heartbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B374891C8429332D1B91D3F /* Pods_Heartbeat.framework */; };
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E23C1FE0D0B6007241CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E23B1FE0D0B6007241CB /* ViewController.swift */; };
 		38F2E23F1FE0D0B6007241CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E23D1FE0D0B6007241CB /* Main.storyboard */; };
@@ -17,14 +18,17 @@
 
 /* Begin PBXFileReference section */
 		281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fritz_Labs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38F2E2361FE0D0B6007241CB /* Fritz Labs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fritz Labs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F2E2361FE0D0B6007241CB /* Heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartbeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2E2391FE0D0B6007241CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F2E23B1FE0D0B6007241CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		38F2E23E1FE0D0B6007241CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38F2E2401FE0D0B6007241CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F2E2431FE0D0B6007241CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38F2E2451FE0D0B6007241CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52591443A794526A11587A3B /* Pods-Heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
 		7D9E203C8DFF0FCBC382E3F4 /* Pods-Fritz Labs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fritz Labs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs.debug.xcconfig"; sourceTree = "<group>"; };
+		8B374891C8429332D1B91D3F /* Pods_Heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41FBB8312BD693D91AF47F1 /* Pods-Heartbeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.release.xcconfig"; sourceTree = "<group>"; };
 		D75B7A65DDD86C94184055D7 /* Pods-Fritz Labs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fritz Labs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -34,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				875FDD5FC304FAC94DE4F0F3 /* Pods_Fritz_Labs.framework in Frameworks */,
+				0852FCE2FAAA005C841B0E3D /* Pods_Heartbeat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +50,8 @@
 			children = (
 				7D9E203C8DFF0FCBC382E3F4 /* Pods-Fritz Labs.debug.xcconfig */,
 				D75B7A65DDD86C94184055D7 /* Pods-Fritz Labs.release.xcconfig */,
+				52591443A794526A11587A3B /* Pods-Heartbeat.debug.xcconfig */,
+				A41FBB8312BD693D91AF47F1 /* Pods-Heartbeat.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -53,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */,
+				8B374891C8429332D1B91D3F /* Pods_Heartbeat.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -60,7 +68,7 @@
 		38F2E22D1FE0D0B6007241CB = {
 			isa = PBXGroup;
 			children = (
-				38F2E2381FE0D0B6007241CB /* Fritz Labs */,
+				38F2E2381FE0D0B6007241CB /* Heartbeat */,
 				38F2E2371FE0D0B6007241CB /* Products */,
 				0C822E0D872EB0CD54187153 /* Pods */,
 				2FC7A5C3AE45A108FFECDBD2 /* Frameworks */,
@@ -70,12 +78,12 @@
 		38F2E2371FE0D0B6007241CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38F2E2361FE0D0B6007241CB /* Fritz Labs.app */,
+				38F2E2361FE0D0B6007241CB /* Heartbeat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		38F2E2381FE0D0B6007241CB /* Fritz Labs */ = {
+		38F2E2381FE0D0B6007241CB /* Heartbeat */ = {
 			isa = PBXGroup;
 			children = (
 				38F2E2391FE0D0B6007241CB /* AppDelegate.swift */,
@@ -85,15 +93,15 @@
 				38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */,
 				38F2E2451FE0D0B6007241CB /* Info.plist */,
 			);
-			path = "Fritz Labs";
+			path = Heartbeat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		38F2E2351FE0D0B6007241CB /* Fritz Labs */ = {
+		38F2E2351FE0D0B6007241CB /* Heartbeat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38F2E2481FE0D0B6007241CB /* Build configuration list for PBXNativeTarget "Fritz Labs" */;
+			buildConfigurationList = 38F2E2481FE0D0B6007241CB /* Build configuration list for PBXNativeTarget "Heartbeat" */;
 			buildPhases = (
 				6A88D3B0715F74B9252C0601 /* [CP] Check Pods Manifest.lock */,
 				38F2E2321FE0D0B6007241CB /* Sources */,
@@ -106,9 +114,9 @@
 			);
 			dependencies = (
 			);
-			name = "Fritz Labs";
+			name = Heartbeat;
 			productName = "Fritz Labs";
-			productReference = 38F2E2361FE0D0B6007241CB /* Fritz Labs.app */;
+			productReference = 38F2E2361FE0D0B6007241CB /* Heartbeat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +135,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 38F2E2311FE0D0B6007241CB /* Build configuration list for PBXProject "Fritz Labs" */;
+			buildConfigurationList = 38F2E2311FE0D0B6007241CB /* Build configuration list for PBXProject "Heartbeat" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -140,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				38F2E2351FE0D0B6007241CB /* Fritz Labs */,
+				38F2E2351FE0D0B6007241CB /* Heartbeat */,
 			);
 		};
 /* End PBXProject section */
@@ -171,7 +179,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6A88D3B0715F74B9252C0601 /* [CP] Check Pods Manifest.lock */ = {
@@ -185,7 +193,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Fritz Labs-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Heartbeat-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -198,7 +206,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
 				"${PODS_ROOT}/Fritz/Framework/Fritz.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
@@ -209,7 +217,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -355,14 +363,15 @@
 		};
 		38F2E2491FE0D0B6007241CB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D9E203C8DFF0FCBC382E3F4 /* Pods-Fritz Labs.debug.xcconfig */;
+			baseConfigurationReference = 52591443A794526A11587A3B /* Pods-Heartbeat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Fritz Labs/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.fritz.Fritz-Labs";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -372,14 +381,15 @@
 		};
 		38F2E24A1FE0D0B6007241CB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D75B7A65DDD86C94184055D7 /* Pods-Fritz Labs.release.xcconfig */;
+			baseConfigurationReference = A41FBB8312BD693D91AF47F1 /* Pods-Heartbeat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Fritz Labs/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.fritz.Fritz-Labs";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -390,7 +400,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		38F2E2311FE0D0B6007241CB /* Build configuration list for PBXProject "Fritz Labs" */ = {
+		38F2E2311FE0D0B6007241CB /* Build configuration list for PBXProject "Heartbeat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38F2E2461FE0D0B6007241CB /* Debug */,
@@ -399,7 +409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38F2E2481FE0D0B6007241CB /* Build configuration list for PBXNativeTarget "Fritz Labs" */ = {
+		38F2E2481FE0D0B6007241CB /* Build configuration list for PBXNativeTarget "Heartbeat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38F2E2491FE0D0B6007241CB /* Debug */,
