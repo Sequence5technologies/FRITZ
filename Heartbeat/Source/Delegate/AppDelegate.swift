@@ -9,6 +9,7 @@
 import UIKit
 import Crashlytics
 import Fabric
+import Fritz
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Configure crash reporting
         Fabric.with([Crashlytics.self])
+
+        // Configure Fritz models
+        FritzSDK.setup(models: [LightningsBelowTheSummit.self, MNIST.self, TheGreatWave.self])
 
         return true
     }

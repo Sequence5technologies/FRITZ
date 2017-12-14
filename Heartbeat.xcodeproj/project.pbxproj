@@ -335,7 +335,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
-				"${PODS_ROOT}/Fritz/Framework/Fritz.framework",
+				"${BUILT_PRODUCTS_DIR}/Fritz/Fritz.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
