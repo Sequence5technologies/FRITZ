@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let theGreatWaveModel = TheGreatWave().fritz()
+
+    let lightningsBelowTheSummitModel = LightningsBelowTheSummit().fritz()
+
+    let mnistModel = MNIST().fritz()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

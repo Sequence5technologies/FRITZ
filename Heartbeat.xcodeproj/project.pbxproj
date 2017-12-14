@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0852FCE2FAAA005C841B0E3D /* Pods_Heartbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B374891C8429332D1B91D3F /* Pods_Heartbeat.framework */; };
 		383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D40CA1FE18FAC00438A9B /* R.generated.swift */; };
+		38B18CB81FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */; };
+		38B18CB91FE222AF005AA896 /* TheGreatWave.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */; };
+		38B18CBC1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */; };
+		38B18CBE1FE222E9005AA896 /* TheGreatWave+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */; };
+		38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */; };
+		38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */; };
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E23C1FE0D0B6007241CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E23B1FE0D0B6007241CB /* ViewController.swift */; };
 		38F2E23F1FE0D0B6007241CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E23D1FE0D0B6007241CB /* Main.storyboard */; };
@@ -19,6 +25,12 @@
 /* Begin PBXFileReference section */
 		281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fritz_Labs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		383D40CA1FE18FAC00438A9B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Heartbeat/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LightningsBelowTheSummit.mlmodel; sourceTree = "<group>"; };
+		38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TheGreatWave.mlmodel; sourceTree = "<group>"; };
+		38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LightningsBelowTheSummit+Fritz.swift"; sourceTree = "<group>"; };
+		38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TheGreatWave+Fritz.swift"; sourceTree = "<group>"; };
+		38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNIST.mlmodel; sourceTree = "<group>"; };
+		38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MNIST+Fritz.swift"; sourceTree = "<group>"; };
 		38F2E2361FE0D0B6007241CB /* Heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartbeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2E2391FE0D0B6007241CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F2E23B1FE0D0B6007241CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				383D40C51FE18EF300438A9B /* Delegate */,
+				38B18CBA1FE222C5005AA896 /* Fritz */,
 				383D40C61FE18EFA00438A9B /* Modules */,
 			);
 			path = Source;
@@ -117,6 +130,26 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		38B18CB51FE2228F005AA896 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */,
+				38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */,
+				38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		38B18CBA1FE222C5005AA896 /* Fritz */ = {
+			isa = PBXGroup;
+			children = (
+				38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */,
+				38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */,
+				38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */,
+			);
+			path = Fritz;
+			sourceTree = "<group>";
+		};
 		38F2E22D1FE0D0B6007241CB = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +171,7 @@
 		38F2E2381FE0D0B6007241CB /* Heartbeat */ = {
 			isa = PBXGroup;
 			children = (
+				38B18CB51FE2228F005AA896 /* Models */,
 				383D40C41FE18EEC00438A9B /* Source */,
 				383D40C71FE18F0400438A9B /* Media */,
 				383D40C81FE18F0D00438A9B /* Supporting Files */,
@@ -306,9 +340,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
+				38B18CB81FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel in Sources */,
+				38B18CBE1FE222E9005AA896 /* TheGreatWave+Fritz.swift in Sources */,
 				38F2E23C1FE0D0B6007241CB /* ViewController.swift in Sources */,
+				38B18CB91FE222AF005AA896 /* TheGreatWave.mlmodel in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
+				38B18CBC1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift in Sources */,
+				38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
