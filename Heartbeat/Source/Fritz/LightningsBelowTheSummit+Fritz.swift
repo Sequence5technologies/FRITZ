@@ -12,5 +12,5 @@ extension LightningsBelowTheSummit: SwiftIdentifiedModel {
 
     static let packagedModelVersion: Int = 1
 
-    static let modelIdentifier: String = "lightnings-below-the-summit"
+    static let modelIdentifier: String = "540998ed05994f85b48ed5f5208dc0a9"
 }
