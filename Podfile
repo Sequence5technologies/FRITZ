@@ -8,6 +8,8 @@ inhibit_all_warnings!
 project 'Heartbeat.xcodeproj'
 
 target 'Heartbeat' do
+  pod 'Crashlytics', '~> 3.9'
+  pod 'Fabric', '~> 1.7'
   pod 'Fritz', '~> 1.0.0-beta'
   pod 'R.swift', '~> 4.0'
 end

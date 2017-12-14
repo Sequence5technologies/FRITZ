@@ -20,10 +20,36 @@
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>3ab14d933cbf3577dd7434aa17e1171fdd726172</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>FritzToken</key>
+	<string>my-fritz-token</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>For processing images from your devices camera</string>
+	<key>NSCameraUsageDescription</key>
+	<string>For processing images from your devices camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>For processing images from your devices camera</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>For processing images from your devices camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>For processing images from your devices camera</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -45,17 +71,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>For processing images from your devices camera</string>
-	<key>NSCameraUsageDescription</key>
-	<string>For processing images from your devices camera</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>For processing images from your devices camera</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>For processing images from your devices camera</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>For processing images from your devices camera</string>
-	<key>FritzToken</key>
-	<string>my-fritz-token</string>
 </dict>
 </plist>
