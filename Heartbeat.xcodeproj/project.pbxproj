@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0852FCE2FAAA005C841B0E3D /* Pods_Heartbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B374891C8429332D1B91D3F /* Pods_Heartbeat.framework */; };
+		381817D61FE2D7CA00050FF6 /* StarryStarryNight.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 381817D51FE2D7CA00050FF6 /* StarryStarryNight.mlmodel */; };
+		381817D81FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817D71FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift */; };
+		381817DF1FE2DAB200050FF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817DE1FE2DAB200050FF6 /* ViewController.swift */; };
+		381817E11FE2DACF00050FF6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817E01FE2DACF00050FF6 /* NavigationController.swift */; };
+		381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817E21FE2DADD00050FF6 /* RootViewController.swift */; };
+		381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381817E41FE2DAE400050FF6 /* Root.storyboard */; };
 		383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D40CA1FE18FAC00438A9B /* R.generated.swift */; };
 		38B18CB81FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */; };
 		38B18CB91FE222AF005AA896 /* TheGreatWave.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */; };
@@ -16,14 +22,18 @@
 		38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */; };
 		38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */; };
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
-		38F2E23C1FE0D0B6007241CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E23B1FE0D0B6007241CB /* ViewController.swift */; };
-		38F2E23F1FE0D0B6007241CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E23D1FE0D0B6007241CB /* Main.storyboard */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fritz_Labs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		381817D51FE2D7CA00050FF6 /* StarryStarryNight.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = StarryStarryNight.mlmodel; sourceTree = "<group>"; };
+		381817D71FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarryStarryNight+Fritz.swift"; sourceTree = "<group>"; };
+		381817DE1FE2DAB200050FF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		381817E01FE2DACF00050FF6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		381817E21FE2DADD00050FF6 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		381817E41FE2DAE400050FF6 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		383D40CA1FE18FAC00438A9B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Heartbeat/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LightningsBelowTheSummit.mlmodel; sourceTree = "<group>"; };
 		38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TheGreatWave.mlmodel; sourceTree = "<group>"; };
@@ -33,8 +43,6 @@
 		38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MNIST+Fritz.swift"; sourceTree = "<group>"; };
 		38F2E2361FE0D0B6007241CB /* Heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartbeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2E2391FE0D0B6007241CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38F2E23B1FE0D0B6007241CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		38F2E23E1FE0D0B6007241CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38F2E2401FE0D0B6007241CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F2E2431FE0D0B6007241CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38F2E2451FE0D0B6007241CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +85,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		381817D91FE2D93F00050FF6 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				381817E21FE2DADD00050FF6 /* RootViewController.swift */,
+				381817E41FE2DAE400050FF6 /* Root.storyboard */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		381817DA1FE2D94600050FF6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				381817DB1FE2D95600050FF6 /* View Controllers */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		381817DB1FE2D95600050FF6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				381817E01FE2DACF00050FF6 /* NavigationController.swift */,
+				381817DE1FE2DAB200050FF6 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		383D40C41FE18EEC00438A9B /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +132,8 @@
 		383D40C61FE18EFA00438A9B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				383D40C91FE18F2300438A9B /* Main */,
+				381817DA1FE2D94600050FF6 /* Common */,
+				381817D91FE2D93F00050FF6 /* Root */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -121,20 +156,12 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		383D40C91FE18F2300438A9B /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				38F2E23B1FE0D0B6007241CB /* ViewController.swift */,
-				38F2E23D1FE0D0B6007241CB /* Main.storyboard */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		38B18CB51FE2228F005AA896 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */,
 				38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */,
+				381817D51FE2D7CA00050FF6 /* StarryStarryNight.mlmodel */,
 				38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */,
 			);
 			path = Models;
@@ -145,6 +172,7 @@
 			children = (
 				38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */,
 				38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */,
+				381817D71FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift */,
 				38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */,
 			);
 			path = Fritz;
@@ -244,9 +272,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */,
 				38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */,
 				38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */,
-				38F2E23F1FE0D0B6007241CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,13 +383,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381817D81FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift in Sources */,
+				381817E11FE2DACF00050FF6 /* NavigationController.swift in Sources */,
 				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
 				38B18CB81FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel in Sources */,
+				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
 				38B18CBE1FE222E9005AA896 /* TheGreatWave+Fritz.swift in Sources */,
-				38F2E23C1FE0D0B6007241CB /* ViewController.swift in Sources */,
+				381817DF1FE2DAB200050FF6 /* ViewController.swift in Sources */,
 				38B18CB91FE222AF005AA896 /* TheGreatWave.mlmodel in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
+				381817D61FE2D7CA00050FF6 /* StarryStarryNight.mlmodel in Sources */,
 				38B18CBC1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift in Sources */,
 				38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */,
 			);
@@ -370,14 +402,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		38F2E23D1FE0D0B6007241CB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				38F2E23E1FE0D0B6007241CB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
