@@ -22,7 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
 
         // Configure Fritz models
-        FritzSDK.setup(models: [LightningsBelowTheSummit.self, MNIST.self, TheGreatWave.self])
+        FritzSDK.setup(models: [
+            LightningsBelowTheSummit.self,
+            MNIST.self,
+            TheGreatWave.self,
+            StarryStarryNight.self
+        ])
 
         return true
     }

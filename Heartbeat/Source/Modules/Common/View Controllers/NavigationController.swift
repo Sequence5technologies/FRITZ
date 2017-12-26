@@ -10,9 +10,19 @@ import UIKit
 
 class NavigationController: UINavigationController {
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationBar.barTintColor = .black
+        navigationBar.tintColor = .white
+
+        navigationBar.titleTextAttributes = [
+            .font: UIFont(name: "AvenirNext-DemiBold", size: 17)!,
+            .foregroundColor: UIColor.white
+        ]
     }
 }

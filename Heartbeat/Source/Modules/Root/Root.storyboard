@@ -29,10 +29,21 @@
                         <viewLayoutGuide key="safeArea" id="ZjF-g5-A5N"/>
                     </view>
                     <navigationItem key="navigationItem" id="SNA-rg-QyG"/>
+                    <connections>
+                        <segue destination="bx1-wx-3nn" kind="presentation" identifier="toDemos" modalTransitionStyle="crossDissolve" id="VDI-iX-0i8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKr-hU-NY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="537" y="175"/>
+        </scene>
+        <!--Demos-->
+        <scene sceneID="bdq-fH-3sV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Demos" id="bx1-wx-3nn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CsO-Fa-xJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1255" y="220"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rw4-vI-zmy">
