@@ -17,7 +17,7 @@ class DemosViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Fritz Demos"
+        title = "Demos".uppercased()
 
         clearsSelectionOnViewWillAppear = true
     }

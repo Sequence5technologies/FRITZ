@@ -24,6 +24,11 @@
 		38B18CBE1FE222E9005AA896 /* TheGreatWave+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */; };
 		38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */; };
 		38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */; };
+		38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA57B1FF53BF9009ABCC6 /* MNISTViewController.swift */; };
+		38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA57E1FF53C47009ABCC6 /* TouchDrawView.swift */; };
+		38BCA5821FF53C47009ABCC6 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA57F1FF53C47009ABCC6 /* Stroke.swift */; };
+		38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA5801FF53C47009ABCC6 /* StrokeSettings.swift */; };
+		38BCA5851FF53C87009ABCC6 /* MNIST.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BCA5841FF53C87009ABCC6 /* MNIST.storyboard */; };
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
@@ -47,6 +52,11 @@
 		38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TheGreatWave+Fritz.swift"; sourceTree = "<group>"; };
 		38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNIST.mlmodel; sourceTree = "<group>"; };
 		38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MNIST+Fritz.swift"; sourceTree = "<group>"; };
+		38BCA57B1FF53BF9009ABCC6 /* MNISTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNISTViewController.swift; sourceTree = "<group>"; };
+		38BCA57E1FF53C47009ABCC6 /* TouchDrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDrawView.swift; sourceTree = "<group>"; };
+		38BCA57F1FF53C47009ABCC6 /* Stroke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
+		38BCA5801FF53C47009ABCC6 /* StrokeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeSettings.swift; sourceTree = "<group>"; };
+		38BCA5841FF53C87009ABCC6 /* MNIST.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MNIST.storyboard; sourceTree = "<group>"; };
 		38F2E2361FE0D0B6007241CB /* Heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartbeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2E2391FE0D0B6007241CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F2E2401FE0D0B6007241CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +150,7 @@
 			children = (
 				381817DA1FE2D94600050FF6 /* Common */,
 				385CF1B11FF2EA8600F1BFF0 /* Demos */,
+				38BCA57A1FF53BDD009ABCC6 /* MNIST */,
 				381817D91FE2D93F00050FF6 /* Root */,
 			);
 			path = Modules;
@@ -201,6 +212,26 @@
 				38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */,
 			);
 			path = Fritz;
+			sourceTree = "<group>";
+		};
+		38BCA57A1FF53BDD009ABCC6 /* MNIST */ = {
+			isa = PBXGroup;
+			children = (
+				38BCA57D1FF53C2D009ABCC6 /* Draw View */,
+				38BCA57B1FF53BF9009ABCC6 /* MNISTViewController.swift */,
+				38BCA5841FF53C87009ABCC6 /* MNIST.storyboard */,
+			);
+			path = MNIST;
+			sourceTree = "<group>";
+		};
+		38BCA57D1FF53C2D009ABCC6 /* Draw View */ = {
+			isa = PBXGroup;
+			children = (
+				38BCA57F1FF53C47009ABCC6 /* Stroke.swift */,
+				38BCA5801FF53C47009ABCC6 /* StrokeSettings.swift */,
+				38BCA57E1FF53C47009ABCC6 /* TouchDrawView.swift */,
+			);
+			path = "Draw View";
 			sourceTree = "<group>";
 		};
 		38F2E22D1FE0D0B6007241CB = {
@@ -301,6 +332,7 @@
 				38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */,
 				38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */,
 				385CF1B51FF2EAAA00F1BFF0 /* Demos.storyboard in Resources */,
+				38BCA5851FF53C87009ABCC6 /* MNIST.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "#if which swiftlint >/dev/null; then\n#    swiftlint\n#else\n#    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi";
 		};
 		38B18CC31FE22C91005AA896 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -389,11 +421,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Fritz/Fritz.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fritz.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 			);
@@ -416,13 +452,17 @@
 				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
 				38B18CB81FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel in Sources */,
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
+				38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */,
 				38B18CBE1FE222E9005AA896 /* TheGreatWave+Fritz.swift in Sources */,
 				381817DF1FE2DAB200050FF6 /* ViewController.swift in Sources */,
 				38B18CB91FE222AF005AA896 /* TheGreatWave.mlmodel in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
 				381817D61FE2D7CA00050FF6 /* StarryStarryNight.mlmodel in Sources */,
+				38BCA5821FF53C47009ABCC6 /* Stroke.swift in Sources */,
 				38B18CBC1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift in Sources */,
+				38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */,
+				38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */,
 				38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

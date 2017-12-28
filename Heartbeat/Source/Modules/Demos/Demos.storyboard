@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -52,6 +53,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="liG-S9-LBR" kind="showDetail" action="showViewController:sender:" id="uPS-Z1-QVn">
+                                                <segue key="commit" inheritsFrom="parent" id="aGH-TH-tE9"/>
+                                                <segue key="preview" inheritsFrom="commit" id="aeR-P2-YYz"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="52B-Dp-Scz" detailTextLabel="V6g-2U-4Wy" rowHeight="120" style="IBUITableViewCellStyleSubtitle" id="iMX-bO-lR9" customClass="DemoTableViewCell" customModule="Heartbeat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="155" width="375" height="120"/>
@@ -143,6 +150,14 @@
             </objects>
             <point key="canvasLocation" x="412" y="197.45127436281859"/>
         </scene>
+        <!--MNIST-->
+        <scene sceneID="TW9-fj-8qM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MNIST" id="liG-S9-LBR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGB-gg-8Dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="164"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="RXQ-Fb-gJH">
             <objects>
@@ -162,4 +177,7 @@
             <point key="canvasLocation" x="-441" y="197"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uPS-Z1-QVn"/>
+    </inferredMetricsTieBreakers>
 </document>

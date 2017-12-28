@@ -24,5 +24,14 @@ class NavigationController: UINavigationController {
             .font: UIFont(name: "AvenirNext-DemiBold", size: 17)!,
             .foregroundColor: UIColor.white
         ]
+
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [NavigationController.self])
+            .setTitleTextAttributes([ .font: UIFont(name: "AvenirNext-DemiBold", size: 14)!], for: .normal)
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [NavigationController.self])
+            .setTitleTextAttributes([ .font: UIFont(name: "AvenirNext-DemiBold", size: 14)!], for: .highlighted)
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [NavigationController.self])
+            .setTitleTextAttributes([ .font: UIFont(name: "AvenirNext-DemiBold", size: 14)!], for: .disabled)
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [NavigationController.self])
+            .setTitleTextAttributes([ .font: UIFont(name: "AvenirNext-DemiBold", size: 14)!], for: .selected)
     }
 }
