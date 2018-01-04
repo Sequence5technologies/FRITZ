@@ -54,7 +54,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <segue destination="liG-S9-LBR" kind="showDetail" action="showViewController:sender:" id="uPS-Z1-QVn">
+                                            <segue destination="liG-S9-LBR" kind="show" id="uPS-Z1-QVn">
                                                 <segue key="commit" inheritsFrom="parent" id="aGH-TH-tE9"/>
                                                 <segue key="preview" inheritsFrom="commit" id="aeR-P2-YYz"/>
                                             </segue>
@@ -67,17 +67,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="STARRY NIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="52B-Dp-Scz">
-                                                    <rect key="frame" x="16" y="17" width="155.5" height="29"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="INCEPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="52B-Dp-Scz">
+                                                    <rect key="frame" x="16" y="25" width="120.5" height="29"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V6g-2U-4Wy">
-                                                    <rect key="frame" x="16" y="50" width="308" height="49.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detect objects in real-time using the camera. A nice upgrade from Not-Hotdog" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V6g-2U-4Wy">
+                                                    <rect key="frame" x="16" y="58" width="285.5" height="33"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <string key="text">Style taken from Vincent van Gogh's famous painting of the scene outside the window of his room at the Saint-Rémy-de-Provence asylum</string>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="0.80078125" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -85,6 +84,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="EEL-qb-gte" kind="show" id="yV2-Ie-OMQ">
+                                                <segue key="commit" inheritsFrom="parent" id="fKh-iy-i2W"/>
+                                                <segue key="preview" inheritsFrom="commit" id="kzu-Hx-jlV"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gc6-Kw-1hH" detailTextLabel="Xg6-0h-UYt" rowHeight="120" style="IBUITableViewCellStyleSubtitle" id="g9u-DF-NNn" customClass="DemoTableViewCell" customModule="Heartbeat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="275" width="375" height="120"/>
@@ -158,6 +163,16 @@
             </objects>
             <point key="canvasLocation" x="1060" y="164"/>
         </scene>
+        <!--Inception-->
+        <scene sceneID="XwI-Kx-iBA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Inception" id="EEL-qb-gte" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hxj-ue-aOj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wu-8Q-Til" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="281"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="RXQ-Fb-gJH">
             <objects>
@@ -178,6 +193,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="yV2-Ie-OMQ"/>
         <segue reference="uPS-Z1-QVn"/>
     </inferredMetricsTieBreakers>
 </document>

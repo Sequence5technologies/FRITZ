@@ -18,6 +18,10 @@
 		385CF1B31FF2EAA200F1BFF0 /* DemosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385CF1B21FF2EAA200F1BFF0 /* DemosViewController.swift */; };
 		385CF1B51FF2EAAA00F1BFF0 /* Demos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385CF1B41FF2EAAA00F1BFF0 /* Demos.storyboard */; };
 		385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385CF1B71FF2F14700F1BFF0 /* DemoTableViewCell.swift */; };
+		389074251FFDE64900DFF7F9 /* Inception.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 389074241FFDE64900DFF7F9 /* Inception.mlmodel */; };
+		389074271FFDE65D00DFF7F9 /* Inception+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389074261FFDE65D00DFF7F9 /* Inception+Fritz.swift */; };
+		3890742A1FFDE6A000DFF7F9 /* InceptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */; };
+		3890742C1FFDE6A900DFF7F9 /* Inception.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */; };
 		38B18CB81FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */; };
 		38B18CB91FE222AF005AA896 /* TheGreatWave.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */; };
 		38B18CBC1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */; };
@@ -46,6 +50,10 @@
 		385CF1B21FF2EAA200F1BFF0 /* DemosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemosViewController.swift; sourceTree = "<group>"; };
 		385CF1B41FF2EAAA00F1BFF0 /* Demos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Demos.storyboard; sourceTree = "<group>"; };
 		385CF1B71FF2F14700F1BFF0 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
+		389074241FFDE64900DFF7F9 /* Inception.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inception.mlmodel; sourceTree = "<group>"; };
+		389074261FFDE65D00DFF7F9 /* Inception+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inception+Fritz.swift"; sourceTree = "<group>"; };
+		389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InceptionViewController.swift; sourceTree = "<group>"; };
+		3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inception.storyboard; sourceTree = "<group>"; };
 		38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LightningsBelowTheSummit.mlmodel; sourceTree = "<group>"; };
 		38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TheGreatWave.mlmodel; sourceTree = "<group>"; };
 		38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LightningsBelowTheSummit+Fritz.swift"; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 			children = (
 				381817DA1FE2D94600050FF6 /* Common */,
 				385CF1B11FF2EA8600F1BFF0 /* Demos */,
+				389074281FFDE68900DFF7F9 /* Inception */,
 				38BCA57A1FF53BDD009ABCC6 /* MNIST */,
 				381817D91FE2D93F00050FF6 /* Root */,
 			);
@@ -192,9 +201,19 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		389074281FFDE68900DFF7F9 /* Inception */ = {
+			isa = PBXGroup;
+			children = (
+				389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */,
+				3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */,
+			);
+			path = Inception;
+			sourceTree = "<group>";
+		};
 		38B18CB51FE2228F005AA896 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				389074241FFDE64900DFF7F9 /* Inception.mlmodel */,
 				38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */,
 				38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */,
 				381817D51FE2D7CA00050FF6 /* StarryStarryNight.mlmodel */,
@@ -206,6 +225,7 @@
 		38B18CBA1FE222C5005AA896 /* Fritz */ = {
 			isa = PBXGroup;
 			children = (
+				389074261FFDE65D00DFF7F9 /* Inception+Fritz.swift */,
 				38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */,
 				38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */,
 				381817D71FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift */,
@@ -328,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3890742C1FFDE6A900DFF7F9 /* Inception.storyboard in Resources */,
 				381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */,
 				38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */,
 				38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */,
@@ -447,6 +468,7 @@
 			files = (
 				381817D81FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift in Sources */,
 				385CF1B31FF2EAA200F1BFF0 /* DemosViewController.swift in Sources */,
+				389074251FFDE64900DFF7F9 /* Inception.mlmodel in Sources */,
 				381817E11FE2DACF00050FF6 /* NavigationController.swift in Sources */,
 				385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */,
 				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
@@ -454,7 +476,9 @@
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
 				38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */,
 				38B18CBE1FE222E9005AA896 /* TheGreatWave+Fritz.swift in Sources */,
+				389074271FFDE65D00DFF7F9 /* Inception+Fritz.swift in Sources */,
 				381817DF1FE2DAB200050FF6 /* ViewController.swift in Sources */,
+				3890742A1FFDE6A000DFF7F9 /* InceptionViewController.swift in Sources */,
 				38B18CB91FE222AF005AA896 /* TheGreatWave.mlmodel in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,

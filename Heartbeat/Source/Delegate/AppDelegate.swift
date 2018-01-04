@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configure Fritz models
         FritzSDK.setLogLevel(.debug)
         FritzSDK.setup(models: [
+            Inception.self,
             LightningsBelowTheSummit.self,
             MNIST.self,
             TheGreatWave.self,
