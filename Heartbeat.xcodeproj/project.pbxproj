@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0852FCE2FAAA005C841B0E3D /* Pods_Heartbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B374891C8429332D1B91D3F /* Pods_Heartbeat.framework */; };
-		381817D61FE2D7CA00050FF6 /* StarryStarryNight.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 381817D51FE2D7CA00050FF6 /* StarryStarryNight.mlmodel */; };
-		381817D81FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817D71FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift */; };
 		381817DF1FE2DAB200050FF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817DE1FE2DAB200050FF6 /* ViewController.swift */; };
 		381817E11FE2DACF00050FF6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817E01FE2DACF00050FF6 /* NavigationController.swift */; };
 		381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817E21FE2DADD00050FF6 /* RootViewController.swift */; };
@@ -22,10 +20,6 @@
 		389074271FFDE65D00DFF7F9 /* Inception+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389074261FFDE65D00DFF7F9 /* Inception+Fritz.swift */; };
 		3890742A1FFDE6A000DFF7F9 /* InceptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */; };
 		3890742C1FFDE6A900DFF7F9 /* Inception.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */; };
-		38B18CB81FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */; };
-		38B18CB91FE222AF005AA896 /* TheGreatWave.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */; };
-		38B18CBC1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */; };
-		38B18CBE1FE222E9005AA896 /* TheGreatWave+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */; };
 		38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */; };
 		38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */; };
 		38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA57B1FF53BF9009ABCC6 /* MNISTViewController.swift */; };
@@ -40,8 +34,6 @@
 
 /* Begin PBXFileReference section */
 		281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fritz_Labs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		381817D51FE2D7CA00050FF6 /* StarryStarryNight.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = StarryStarryNight.mlmodel; sourceTree = "<group>"; };
-		381817D71FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarryStarryNight+Fritz.swift"; sourceTree = "<group>"; };
 		381817DE1FE2DAB200050FF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		381817E01FE2DACF00050FF6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		381817E21FE2DADD00050FF6 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -54,10 +46,6 @@
 		389074261FFDE65D00DFF7F9 /* Inception+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inception+Fritz.swift"; sourceTree = "<group>"; };
 		389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InceptionViewController.swift; sourceTree = "<group>"; };
 		3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inception.storyboard; sourceTree = "<group>"; };
-		38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LightningsBelowTheSummit.mlmodel; sourceTree = "<group>"; };
-		38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TheGreatWave.mlmodel; sourceTree = "<group>"; };
-		38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LightningsBelowTheSummit+Fritz.swift"; sourceTree = "<group>"; };
-		38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TheGreatWave+Fritz.swift"; sourceTree = "<group>"; };
 		38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNIST.mlmodel; sourceTree = "<group>"; };
 		38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MNIST+Fritz.swift"; sourceTree = "<group>"; };
 		38BCA57B1FF53BF9009ABCC6 /* MNISTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNISTViewController.swift; sourceTree = "<group>"; };
@@ -214,10 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				389074241FFDE64900DFF7F9 /* Inception.mlmodel */,
-				38B18CB61FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel */,
 				38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */,
-				381817D51FE2D7CA00050FF6 /* StarryStarryNight.mlmodel */,
-				38B18CB71FE222AF005AA896 /* TheGreatWave.mlmodel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,10 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				389074261FFDE65D00DFF7F9 /* Inception+Fritz.swift */,
-				38B18CBB1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift */,
 				38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */,
-				381817D71FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift */,
-				38B18CBD1FE222E9005AA896 /* TheGreatWave+Fritz.swift */,
 			);
 			path = Fritz;
 			sourceTree = "<group>";
@@ -466,25 +448,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				381817D81FE2D7E500050FF6 /* StarryStarryNight+Fritz.swift in Sources */,
 				385CF1B31FF2EAA200F1BFF0 /* DemosViewController.swift in Sources */,
 				389074251FFDE64900DFF7F9 /* Inception.mlmodel in Sources */,
 				381817E11FE2DACF00050FF6 /* NavigationController.swift in Sources */,
 				385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */,
 				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
-				38B18CB81FE222AF005AA896 /* LightningsBelowTheSummit.mlmodel in Sources */,
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
 				38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */,
-				38B18CBE1FE222E9005AA896 /* TheGreatWave+Fritz.swift in Sources */,
 				389074271FFDE65D00DFF7F9 /* Inception+Fritz.swift in Sources */,
 				381817DF1FE2DAB200050FF6 /* ViewController.swift in Sources */,
 				3890742A1FFDE6A000DFF7F9 /* InceptionViewController.swift in Sources */,
-				38B18CB91FE222AF005AA896 /* TheGreatWave.mlmodel in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
-				381817D61FE2D7CA00050FF6 /* StarryStarryNight.mlmodel in Sources */,
 				38BCA5821FF53C47009ABCC6 /* Stroke.swift in Sources */,
-				38B18CBC1FE222DD005AA896 /* LightningsBelowTheSummit+Fritz.swift in Sources */,
 				38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */,
 				38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */,
 				38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */,
