@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Fritz:
-    :commit: ea312688f16baee52ea3c943057280883769b9e7
+    :commit: 86c1f50e8c144f02ae78b77cf289b5be1d45beff
     :git: https://github.com/fritzlabs/swift-sdk.git
 
 SPEC CHECKSUMS:
