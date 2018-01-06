@@ -96,8 +96,9 @@ class InceptionViewController: UIViewController {
 extension InceptionViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection){
+        connection.videoOrientation = .portrait
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        let requestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
+        let requestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer)
         try? requestHandler.perform([classificationRequest])
     }
 
@@ -122,9 +123,9 @@ extension InceptionViewController: AVCaptureVideoDataOutputSampleBufferDelegate 
 
     private func confidenceColor(_ value: Int) -> UIColor {
         switch value {
-        case ...33:   return .red
+        case ...33: return .red
         case 34...66: return .orange
-        default:      return .green
+        default: return .green
         }
     }
 }
