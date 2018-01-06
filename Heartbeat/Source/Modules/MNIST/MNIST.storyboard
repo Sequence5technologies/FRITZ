@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--MNIST-->
         <scene sceneID="Onv-Cq-naz">
@@ -23,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQB-NY-aXj" customClass="TouchDrawView" customModule="Fritz_Demo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQB-NY-aXj" customClass="TouchDrawView" customModule="Heartbeat" customModuleProvider="target">
                                 <rect key="frame" x="20" y="168" width="335" height="335"/>
                                 <color key="backgroundColor" red="0.12266250366067938" green="0.12206993117922682" blue="0.12325507614213194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -35,8 +30,8 @@
                                 <rect key="frame" x="20" y="567" width="335" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dI4-az-EPt">
-                                        <rect key="frame" x="115.5" y="13.5" width="106" height="55"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
+                                        <rect key="frame" x="117" y="16" width="101.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>

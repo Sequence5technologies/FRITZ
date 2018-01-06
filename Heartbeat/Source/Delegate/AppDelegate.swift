@@ -25,7 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FritzSDK.setLogLevel(.debug)
         FritzSDK.setup(models: [
             Inception.self,
-            MNIST.self
+            MNIST.self,
+            AgeNet.self,
+            GenderNet.self,
+            CNNEmotions.self
         ])
 
         return true

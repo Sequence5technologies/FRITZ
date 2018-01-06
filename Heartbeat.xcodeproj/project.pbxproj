@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0852FCE2FAAA005C841B0E3D /* Pods_Heartbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B374891C8429332D1B91D3F /* Pods_Heartbeat.framework */; };
-		381817DF1FE2DAB200050FF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817DE1FE2DAB200050FF6 /* ViewController.swift */; };
-		381817E11FE2DACF00050FF6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817E01FE2DACF00050FF6 /* NavigationController.swift */; };
 		381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817E21FE2DADD00050FF6 /* RootViewController.swift */; };
 		381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381817E41FE2DAE400050FF6 /* Root.storyboard */; };
 		383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D40CA1FE18FAC00438A9B /* R.generated.swift */; };
@@ -17,16 +15,21 @@
 		385CF1B51FF2EAAA00F1BFF0 /* Demos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385CF1B41FF2EAAA00F1BFF0 /* Demos.storyboard */; };
 		385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385CF1B71FF2F14700F1BFF0 /* DemoTableViewCell.swift */; };
 		389074251FFDE64900DFF7F9 /* Inception.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 389074241FFDE64900DFF7F9 /* Inception.mlmodel */; };
-		389074271FFDE65D00DFF7F9 /* Inception+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389074261FFDE65D00DFF7F9 /* Inception+Fritz.swift */; };
 		3890742A1FFDE6A000DFF7F9 /* InceptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */; };
 		3890742C1FFDE6A900DFF7F9 /* Inception.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */; };
 		38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */; };
-		38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */; };
 		38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA57B1FF53BF9009ABCC6 /* MNISTViewController.swift */; };
 		38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA57E1FF53C47009ABCC6 /* TouchDrawView.swift */; };
 		38BCA5821FF53C47009ABCC6 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA57F1FF53C47009ABCC6 /* Stroke.swift */; };
 		38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA5801FF53C47009ABCC6 /* StrokeSettings.swift */; };
 		38BCA5851FF53C87009ABCC6 /* MNIST.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BCA5841FF53C87009ABCC6 /* MNIST.storyboard */; };
+		38E96BF82001308B00683571 /* Models+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF42001308B00683571 /* Models+Fritz.swift */; };
+		38E96BF92001308B00683571 /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF52001308B00683571 /* CNNEmotions.mlmodel */; };
+		38E96BFA2001308B00683571 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF62001308B00683571 /* AgeNet.mlmodel */; };
+		38E96BFB2001308B00683571 /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF72001308B00683571 /* GenderNet.mlmodel */; };
+		38E96C01200130E500683571 /* HumanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BFF200130E500683571 /* HumanViewController.swift */; };
+		38E96C02200130E500683571 /* Human.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E96C00200130E500683571 /* Human.storyboard */; };
+		38E96C042001310000683571 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E96C032001310000683571 /* NavigationController.swift */; };
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
@@ -34,8 +37,6 @@
 
 /* Begin PBXFileReference section */
 		281FBC366CE7958C9C68C2D8 /* Pods_Fritz_Labs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fritz_Labs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		381817DE1FE2DAB200050FF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		381817E01FE2DACF00050FF6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		381817E21FE2DADD00050FF6 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		381817E41FE2DAE400050FF6 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		383D40CA1FE18FAC00438A9B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Heartbeat/R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -43,16 +44,21 @@
 		385CF1B41FF2EAAA00F1BFF0 /* Demos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Demos.storyboard; sourceTree = "<group>"; };
 		385CF1B71FF2F14700F1BFF0 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		389074241FFDE64900DFF7F9 /* Inception.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inception.mlmodel; sourceTree = "<group>"; };
-		389074261FFDE65D00DFF7F9 /* Inception+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inception+Fritz.swift"; sourceTree = "<group>"; };
 		389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InceptionViewController.swift; sourceTree = "<group>"; };
 		3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inception.storyboard; sourceTree = "<group>"; };
 		38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNIST.mlmodel; sourceTree = "<group>"; };
-		38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MNIST+Fritz.swift"; sourceTree = "<group>"; };
 		38BCA57B1FF53BF9009ABCC6 /* MNISTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNISTViewController.swift; sourceTree = "<group>"; };
 		38BCA57E1FF53C47009ABCC6 /* TouchDrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDrawView.swift; sourceTree = "<group>"; };
 		38BCA57F1FF53C47009ABCC6 /* Stroke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 		38BCA5801FF53C47009ABCC6 /* StrokeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeSettings.swift; sourceTree = "<group>"; };
 		38BCA5841FF53C87009ABCC6 /* MNIST.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MNIST.storyboard; sourceTree = "<group>"; };
+		38E96BF42001308B00683571 /* Models+Fritz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Models+Fritz.swift"; sourceTree = "<group>"; };
+		38E96BF52001308B00683571 /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CNNEmotions.mlmodel; sourceTree = "<group>"; };
+		38E96BF62001308B00683571 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
+		38E96BF72001308B00683571 /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
+		38E96BFF200130E500683571 /* HumanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanViewController.swift; sourceTree = "<group>"; };
+		38E96C00200130E500683571 /* Human.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Human.storyboard; sourceTree = "<group>"; };
+		38E96C032001310000683571 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		38F2E2361FE0D0B6007241CB /* Heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartbeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2E2391FE0D0B6007241CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F2E2401FE0D0B6007241CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,25 +115,15 @@
 		381817DA1FE2D94600050FF6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				381817DB1FE2D95600050FF6 /* View Controllers */,
+				38E96C032001310000683571 /* NavigationController.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		381817DB1FE2D95600050FF6 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				381817E01FE2DACF00050FF6 /* NavigationController.swift */,
-				381817DE1FE2DAB200050FF6 /* ViewController.swift */,
-			);
-			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		383D40C41FE18EEC00438A9B /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				383D40C51FE18EF300438A9B /* Delegate */,
-				38B18CBA1FE222C5005AA896 /* Fritz */,
 				383D40C61FE18EFA00438A9B /* Modules */,
 			);
 			path = Source;
@@ -146,6 +142,7 @@
 			children = (
 				381817DA1FE2D94600050FF6 /* Common */,
 				385CF1B11FF2EA8600F1BFF0 /* Demos */,
+				38E96BFE200130CF00683571 /* Human */,
 				389074281FFDE68900DFF7F9 /* Inception */,
 				38BCA57A1FF53BDD009ABCC6 /* MNIST */,
 				381817D91FE2D93F00050FF6 /* Root */,
@@ -203,17 +200,12 @@
 			children = (
 				389074241FFDE64900DFF7F9 /* Inception.mlmodel */,
 				38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */,
+				38E96BF62001308B00683571 /* AgeNet.mlmodel */,
+				38E96BF52001308B00683571 /* CNNEmotions.mlmodel */,
+				38E96BF72001308B00683571 /* GenderNet.mlmodel */,
+				38E96BF42001308B00683571 /* Models+Fritz.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		38B18CBA1FE222C5005AA896 /* Fritz */ = {
-			isa = PBXGroup;
-			children = (
-				389074261FFDE65D00DFF7F9 /* Inception+Fritz.swift */,
-				38B18CC11FE224D2005AA896 /* MNIST+Fritz.swift */,
-			);
-			path = Fritz;
 			sourceTree = "<group>";
 		};
 		38BCA57A1FF53BDD009ABCC6 /* MNIST */ = {
@@ -234,6 +226,15 @@
 				38BCA57E1FF53C47009ABCC6 /* TouchDrawView.swift */,
 			);
 			path = "Draw View";
+			sourceTree = "<group>";
+		};
+		38E96BFE200130CF00683571 /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				38E96C00200130E500683571 /* Human.storyboard */,
+				38E96BFF200130E500683571 /* HumanViewController.swift */,
+			);
+			path = Human;
 			sourceTree = "<group>";
 		};
 		38F2E22D1FE0D0B6007241CB = {
@@ -330,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E96C02200130E500683571 /* Human.storyboard in Resources */,
 				3890742C1FFDE6A900DFF7F9 /* Inception.storyboard in Resources */,
 				381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */,
 				38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */,
@@ -450,20 +452,22 @@
 			files = (
 				385CF1B31FF2EAA200F1BFF0 /* DemosViewController.swift in Sources */,
 				389074251FFDE64900DFF7F9 /* Inception.mlmodel in Sources */,
-				381817E11FE2DACF00050FF6 /* NavigationController.swift in Sources */,
 				385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */,
 				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
 				38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */,
-				389074271FFDE65D00DFF7F9 /* Inception+Fritz.swift in Sources */,
-				381817DF1FE2DAB200050FF6 /* ViewController.swift in Sources */,
 				3890742A1FFDE6A000DFF7F9 /* InceptionViewController.swift in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
+				38E96BF92001308B00683571 /* CNNEmotions.mlmodel in Sources */,
+				38E96BFB2001308B00683571 /* GenderNet.mlmodel in Sources */,
 				38BCA5821FF53C47009ABCC6 /* Stroke.swift in Sources */,
+				38E96BF82001308B00683571 /* Models+Fritz.swift in Sources */,
+				38E96C042001310000683571 /* NavigationController.swift in Sources */,
+				38E96BFA2001308B00683571 /* AgeNet.mlmodel in Sources */,
 				38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */,
 				38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */,
-				38B18CC21FE224D2005AA896 /* MNIST+Fritz.swift in Sources */,
+				38E96C01200130E500683571 /* HumanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
