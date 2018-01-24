@@ -35,10 +35,3 @@ extension GenderNet: SwiftIdentifiedModel {
 
     static let modelIdentifier: String = "1aa1620864174fbcbba8efdd17d9dd32"
 }
-
-extension CNNEmotions: SwiftIdentifiedModel {
-
-    static let packagedModelVersion: Int = 1
-
-    static let modelIdentifier: String = "66b5830020784b26b804e74844bad42c"
-}

@@ -26,10 +26,6 @@ class HumanViewController: UIViewController {
         didSet { ageLabel.text = "..." }
     }
 
-    @IBOutlet weak var emotionLabel: UILabel! {
-        didSet { emotionLabel.text = "..." }
-    }
-
     private lazy var cameraSession = AVCaptureSession()
 
     private lazy var previewLayer: AVCaptureVideoPreviewLayer = {
@@ -41,8 +37,6 @@ class HumanViewController: UIViewController {
     private let ageModel = AgeNet().fritz().model
 
     private let genderModel = GenderNet().fritz().model
-
-    private let emotionsModel = CNNEmotions().fritz().model
 
     private lazy var ageRequest: VNCoreMLRequest = {
         let vnModel = try! VNCoreMLModel(for: ageModel)
@@ -58,21 +52,12 @@ class HumanViewController: UIViewController {
         return request
     }()
 
-    private lazy var emotionRequest: VNCoreMLRequest = {
-        let vnModel = try! VNCoreMLModel(for: emotionsModel)
-        let request = VNCoreMLRequest(model: vnModel, completionHandler: handleEmotionRequestUpdate)
-        request.imageCropAndScaleOption = .centerCrop
-        return request
-    }()
-
     private lazy var faceRequest: VNDetectFaceLandmarksRequest = {
         let request = VNDetectFaceLandmarksRequest(completionHandler: handleFaceRequestUpdate)
         return request
     }()
 
-    private lazy var imageRequests: [VNImageBasedRequest] = {
-        return [ageRequest, genderRequest, emotionRequest, faceRequest]
-    }()
+    private lazy var imageRequests: [VNImageBasedRequest] = [ageRequest, genderRequest, faceRequest]
 
     private let sessionQueue = DispatchQueue(label: "com.fritz.heartbeat.inception.session", attributes: .concurrent)
 
@@ -155,13 +140,6 @@ extension HumanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let observation = request.results?.first as? VNClassificationObservation else { return }
         DispatchQueue.main.async {
             self.genderLabel.text = observation.identifier.capitalized
-        }
-    }
-
-    private func handleEmotionRequestUpdate(request: VNRequest, error: Error?) {
-        guard let observation = request.results?.first as? VNClassificationObservation else { return }
-        DispatchQueue.main.async {
-            self.emotionLabel.text = observation.identifier.capitalized
         }
     }
 

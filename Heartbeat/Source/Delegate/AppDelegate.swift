@@ -27,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Inception.self,
             MNIST.self,
             AgeNet.self,
-            GenderNet.self,
-            CNNEmotions.self
+            GenderNet.self
         ])
 
         return true

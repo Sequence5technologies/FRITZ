@@ -24,7 +24,6 @@
 		38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA5801FF53C47009ABCC6 /* StrokeSettings.swift */; };
 		38BCA5851FF53C87009ABCC6 /* MNIST.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BCA5841FF53C87009ABCC6 /* MNIST.storyboard */; };
 		38E96BF82001308B00683571 /* Models+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF42001308B00683571 /* Models+Fritz.swift */; };
-		38E96BF92001308B00683571 /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF52001308B00683571 /* CNNEmotions.mlmodel */; };
 		38E96BFA2001308B00683571 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF62001308B00683571 /* AgeNet.mlmodel */; };
 		38E96BFB2001308B00683571 /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF72001308B00683571 /* GenderNet.mlmodel */; };
 		38E96C01200130E500683571 /* HumanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BFF200130E500683571 /* HumanViewController.swift */; };
@@ -53,7 +52,6 @@
 		38BCA5801FF53C47009ABCC6 /* StrokeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeSettings.swift; sourceTree = "<group>"; };
 		38BCA5841FF53C87009ABCC6 /* MNIST.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MNIST.storyboard; sourceTree = "<group>"; };
 		38E96BF42001308B00683571 /* Models+Fritz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Models+Fritz.swift"; sourceTree = "<group>"; };
-		38E96BF52001308B00683571 /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CNNEmotions.mlmodel; sourceTree = "<group>"; };
 		38E96BF62001308B00683571 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
 		38E96BF72001308B00683571 /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
 		38E96BFF200130E500683571 /* HumanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 				389074241FFDE64900DFF7F9 /* Inception.mlmodel */,
 				38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */,
 				38E96BF62001308B00683571 /* AgeNet.mlmodel */,
-				38E96BF52001308B00683571 /* CNNEmotions.mlmodel */,
 				38E96BF72001308B00683571 /* GenderNet.mlmodel */,
 				38E96BF42001308B00683571 /* Models+Fritz.swift */,
 			);
@@ -459,7 +456,6 @@
 				3890742A1FFDE6A000DFF7F9 /* InceptionViewController.swift in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
-				38E96BF92001308B00683571 /* CNNEmotions.mlmodel in Sources */,
 				38E96BFB2001308B00683571 /* GenderNet.mlmodel in Sources */,
 				38BCA5821FF53C47009ABCC6 /* Stroke.swift in Sources */,
 				38E96BF82001308B00683571 /* Models+Fritz.swift in Sources */,
