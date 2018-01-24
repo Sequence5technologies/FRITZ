@@ -5,7 +5,7 @@ PODS:
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.2)
-  - Fritz (1.0.0-beta4)
+  - Fritz (1.0.0-beta5)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Fritz:
-    :commit: 86c1f50e8c144f02ae78b77cf289b5be1d45beff
+    :commit: d3bcff188d366dc6139d221b38da90f2ea5b227c
     :git: https://github.com/fritzlabs/swift-sdk.git
 
 SPEC CHECKSUMS:
@@ -31,10 +31,10 @@ SPEC CHECKSUMS:
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
-  Fritz: 58668626248ddbf6d2c7ccfc0d1661289316ead6
+  Fritz: 7c1a86c40c5f6c95235f5272a70073706415956a
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
 
 PODFILE CHECKSUM: 8fb652c75e9fa310d6a2e101947d5cb27d7e2f16
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0
