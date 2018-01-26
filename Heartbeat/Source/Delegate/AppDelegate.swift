@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MNIST.self,
             AgeNet.self,
             GenderNet.self,
-            ssd_mobilenet_feature_extractor.self
+            SSDMobilenetFeatureExtractor.self
         ])
 
         return true

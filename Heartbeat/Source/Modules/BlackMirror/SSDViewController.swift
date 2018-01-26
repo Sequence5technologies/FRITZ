@@ -84,7 +84,7 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
     }
 
     func setupVision() {
-        guard let visionModel = try? VNCoreMLModel(for: ssd_mobilenet_feature_extractor().fritz().model)
+        guard let visionModel = try? VNCoreMLModel(for: SSDMobilenetFeatureExtractor().fritz().model)
             else { fatalError("Can't load VisionML model") }
         self.visionModel = visionModel
     }

@@ -36,7 +36,7 @@ extension GenderNet: SwiftIdentifiedModel {
     static let modelIdentifier: String = "1aa1620864174fbcbba8efdd17d9dd32"
 }
 
-extension ssd_mobilenet_feature_extractor: SwiftIdentifiedModel {
+extension SSDMobilenetFeatureExtractor: SwiftIdentifiedModel {
     
     static let packagedModelVersion: Int = 1
     
