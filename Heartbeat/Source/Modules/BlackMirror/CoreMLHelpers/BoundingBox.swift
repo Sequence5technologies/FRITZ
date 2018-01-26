@@ -2,28 +2,27 @@ import Foundation
 import UIKit
 
 class BoundingBox {
-  let shapeLayer: CAShapeLayer
+  let blurEffectView : UIVisualEffectView
 
   init() {
-    shapeLayer = CAShapeLayer()
-    shapeLayer.fillColor = UIColor.black.cgColor
-    shapeLayer.lineWidth = 4
-    shapeLayer.isHidden = true
+    let blurEffect = UIBlurEffect(style: .light)
+    blurEffectView = UIVisualEffectView(effect: blurEffect)
+    blurEffectView.isHidden = true
   }
 
-  func addToLayer(_ parent: CALayer) {
-    parent.addSublayer(shapeLayer)
+  func addToLayer(_ view: UIView) {
+    view.addSubview(blurEffectView)
   }
 
   func show(frame: CGRect, label: String, color: UIColor, textColor: UIColor = .black) {
     CATransaction.setDisableActions(true)
 
     let path = UIBezierPath(rect: frame)
-    shapeLayer.path = path.cgPath
-    shapeLayer.isHidden = false
+    blurEffectView.frame = path.cgPath.boundingBox
+    blurEffectView.isHidden = false
   }
 
   func hide() {
-    shapeLayer.isHidden = true
+    blurEffectView.isHidden = true
   }
 }

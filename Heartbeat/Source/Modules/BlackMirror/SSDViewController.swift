@@ -68,7 +68,7 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
         // Create shape layers for the bounding boxes.
         for _ in 0..<numBoxes {
             let box = BoundingBox()
-            box.addToLayer(view.layer)
+            box.addToLayer(view)
             self.boundingBoxes.append(box)
         }
     }
