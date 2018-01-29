@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Inception.self,
             MNIST.self,
             AgeNet.self,
-            GenderNet.self
+            GenderNet.self,
+            SSDMobilenetFeatureExtractor.self
         ])
 
         return true
