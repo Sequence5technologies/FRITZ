@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Alamofire (4.7.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
-  - Crashlytics (3.9.3):
-    - Fabric (~> 1.7.2)
-  - Fabric (1.7.2)
+  - Crashlytics (3.10.1):
+    - Fabric (~> 1.7.5)
+  - Fabric (1.7.5)
   - Fritz (1.0.0-beta6)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
@@ -18,10 +18,10 @@ DEPENDENCIES:
   - R.swift (~> 4.0)
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
-  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
-  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
+  Fabric: ae7146a5f505ea370a1e44820b4b1dc8890e2890
   Fritz: df0a54ea3b0a419002db802bba3b06cde9eefa2d
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
