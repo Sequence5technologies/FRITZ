@@ -2,6 +2,8 @@
 
 Heartbeat by Fritz is a collection of experiences utilizing machine learning models built with Apple's Core ML framework. Each demo is instrumented using the [Fritz SDK](https://github.com/fritzlabs/swift-framework), which provides management and deployment tools, as well as real-time insights into model performance on-device.
 
+If you want to try it out, you can download and use Heartbeat by Fritz from the [App Store](https://itunes.apple.com/us/app/heartbeat-by-fritz/id1325206416).
+
 ## Getting Started
 
 The steps below will guide you through downloading this project, getting it up, and running in a simulator or on device.
