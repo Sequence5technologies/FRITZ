@@ -300,12 +300,12 @@
 		835B7549201A7AB70030FE16 /* BlackMirror */ = {
 			isa = PBXGroup;
 			children = (
+				835B7554201A8B140030FE16 /* CoreMLHelpers */,
+				835B7569201A8B2C0030FE16 /* coco_labels_list.txt */,
 				835B756C201A8B2D0030FE16 /* Utility.swift */,
 				835B756A201A8B2C0030FE16 /* SSDViewController.swift */,
-				835B7569201A8B2C0030FE16 /* coco_labels_list.txt */,
 				835B756B201A8B2D0030FE16 /* Anchors.swift */,
 				835B7567201A8B1D0030FE16 /* SSDPostprocessor.swift */,
-				835B7554201A8B140030FE16 /* CoreMLHelpers */,
 				835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */,
 			);
 			path = BlackMirror;
