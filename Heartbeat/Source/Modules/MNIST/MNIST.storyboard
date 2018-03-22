@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SHg-Eb-Vf7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MNIST-->
+        <scene sceneID="Onv-Cq-naz">
+            <objects>
+                <viewController id="SHg-Eb-Vf7" customClass="MNISTViewController" customModule="Heartbeat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hsy-8D-Sdv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQB-NY-aXj" customClass="TouchDrawView" customModule="Heartbeat" customModuleProvider="target">
+                                <rect key="frame" x="20" y="168" width="335" height="335"/>
+                                <color key="backgroundColor" red="0.12266250366067938" green="0.12206993117922682" blue="0.12325507614213194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LQB-NY-aXj" secondAttribute="height" multiplier="1:1" id="07U-xb-ggR"/>
+                                    <constraint firstAttribute="width" constant="335" id="cH0-pO-CfE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Z1-0a-fn4">
+                                <rect key="frame" x="20" y="567" width="335" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dI4-az-EPt">
+                                        <rect key="frame" x="117" y="16" width="101.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12156974524259567" green="0.12156660109758377" blue="0.12156876176595688" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="dI4-az-EPt" firstAttribute="centerY" secondItem="6Z1-0a-fn4" secondAttribute="centerY" id="0oG-aC-gyn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="3AG-cw-FGA"/>
+                                    <constraint firstAttribute="height" constant="80" id="Xon-tQ-UAL"/>
+                                    <constraint firstItem="dI4-az-EPt" firstAttribute="centerX" secondItem="6Z1-0a-fn4" secondAttribute="centerX" id="swO-h4-q8n"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LQB-NY-aXj" firstAttribute="centerY" secondItem="aYe-jS-9Ss" secondAttribute="centerY" constant="-30" id="5kq-bp-a4i"/>
+                            <constraint firstItem="6Z1-0a-fn4" firstAttribute="leading" secondItem="aYe-jS-9Ss" secondAttribute="leading" constant="20" id="Iew-1c-3NZ"/>
+                            <constraint firstItem="aYe-jS-9Ss" firstAttribute="trailing" secondItem="6Z1-0a-fn4" secondAttribute="trailing" constant="20" id="Ji6-uV-ff9"/>
+                            <constraint firstItem="LQB-NY-aXj" firstAttribute="centerX" secondItem="aYe-jS-9Ss" secondAttribute="centerX" id="Omt-S4-10q"/>
+                            <constraint firstItem="aYe-jS-9Ss" firstAttribute="bottom" secondItem="6Z1-0a-fn4" secondAttribute="bottom" constant="20" id="SIC-5l-T4J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aYe-jS-9Ss"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MNIST" id="Tqn-iW-AHc">
+                        <barButtonItem key="rightBarButtonItem" title="CLEAR" id="tIg-53-gbb">
+                            <color key="tintColor" red="0.91786056760000001" green="0.2441819012" blue="0.24309444429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="handleResetTapped:" destination="SHg-Eb-Vf7" id="0yl-qp-Dd9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="dI4-az-EPt" id="Mv9-Ri-ahS"/>
+                        <outlet property="resultView" destination="6Z1-0a-fn4" id="IyX-CF-9JE"/>
+                        <outlet property="touchDrawView" destination="LQB-NY-aXj" id="dvv-nE-y0Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kik-7G-daY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="193"/>
+        </scene>
+    </scenes>
+</document>
