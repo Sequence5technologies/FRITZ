@@ -1,5 +1,5 @@
 //
-//  InceptionViewController.swift
+//  MobileNetViewController.swift
 //  Heartbeat
 //
 //  Created by Andrew Barba on 1/3/18.
@@ -12,7 +12,7 @@ import AlamofireImage
 import Fritz
 import Vision
 
-class InceptionViewController: UIViewController {
+class MobileNetViewController: UIViewController {
 
     @IBOutlet weak var resultView: UIView! {
         didSet { resultView.layer.cornerRadius = 4 }
@@ -34,11 +34,11 @@ class InceptionViewController: UIViewController {
         return preview
     }()
 
-    private let model = Inception().fritz().model
+    private let model = MobileNet().fritz().model
 
-    private let sessionQueue = DispatchQueue(label: "com.fritz.heartbeat.inception.session")
+    private let sessionQueue = DispatchQueue(label: "com.fritz.heartbeat.mobilenet.session")
 
-    private let captureQueue = DispatchQueue(label: "com.fritz.heartbeat.inception.capture")
+    private let captureQueue = DispatchQueue(label: "com.fritz.heartbeat.mobilenet.capture")
 
     private lazy var classificationRequest: VNCoreMLRequest = {
         let vnModel = try! VNCoreMLModel(for: model)
@@ -93,7 +93,7 @@ class InceptionViewController: UIViewController {
     }
 }
 
-extension InceptionViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension MobileNetViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection){
         connection.videoOrientation = .portrait
