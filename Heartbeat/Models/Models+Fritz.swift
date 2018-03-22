@@ -15,7 +15,6 @@ extension MobileNet: SwiftIdentifiedModel {
     static let modelIdentifier: String = "de7974faf0d144fabcdce40c49a1d791"
 }
 
-
 extension MNIST: SwiftIdentifiedModel {
 
     static let packagedModelVersion: Int = 1
