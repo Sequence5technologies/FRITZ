@@ -8,12 +8,13 @@
 
 import Fritz
 
-extension Inception: SwiftIdentifiedModel {
+extension MobileNet: SwiftIdentifiedModel {
 
     static let packagedModelVersion: Int = 1
 
-    static let modelIdentifier: String = "9a3da953e3b249ca9673cd2ffb78c64d"
+    static let modelIdentifier: String = "de7974faf0d144fabcdce40c49a1d791"
 }
+
 
 extension MNIST: SwiftIdentifiedModel {
 

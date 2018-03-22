@@ -59,9 +59,9 @@ class HumanViewController: UIViewController {
 
     private lazy var imageRequests: [VNImageBasedRequest] = [ageRequest, genderRequest, faceRequest]
 
-    private let sessionQueue = DispatchQueue(label: "com.fritz.heartbeat.inception.session", attributes: .concurrent)
+    private let sessionQueue = DispatchQueue(label: "com.fritz.heartbeat.human.session", attributes: .concurrent)
 
-    private let captureQueue = DispatchQueue(label: "com.fritz.heartbeat.inception.capture", attributes: .concurrent)
+    private let captureQueue = DispatchQueue(label: "com.fritz.heartbeat.human.capture", attributes: .concurrent)
 
     private var maskLayer: [CAShapeLayer] = []
 
