@@ -40,20 +40,26 @@ class HumanViewController: UIViewController {
 
     private lazy var ageRequest: VNCoreMLRequest = {
         let vnModel = try! VNCoreMLModel(for: ageModel)
-        let request = VNCoreMLRequest(model: vnModel, completionHandler: handleAgeRequestUpdate)
+        let request = VNCoreMLRequest(model: vnModel) { [unowned self] in
+            self.handleAgeRequestUpdate(request: $0, error: $1)
+        }
         request.imageCropAndScaleOption = .centerCrop
         return request
     }()
 
     private lazy var genderRequest: VNCoreMLRequest = {
         let vnModel = try! VNCoreMLModel(for: genderModel)
-        let request = VNCoreMLRequest(model: vnModel, completionHandler: handleGenderRequestUpdate)
+        let request = VNCoreMLRequest(model: vnModel) { [unowned self] in
+            self.handleGenderRequestUpdate(request: $0, error: $1)
+        }
         request.imageCropAndScaleOption = .centerCrop
         return request
     }()
 
     private lazy var faceRequest: VNDetectFaceLandmarksRequest = {
-        let request = VNDetectFaceLandmarksRequest(completionHandler: handleFaceRequestUpdate)
+        let request = VNDetectFaceLandmarksRequest() { [unowned self] in
+            self.handleFaceRequestUpdate(request: $0, error: $1)
+        }
         return request
     }()
 

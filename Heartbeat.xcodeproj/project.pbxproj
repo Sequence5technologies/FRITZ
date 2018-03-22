@@ -262,8 +262,8 @@
 		38E96BFE200130CF00683571 /* Human */ = {
 			isa = PBXGroup;
 			children = (
-				38E96C00200130E500683571 /* Human.storyboard */,
 				38E96BFF200130E500683571 /* HumanViewController.swift */,
+				38E96C00200130E500683571 /* Human.storyboard */,
 			);
 			path = Human;
 			sourceTree = "<group>";
