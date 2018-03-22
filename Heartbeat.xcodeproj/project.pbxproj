@@ -14,9 +14,8 @@
 		385CF1B31FF2EAA200F1BFF0 /* DemosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385CF1B21FF2EAA200F1BFF0 /* DemosViewController.swift */; };
 		385CF1B51FF2EAAA00F1BFF0 /* Demos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385CF1B41FF2EAAA00F1BFF0 /* Demos.storyboard */; };
 		385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385CF1B71FF2F14700F1BFF0 /* DemoTableViewCell.swift */; };
-		389074251FFDE64900DFF7F9 /* Inception.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 389074241FFDE64900DFF7F9 /* Inception.mlmodel */; };
-		3890742A1FFDE6A000DFF7F9 /* InceptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */; };
-		3890742C1FFDE6A900DFF7F9 /* Inception.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */; };
+		3890742A1FFDE6A000DFF7F9 /* MobileNetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389074291FFDE6A000DFF7F9 /* MobileNetViewController.swift */; };
+		3890742C1FFDE6A900DFF7F9 /* MobileNet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3890742B1FFDE6A900DFF7F9 /* MobileNet.storyboard */; };
 		38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */; };
 		38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA57B1FF53BF9009ABCC6 /* MNISTViewController.swift */; };
 		38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA57E1FF53C47009ABCC6 /* TouchDrawView.swift */; };
@@ -32,6 +31,7 @@
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
+		83242C2620640B2C00B955D2 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 83242C2520640B2C00B955D2 /* MobileNet.mlmodel */; };
 		835B7551201A8AFB0030FE16 /* SSDMobilenetFeatureExtractor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 835B7550201A8AFB0030FE16 /* SSDMobilenetFeatureExtractor.mlmodel */; };
 		835B755E201A8B150030FE16 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7555201A8B140030FE16 /* Math.swift */; };
 		835B755F201A8B150030FE16 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */; };
@@ -58,9 +58,8 @@
 		385CF1B21FF2EAA200F1BFF0 /* DemosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemosViewController.swift; sourceTree = "<group>"; };
 		385CF1B41FF2EAAA00F1BFF0 /* Demos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Demos.storyboard; sourceTree = "<group>"; };
 		385CF1B71FF2F14700F1BFF0 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
-		389074241FFDE64900DFF7F9 /* Inception.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inception.mlmodel; sourceTree = "<group>"; };
-		389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InceptionViewController.swift; sourceTree = "<group>"; };
-		3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inception.storyboard; sourceTree = "<group>"; };
+		389074291FFDE6A000DFF7F9 /* MobileNetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileNetViewController.swift; sourceTree = "<group>"; };
+		3890742B1FFDE6A900DFF7F9 /* MobileNet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MobileNet.storyboard; sourceTree = "<group>"; };
 		38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNIST.mlmodel; sourceTree = "<group>"; };
 		38BCA57B1FF53BF9009ABCC6 /* MNISTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNISTViewController.swift; sourceTree = "<group>"; };
 		38BCA57E1FF53C47009ABCC6 /* TouchDrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDrawView.swift; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		38F2E2451FE0D0B6007241CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52591443A794526A11587A3B /* Pods-Heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
 		7D9E203C8DFF0FCBC382E3F4 /* Pods-Fritz Labs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fritz Labs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs.debug.xcconfig"; sourceTree = "<group>"; };
+		83242C2520640B2C00B955D2 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		835B7550201A8AFB0030FE16 /* SSDMobilenetFeatureExtractor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SSDMobilenetFeatureExtractor.mlmodel; sourceTree = "<group>"; };
 		835B7555201A8B140030FE16 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				381817DA1FE2D94600050FF6 /* Common */,
 				385CF1B11FF2EA8600F1BFF0 /* Demos */,
 				38E96BFE200130CF00683571 /* Human */,
-				389074281FFDE68900DFF7F9 /* Inception */,
+				389074281FFDE68900DFF7F9 /* MobileNet */,
 				38BCA57A1FF53BDD009ABCC6 /* MNIST */,
 				381817D91FE2D93F00050FF6 /* Root */,
 			);
@@ -217,23 +217,23 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		389074281FFDE68900DFF7F9 /* Inception */ = {
+		389074281FFDE68900DFF7F9 /* MobileNet */ = {
 			isa = PBXGroup;
 			children = (
-				389074291FFDE6A000DFF7F9 /* InceptionViewController.swift */,
-				3890742B1FFDE6A900DFF7F9 /* Inception.storyboard */,
+				389074291FFDE6A000DFF7F9 /* MobileNetViewController.swift */,
+				3890742B1FFDE6A900DFF7F9 /* MobileNet.storyboard */,
 			);
-			path = Inception;
+			path = MobileNet;
 			sourceTree = "<group>";
 		};
 		38B18CB51FE2228F005AA896 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				835B7550201A8AFB0030FE16 /* SSDMobilenetFeatureExtractor.mlmodel */,
-				389074241FFDE64900DFF7F9 /* Inception.mlmodel */,
 				38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */,
 				38E96BF62001308B00683571 /* AgeNet.mlmodel */,
 				38E96BF72001308B00683571 /* GenderNet.mlmodel */,
+				83242C2520640B2C00B955D2 /* MobileNet.mlmodel */,
 				38E96BF42001308B00683571 /* Models+Fritz.swift */,
 			);
 			path = Models;
@@ -394,7 +394,7 @@
 			files = (
 				38E96C02200130E500683571 /* Human.storyboard in Resources */,
 				835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */,
-				3890742C1FFDE6A900DFF7F9 /* Inception.storyboard in Resources */,
+				3890742C1FFDE6A900DFF7F9 /* MobileNet.storyboard in Resources */,
 				381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */,
 				835B756D201A8B2D0030FE16 /* coco_labels_list.txt in Resources */,
 				38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */,
@@ -514,17 +514,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				385CF1B31FF2EAA200F1BFF0 /* DemosViewController.swift in Sources */,
-				389074251FFDE64900DFF7F9 /* Inception.mlmodel in Sources */,
 				835B756F201A8B2D0030FE16 /* Anchors.swift in Sources */,
 				385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */,
 				835B7561201A8B150030FE16 /* BoundingBox.swift in Sources */,
 				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
 				835B7568201A8B1D0030FE16 /* SSDPostprocessor.swift in Sources */,
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
+				83242C2620640B2C00B955D2 /* MobileNet.mlmodel in Sources */,
 				835B7565201A8B150030FE16 /* NonMaxSuppression.swift in Sources */,
 				835B7564201A8B150030FE16 /* CVPixelBuffer+Helpers.swift in Sources */,
 				38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */,
-				3890742A1FFDE6A000DFF7F9 /* InceptionViewController.swift in Sources */,
+				3890742A1FFDE6A000DFF7F9 /* MobileNetViewController.swift in Sources */,
 				835B755F201A8B150030FE16 /* UIImage+CVPixelBuffer.swift in Sources */,
 				835B756E201A8B2D0030FE16 /* SSDViewController.swift in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,

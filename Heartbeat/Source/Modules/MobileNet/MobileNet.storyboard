@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--INCEPTION-->
+        <!--MOBILENET-->
         <scene sceneID="Olm-CA-aK0">
             <objects>
-                <viewController id="GhT-AM-2Xp" customClass="InceptionViewController" customModule="Heartbeat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GhT-AM-2Xp" customClass="MobileNetViewController" customModule="Heartbeat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VCH-bE-Orv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vzw-Am-OMq"/>
                     </view>
-                    <navigationItem key="navigationItem" title="INCEPTION" id="aSF-jE-iSZ"/>
+                    <navigationItem key="navigationItem" title="MOBILENET" id="aSF-jE-iSZ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="confidenceLabel" destination="ZIZ-Al-HBK" id="tet-3j-52Y"/>
