@@ -13,4 +13,7 @@ target 'Heartbeat' do
   pod 'Fabric', '~> 1.7'
   pod 'Fritz', '~> 1.0.0-beta8'
   pod 'R.swift', '~> 4.0'
+  pod 'Firebase/Core'
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionFaceModel'
 end

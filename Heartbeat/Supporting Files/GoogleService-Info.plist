@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>720330189180-4b0nlg11qgodrfpkkld9348kdt8kq2lp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.720330189180-4b0nlg11qgodrfpkkld9348kdt8kq2lp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCB_3UvEQtcdbhqRB0WqmcE9QOqBY5DFbM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>720330189180</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.fritz.Heartbeat</string>
+	<key>PROJECT_ID</key>
+	<string>heartbeat-ios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>heartbeat-ios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:720330189180:ios:3a99f6c496817ba3</string>
+	<key>DATABASE_URL</key>
+	<string>https://heartbeat-ios.firebaseio.com</string>
+</dict>
+</plist>

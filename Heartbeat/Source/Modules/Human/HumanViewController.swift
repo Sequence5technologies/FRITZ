@@ -10,9 +10,12 @@ import UIKit
 import AVFoundation
 import AlamofireImage
 import Fritz
-import Vision
+import Firebase
+import Vision.VNRequest
 
 class HumanViewController: UIViewController {
+    
+    lazy var vision = Vision.vision()
 
     @IBOutlet weak var resultView: UIView! {
         didSet { resultView.layer.cornerRadius = 4 }
@@ -34,43 +37,12 @@ class HumanViewController: UIViewController {
         return preview
     }()
 
-    private let ageModel = AgeNet().fritz().model
-
-    private let genderModel = GenderNet().fritz().model
-
-    private lazy var ageRequest: VNCoreMLRequest = {
-        let vnModel = try! VNCoreMLModel(for: ageModel)
-        let request = VNCoreMLRequest(model: vnModel) { [unowned self] in
-            self.handleAgeRequestUpdate(request: $0, error: $1)
-        }
-        request.imageCropAndScaleOption = .centerCrop
-        return request
-    }()
-
-    private lazy var genderRequest: VNCoreMLRequest = {
-        let vnModel = try! VNCoreMLModel(for: genderModel)
-        let request = VNCoreMLRequest(model: vnModel) { [unowned self] in
-            self.handleGenderRequestUpdate(request: $0, error: $1)
-        }
-        request.imageCropAndScaleOption = .centerCrop
-        return request
-    }()
-
-    private lazy var faceRequest: VNDetectFaceLandmarksRequest = {
-        let request = VNDetectFaceLandmarksRequest() { [unowned self] in
-            self.handleFaceRequestUpdate(request: $0, error: $1)
-        }
-        return request
-    }()
-
-    private lazy var imageRequests: [VNImageBasedRequest] = [ageRequest, genderRequest, faceRequest]
-
     private let sessionQueue = DispatchQueue(label: "com.fritz.heartbeat.human.session", attributes: .concurrent)
 
     private let captureQueue = DispatchQueue(label: "com.fritz.heartbeat.human.capture", attributes: .concurrent)
-
+    
     private var maskLayer: [CAShapeLayer] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -121,40 +93,74 @@ extension HumanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection){
         connection.videoOrientation = .portrait
-        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 
-        var options: [VNImageOption : Any] = [:]
-
-        if let cameraIntrinsicData = CMGetAttachment(sampleBuffer, kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, nil) {
-            options = [.cameraIntrinsics : cameraIntrinsicData]
-        }
-
-        for request in imageRequests {
-            let requestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .upMirrored, options: options)
-            try? requestHandler.perform([request])
-        }
-    }
-
-    private func handleAgeRequestUpdate(request: VNRequest, error: Error?) {
-        guard let observation = request.results?.first as? VNClassificationObservation else { return }
-        DispatchQueue.main.async {
-            self.ageLabel.text = observation.identifier.capitalized
-        }
-    }
-
-    private func handleGenderRequestUpdate(request: VNRequest, error: Error?) {
-        guard let observation = request.results?.first as? VNClassificationObservation else { return }
-        DispatchQueue.main.async {
-            self.genderLabel.text = observation.identifier.capitalized
-        }
-    }
-
-    private func handleFaceRequestUpdate(request: VNRequest, error: Error?) {
-        guard let results = request.results as? [VNFaceObservation] else { return }
-        DispatchQueue.main.async {
-            self.removeMask()
-            for face in results {
-                self.drawFaceWithLandmarks(face: face)
+        let options = VisionFaceDetectorOptions()
+        options.modeType = .fast
+        options.landmarkType = .all
+        options.classificationType = .none
+        options.minFaceSize = CGFloat(0.1)
+        options.isTrackingEnabled = false
+        
+        let faceDetector = vision.faceDetector(options: options)
+        
+        let metadata = VisionImageMetadata()
+        metadata.orientation = .topLeft
+        
+        let visionImage = VisionImage(buffer: sampleBuffer)
+        visionImage.metadata = metadata
+        
+        faceDetector.detect(in: visionImage) { (faces, error) in
+            guard error == nil, let faces = faces, !faces.isEmpty else {
+                // Error. You should also check the console for error messages.
+                // ...
+                return
+            }
+            
+            // Faces detected
+            // ...
+            print("some faces detected?")
+            
+            DispatchQueue.main.async {
+                self.removeMask()
+                for face in faces {
+                    self.drawFaceWithLandmarks(face: face)
+                    
+                    let frame = face.frame
+                    print(frame.debugDescription)
+                    self.drawFaceFrame(rect: frame)
+                    
+                    if face.hasHeadEulerAngleY {
+                        let rotY = face.headEulerAngleY  // Head is rotated to the right rotY degrees
+                        self.genderLabel.text = NSString(format: "%.2f", rotY) as String
+                    }
+                    if face.hasHeadEulerAngleZ {
+                        let rotZ = face.headEulerAngleZ  // Head is rotated upward rotZ degrees
+                        self.ageLabel.text = NSString(format: "%.2f", rotZ) as String
+                    }
+                    
+                    // If landmark detection was enabled (mouth, ears, eyes, cheeks, and
+                    // nose available):
+                    if let leftEye = face.landmark(ofType: .leftEye) {
+                        let leftEyePosition = leftEye.position
+                        print(leftEyePosition)
+                    }
+                    
+                    // If classification was enabled:
+                    if face.hasSmilingProbability {
+                        let smileProb = face.smilingProbability
+                        print(smileProb)
+                    }
+                    if face.hasRightEyeOpenProbability {
+                        let rightEyeOpenProb = face.rightEyeOpenProbability
+                        print(rightEyeOpenProb)
+                    }
+                    
+                    // If face tracking was enabled:
+                    if face.hasTrackingID {
+                        let trackingId = face.trackingID
+                        print(trackingId)
+                    }
+                }
             }
         }
     }
@@ -178,7 +184,26 @@ extension HumanViewController {
         return mask
     }
 
-    func drawFaceWithLandmarks(face: VNFaceObservation) {
+    
+    
+    // Create a new layer drawing the bounding box
+    func drawFaceFrame(rect: CGRect) -> CAShapeLayer{
+        
+        let mask = CAShapeLayer()
+        mask.frame = rect
+        mask.cornerRadius = 10
+        mask.opacity = 0.75
+        mask.borderColor = UIColor.yellow.cgColor
+        mask.borderWidth = 2.0
+        
+        maskLayer.append(mask)
+        previewLayer.insertSublayer(mask, at: 1)
+        
+        return mask
+    }
+
+    
+    func drawFaceWithLandmarks(face: VisionFace) {
         let frame = previewLayer.frame
 
         let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -frame.height)
@@ -186,64 +211,62 @@ extension HumanViewController {
         let translate = CGAffineTransform.identity.scaledBy(x: frame.width, y: frame.height)
 
         // The coordinates are normalized to the dimensions of the processed image, with the origin at the image's lower-left corner.
-        let facebounds = face.boundingBox.applying(translate).applying(transform)
+        let facebounds = face.frame.applying(translate).applying(transform)
 
         // Draw the bounding rect
         let faceLayer = createLayer(in: facebounds)
 
         // Draw the landmarks
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.nose)!, isClosed:false)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.noseCrest)!, isClosed:false)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.medianLine)!, isClosed:false)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.leftEye)!)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.leftPupil)!)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.leftEyebrow)!, isClosed:false)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.rightEye)!)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.rightPupil)!)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.rightEye)!)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.rightEyebrow)!, isClosed:false)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.innerLips)!)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.outerLips)!)
-        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.faceContour)!, isClosed: false)
+        if let leftEye = face.landmark(ofType: .leftEye) {
+            let leftEyePosition = leftEye.position
+            drawLandmarks(on: faceLayer, visionPoint: leftEyePosition)
+        }
+        
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.land)!, isClosed:false)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.noseCrest)!, isClosed:false)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.medianLine)!, isClosed:false)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.leftEye)!)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.leftPupil)!)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.leftEyebrow)!, isClosed:false)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.rightEye)!)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.rightPupil)!)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.rightEye)!)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.rightEyebrow)!, isClosed:false)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.innerLips)!)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.outerLips)!)
+//        drawLandmarks(on: faceLayer, faceLandmarkRegion: (face.landmarks?.faceContour)!, isClosed: false)
     }
 
 
 
-    func drawLandmarks(on targetLayer: CALayer, faceLandmarkRegion: VNFaceLandmarkRegion2D, isClosed: Bool = true) {
+    func drawLandmarks(on targetLayer: CALayer, visionPoint: VisionPoint) {
         let rect: CGRect = targetLayer.frame
-        var points: [CGPoint] = []
-
-        for i in 0..<faceLandmarkRegion.pointCount {
-            let point = faceLandmarkRegion.normalizedPoints[i]
-            points.append(point)
-        }
-
-        let landmarkLayer = drawPointsOnLayer(rect: rect, landmarkPoints: points, isClosed: isClosed)
+        
+        let landmarkLayer = drawPointsOnLayer(rect: rect, landmarkPoint: visionPoint)
 
         // Change scale, coordinate systems, and mirroring
-        landmarkLayer.transform = CATransform3DMakeAffineTransform(
-            CGAffineTransform.identity
-                .scaledBy(x: rect.width, y: -rect.height)
-                .translatedBy(x: 0, y: -1)
-        )
+//        landmarkLayer.transform = CATransform3DMakeAffineTransform(
+//            CGAffineTransform.identity
+//                .scaledBy(x: rect.width, y: -rect.height)
+//                .translatedBy(x: 0, y: -1)
+       // )
 
         targetLayer.insertSublayer(landmarkLayer, at: 1)
     }
 
-    func drawPointsOnLayer(rect:CGRect, landmarkPoints: [CGPoint], isClosed: Bool = true) -> CALayer {
-        let linePath = UIBezierPath()
-        linePath.move(to: landmarkPoints.first!)
-
-        for point in landmarkPoints.dropFirst() {
-            linePath.addLine(to: point)
-        }
-
-        if isClosed {
-            linePath.addLine(to: landmarkPoints.first!)
-        }
-
+    func drawPointsOnLayer(rect:CGRect, landmarkPoint: VisionPoint) -> CALayer {
+        
+        let center = CGPoint(x: CGFloat(landmarkPoint.x), y: CGFloat(landmarkPoint.y))
+        
+        let circlePath = UIBezierPath(
+            arcCenter: center,
+            radius: CGFloat(10),
+            startAngle: CGFloat(0),
+            endAngle: CGFloat(2 * Double.pi),
+            clockwise: true)
+        
         let lineLayer = CAShapeLayer()
-        lineLayer.path = linePath.cgPath
+        lineLayer.path = circlePath.cgPath
         lineLayer.fillColor = nil
         lineLayer.opacity = 1.0
         lineLayer.strokeColor = UIColor.green.cgColor

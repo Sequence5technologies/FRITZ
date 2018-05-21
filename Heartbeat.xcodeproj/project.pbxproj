@@ -48,6 +48,7 @@
 		835B756F201A8B2D0030FE16 /* Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756B201A8B2D0030FE16 /* Anchors.swift */; };
 		835B7570201A8B2D0030FE16 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756C201A8B2D0030FE16 /* Utility.swift */; };
 		835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */; };
+		EF802E1520AF60A9006468BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF802E1420AF60A9006468BA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		8B374891C8429332D1B91D3F /* Pods_Heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41FBB8312BD693D91AF47F1 /* Pods-Heartbeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.release.xcconfig"; sourceTree = "<group>"; };
 		D75B7A65DDD86C94184055D7 /* Pods-Fritz Labs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fritz Labs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fritz Labs/Pods-Fritz Labs.release.xcconfig"; sourceTree = "<group>"; };
+		EF802E1420AF60A9006468BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 		383D40C81FE18F0D00438A9B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EF802E1420AF60A9006468BA /* GoogleService-Info.plist */,
 				383D40CA1FE18FAC00438A9B /* R.generated.swift */,
 				38F2E2451FE0D0B6007241CB /* Info.plist */,
 			);
@@ -341,8 +344,8 @@
 				38F2E2331FE0D0B6007241CB /* Frameworks */,
 				38F2E2341FE0D0B6007241CB /* Resources */,
 				B1F75F4AD434494BA9821A45 /* [CP] Embed Pods Frameworks */,
-				54B8FE0EEC1F9A682DE496F4 /* [CP] Copy Pods Resources */,
 				38B18CC31FE22C91005AA896 /* Fabric */,
+				43D4280362D191DBD8EBEDFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -399,6 +402,7 @@
 				835B756D201A8B2D0030FE16 /* coco_labels_list.txt in Resources */,
 				38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */,
 				38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */,
+				EF802E1520AF60A9006468BA /* GoogleService-Info.plist in Resources */,
 				385CF1B51FF2EAAA00F1BFF0 /* Demos.storyboard in Resources */,
 				38BCA5851FF53C87009ABCC6 /* MNIST.storyboard in Resources */,
 			);
@@ -449,15 +453,18 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 3ab14d933cbf3577dd7434aa17e1171fdd726172 a7e273788cbf79557095d9bd720a5d71abef69142d7a82ef17e9d88751ee49d8";
 		};
-		54B8FE0EEC1F9A682DE496F4 /* [CP] Copy Pods Resources */ = {
+		43D4280362D191DBD8EBEDFF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVFaceDetectorResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVFaceDetectorResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -491,15 +498,25 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${PODS_ROOT}/Fritz/Framework/Fritz.framework",
+				"${PODS_ROOT}/Fritz/Fritz.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fritz.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

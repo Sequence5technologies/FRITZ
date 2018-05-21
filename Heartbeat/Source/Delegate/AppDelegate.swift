@@ -10,6 +10,7 @@ import UIKit
 import Crashlytics
 import Fabric
 import Fritz
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Configure Fritz models
         FritzSDK.setLogLevel(.debug)
+        
+        // Configure Firebase
+        FirebaseApp.configure()
 
         return true
     }
