@@ -262,8 +262,8 @@
 		38E96BFE200130CF00683571 /* Human */ = {
 			isa = PBXGroup;
 			children = (
-				38E96C00200130E500683571 /* Human.storyboard */,
 				38E96BFF200130E500683571 /* HumanViewController.swift */,
+				38E96C00200130E500683571 /* Human.storyboard */,
 			);
 			path = Human;
 			sourceTree = "<group>";
@@ -341,7 +341,6 @@
 				38F2E2331FE0D0B6007241CB /* Frameworks */,
 				38F2E2341FE0D0B6007241CB /* Resources */,
 				B1F75F4AD434494BA9821A45 /* [CP] Embed Pods Frameworks */,
-				54B8FE0EEC1F9A682DE496F4 /* [CP] Copy Pods Resources */,
 				38B18CC31FE22C91005AA896 /* Fabric */,
 			);
 			buildRules = (
@@ -360,7 +359,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Fritz Labs, Inc.";
 				TargetAttributes = {
 					38F2E2351FE0D0B6007241CB = {
@@ -449,21 +448,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 3ab14d933cbf3577dd7434aa17e1171fdd726172 a7e273788cbf79557095d9bd720a5d71abef69142d7a82ef17e9d88751ee49d8";
 		};
-		54B8FE0EEC1F9A682DE496F4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6A88D3B0715F74B9252C0601 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,7 +475,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${PODS_ROOT}/Fritz/Framework/Fritz.framework",
+				"${PODS_ROOT}/Fritz/Fritz.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -575,6 +559,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -582,6 +567,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -632,6 +618,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -639,6 +626,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

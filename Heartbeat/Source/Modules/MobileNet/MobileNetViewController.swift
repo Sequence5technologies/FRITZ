@@ -42,7 +42,9 @@ class MobileNetViewController: UIViewController {
 
     private lazy var classificationRequest: VNCoreMLRequest = {
         let vnModel = try! VNCoreMLModel(for: model)
-        let request = VNCoreMLRequest(model: vnModel, completionHandler: handleVisionRequestUpdate)
+        let request = VNCoreMLRequest(model: vnModel) { [unowned self] in
+            self.handleVisionRequestUpdate(request: $0, error: $1)
+        }
         request.imageCropAndScaleOption = .centerCrop
         return request
     }()

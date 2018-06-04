@@ -183,7 +183,7 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
     }
     
     public static func softmax2(_ x: [Double]) -> [Double] {
-        var x:[Float] = x.flatMap{Float($0)}
+        var x: [Float] = x.compactMap{ Float($0) }
         let len = vDSP_Length(x.count)
         
         // Find the maximum value in the input array.
@@ -207,7 +207,7 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
         // so that they all add up to 1.
         vDSP_vsdiv(x, 1, &sum, &x, 1, len)
         
-        let y:[Double] = x.flatMap{Double($0)}
+        let y: [Double] = x.compactMap{ Double($0) }
         return y
     }
     

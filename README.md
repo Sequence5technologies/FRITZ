@@ -12,12 +12,15 @@ The steps below will guide you through downloading this project, getting it up, 
 
 In order to run this project you need:
 
-- Xcode 9.2 or later
+- Swift 4.1, Xcode 9.3 or later
+- Git Large File Storage (LFS) - [available here](https://git-lfs.github.com)
 - Cocoapods - [available here](https://cocoapods.org)
 
 ### Step 1 - Clone Project
 
-First things first, [clone](https://github.com/fritzlabs/heartbeat-ios.git) or [download](https://github.com/fritzlabs/heartbeat-ios/archive/master.zip) the project to your Mac. We recommend cloning, but if you choose to download make sure you unzip the archive before proceeding.
+In order to clone the project, you must first install Git Large File Storage (LFS), [available here](https://git-lfs.github.com). The `MLModel` files are checked into the repo using LFS and will not clone properly otherwise.
+
+After installing LFS, [clone](https://github.com/fritzlabs/heartbeat-ios.git) or [download](https://github.com/fritzlabs/heartbeat-ios/archive/master.zip) the project to your Mac. We recommend cloning, but if you choose to download make sure you unzip the archive before proceeding.
 
 ### Step 2 - Install Dependencies
 
