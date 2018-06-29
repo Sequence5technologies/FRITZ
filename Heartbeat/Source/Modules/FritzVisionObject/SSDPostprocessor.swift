@@ -50,9 +50,12 @@ struct Prediction {
     let anchor: BoundingBox2
     let anchorEncoding: AnchorEncoding
     let detectedClass: Int
-    
+    let detectedClassLabel: String?
+
     var finalPrediction: BoundingBox2 {
         get {
+
+            // TODO: Double check that finalPrediction properly encodes the anchor boxes.
             let yACtr = (anchor.yMin + anchor.yMax) / 2.0
             let xACtr = (anchor.xMin + anchor.xMax) / 2.0
             let ha = (anchor.yMax - anchor.yMin)
@@ -101,7 +104,6 @@ class SSDPostProcessor {
                 print(error)
             }
         }
-        
     }
     
     func postprocess(boxPredictions: MLMultiArray, classPredictions: MLMultiArray) -> [Prediction] {
@@ -164,7 +166,6 @@ class SSDPostProcessor {
         return selectedPredictions
     }
 
-    
     private func pruneLowScoring(boxPredictions: MLMultiArray, classPredictions: MLMultiArray) -> [[Prediction]] {
         var prunedPredictions: [[Prediction]] = Array(repeating: [], count: numClasses + 1)
         let klass = personClass
@@ -178,8 +179,8 @@ class SSDPostProcessor {
                     th: boxPredictions[offset(2, box)].doubleValue,
                     tw: boxPredictions[offset(3, box)].doubleValue
                 )
-                
-                let prediction = Prediction(index: box, score: score, anchor: anchor, anchorEncoding: anchorEncoding, detectedClass: klass)
+                let classLabel = classNames?[klass]
+                let prediction = Prediction(index: box, score: score, anchor: anchor, anchorEncoding: anchorEncoding, detectedClass: klass, detectedClassLabel: classLabel)
                 
                 prunedPredictions[klass].append(prediction)
             }

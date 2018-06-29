@@ -19,8 +19,8 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
     var lastExecution = Date()
     var screenHeight: Double?
     var screenWidth: Double?
-    let ssdPostProcessor = SSDPostProcessor(numAnchors: 1917, numClasses: 90)
-    var visionModel:VNCoreMLModel?
+
+    let objectPredictor = FritzVisionObjectModel()
 
     
     private lazy var cameraLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
@@ -50,7 +50,6 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
         self.captureSession.addOutput(videoOutput)
         self.captureSession.startRunning()
-        setupVision()
 
         setupBoxes()
         
@@ -83,51 +82,19 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
         // Dispose of any resources that can be recreated.
     }
 
-    func setupVision() {
-        guard let visionModel = try? VNCoreMLModel(for: SSDMobilenetFeatureExtractor().fritz().model)
-            else { fatalError("Can't load VisionML model") }
-        self.visionModel = visionModel
-    }
-    
-    func processClassifications(for request: VNRequest, error: Error?) -> [Prediction]? {
-        let thisExecution = Date()
-        let executionTime = thisExecution.timeIntervalSince(lastExecution)
-        let framesPerSecond:Double = 1/executionTime
-        lastExecution = thisExecution
-        guard let results = request.results as? [VNCoreMLFeatureValueObservation] else {
-            return nil
-        }
-        guard results.count == 2 else {
-            return nil
-        }
-        guard let boxPredictions = results[1].featureValue.multiArrayValue,
-            let classPredictions = results[0].featureValue.multiArrayValue else {
-            return nil
-        }
-        DispatchQueue.main.async {
-            self.frameLabel.text = "FPS: \(framesPerSecond.format(f: ".3"))"
-        }
-        
-        let predictions = self.ssdPostProcessor.postprocess(boxPredictions: boxPredictions, classPredictions: classPredictions)
-        return predictions
-    }
-
-    func drawBoxes(predictions: [Prediction]) {
-        
+    func drawBoxes(predictions: [FritzVisionObject]) {
         for (index, prediction) in predictions.enumerated() {
-            if let classNames = self.ssdPostProcessor.classNames {
-                print("Class: \(classNames[prediction.detectedClass])")
-                
-                let textColor: UIColor
-                let textLabel = String(format: "%.2f - %@", self.sigmoid(prediction.score), classNames[prediction.detectedClass])
-                
-                textColor = UIColor.black
-                let rect = prediction.finalPrediction.toCGRect(imgWidth: self.screenWidth!, imgHeight: self.screenWidth!, xOffset: 0, yOffset: (self.screenHeight! - self.screenWidth!)/2)
-                self.boundingBoxes[index].show(frame: rect,
-                                               label: textLabel,
-                                               color: UIColor.red, textColor: textColor)
-            }
+            print("Class: \(prediction.label.label)")
+
+            let textColor: UIColor
+            let textLabel = String(format: "%.2f - %@", self.sigmoid(prediction.label.confidence), prediction.label.label)
+            textColor = UIColor.black
+            let rect = prediction.boundingBox.toCGRect(imgWidth: self.screenWidth!, imgHeight: self.screenWidth!, xOffset: 0, yOffset: (self.screenHeight! - self.screenWidth!)/2)
+            self.boundingBoxes[index].show(frame: rect,
+                                           label: textLabel,
+                                           color: UIColor.red, textColor: textColor)
         }
+
         for index in predictions.count..<self.numBoxes {
             self.boundingBoxes[index].hide()
         }
@@ -137,34 +104,22 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }
-        guard let visionModel = self.visionModel else {
-            return
-        }
-
         var requestOptions:[VNImageOption : Any] = [:]
         if let cameraIntrinsicData = CMGetAttachment(sampleBuffer, kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, nil) {
             requestOptions = [.cameraIntrinsics:cameraIntrinsicData]
         }
         let orientation = CGImagePropertyOrientation(rawValue: UInt32(EXIFOrientation.rightTop.rawValue))
 
-        let trackingRequest = VNCoreMLRequest(model: visionModel) { (request, error) in
-            guard let predictions = self.processClassifications(for: request, error: error) else { return }
-            DispatchQueue.main.async {
-                self.drawBoxes(predictions: predictions)
+        objectPredictor.predict(pixelBuffer, orientation: orientation!, options: requestOptions) { (results, error) in
+            if let error = error {
+                print(error)
+                return
             }
-            self.semaphore.signal()
-        }
-        trackingRequest.imageCropAndScaleOption = VNImageCropAndScaleOption.centerCrop
-
-        
-        self.semaphore.wait()
-        do {
-            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation!, options: requestOptions)
-            try imageRequestHandler.perform([trackingRequest])
-        } catch {
-            print(error)
-            self.semaphore.signal()
-            
+            if let results = results {
+                DispatchQueue.main.async {
+                    self.drawBoxes(predictions: results)
+                }
+            }
         }
     }
 

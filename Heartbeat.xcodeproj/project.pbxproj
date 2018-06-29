@@ -50,6 +50,8 @@
 		835B756F201A8B2D0030FE16 /* Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756B201A8B2D0030FE16 /* Anchors.swift */; };
 		835B7570201A8B2D0030FE16 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756C201A8B2D0030FE16 /* Utility.swift */; };
 		835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */; };
+		83DDFF9520E6B49C003CC18C /* FritzVisionObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDFF9420E6B49C003CC18C /* FritzVisionObjectModel.swift */; };
+		83DDFF9720E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 83DDFF9620E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,8 @@
 		835B756B201A8B2D0030FE16 /* Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchors.swift; sourceTree = "<group>"; };
 		835B756C201A8B2D0030FE16 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BlackMirrorStoryboard.storyboard; sourceTree = "<group>"; };
+		83DDFF9420E6B49C003CC18C /* FritzVisionObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FritzVisionObjectModel.swift; sourceTree = "<group>"; };
+		83DDFF9620E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ssdlite_mobilenet_v2_coco.mlmodel; sourceTree = "<group>"; };
 		AE5BD89ECFAC366472049E82 /* Pods_Heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1372C3DC7B399D3E8B847F4 /* Pods-Heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3EEEC0D5C3BD7048C6B741 /* Pods-Heartbeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		383D40C61FE18EFA00438A9B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				83DDFF9320E6B48E003CC18C /* FritzVisionObject */,
 				835B7549201A7AB70030FE16 /* BlackMirror */,
 				381817DA1FE2D94600050FF6 /* Common */,
 				385CF1B11FF2EA8600F1BFF0 /* Demos */,
@@ -304,7 +309,6 @@
 				835B756C201A8B2D0030FE16 /* Utility.swift */,
 				835B756A201A8B2C0030FE16 /* SSDViewController.swift */,
 				835B756B201A8B2D0030FE16 /* Anchors.swift */,
-				835B7567201A8B1D0030FE16 /* SSDPostprocessor.swift */,
 				835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */,
 			);
 			path = BlackMirror;
@@ -324,6 +328,16 @@
 				835B755D201A8B140030FE16 /* MLMultiArray+Image.swift */,
 			);
 			path = CoreMLHelpers;
+			sourceTree = "<group>";
+		};
+		83DDFF9320E6B48E003CC18C /* FritzVisionObject */ = {
+			isa = PBXGroup;
+			children = (
+				83DDFF9620E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel */,
+				83DDFF9420E6B49C003CC18C /* FritzVisionObjectModel.swift */,
+				835B7567201A8B1D0030FE16 /* SSDPostprocessor.swift */,
+			);
+			path = FritzVisionObject;
 			sourceTree = "<group>";
 		};
 		8E4F2C91079D1F45793D461F /* Pods */ = {
@@ -521,11 +535,13 @@
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
 				83242C2620640B2C00B955D2 /* MobileNet.mlmodel in Sources */,
 				835B7565201A8B150030FE16 /* NonMaxSuppression.swift in Sources */,
+				83DDFF9720E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel in Sources */,
 				835B7564201A8B150030FE16 /* CVPixelBuffer+Helpers.swift in Sources */,
 				38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */,
 				3890742A1FFDE6A000DFF7F9 /* MobileNetViewController.swift in Sources */,
 				38173F3120E2DCD00036005E /* VisionViewController.swift in Sources */,
 				835B755F201A8B150030FE16 /* UIImage+CVPixelBuffer.swift in Sources */,
+				83DDFF9520E6B49C003CC18C /* FritzVisionObjectModel.swift in Sources */,
 				835B756E201A8B2D0030FE16 /* SSDViewController.swift in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				835B7560201A8B150030FE16 /* Array.swift in Sources */,
