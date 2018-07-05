@@ -11,9 +11,9 @@ extension MobileNet: SwiftIdentifiedModel {
 
     static let packagedModelVersion: Int = 1
 
-    static let modelIdentifier: String = "model-id-1"
+    static let modelIdentifier: String = "324a6dfb5bf6409f8b2b47d928a32dd8"
 
-    static let session = Fritz.Session(appToken: "app-token-12345")
+    static let session = Fritz.Session(appToken: "ab85fe8881e5448d88f875ddc5ec8722", environment: Environment(namespace: "local", apiPath: "http://192.168.50.169:8070/sdk/v1"))
 }
 
 extension MNIST: SwiftIdentifiedModel {

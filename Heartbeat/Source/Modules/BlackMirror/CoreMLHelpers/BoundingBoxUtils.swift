@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class BoundingBox {
+class BoundingBoxUtils {
   let blurEffectView : UIVisualEffectView
 
   init() {

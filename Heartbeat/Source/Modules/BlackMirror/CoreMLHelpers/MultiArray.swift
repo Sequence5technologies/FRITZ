@@ -178,6 +178,7 @@ extension MultiArray: CustomStringConvertible {
       return String(repeating: " ", count: x)
     }
 
+    print(indices)
     // This function is called recursively for every dimension.
     // Add an entry for this dimension to the end of the array.
     var indices = indices + [0]

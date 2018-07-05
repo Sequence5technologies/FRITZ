@@ -38,7 +38,7 @@
 		835B755E201A8B150030FE16 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7555201A8B140030FE16 /* Math.swift */; };
 		835B755F201A8B150030FE16 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */; };
 		835B7560201A8B150030FE16 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7557201A8B140030FE16 /* Array.swift */; };
-		835B7561201A8B150030FE16 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7558201A8B140030FE16 /* BoundingBox.swift */; };
+		835B7561201A8B150030FE16 /* BoundingBoxUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7558201A8B140030FE16 /* BoundingBoxUtils.swift */; };
 		835B7562201A8B150030FE16 /* Predictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7559201A8B140030FE16 /* Predictions.swift */; };
 		835B7563201A8B150030FE16 /* MultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B755A201A8B140030FE16 /* MultiArray.swift */; };
 		835B7564201A8B150030FE16 /* CVPixelBuffer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B755B201A8B140030FE16 /* CVPixelBuffer+Helpers.swift */; };
@@ -50,6 +50,7 @@
 		835B756F201A8B2D0030FE16 /* Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756B201A8B2D0030FE16 /* Anchors.swift */; };
 		835B7570201A8B2D0030FE16 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756C201A8B2D0030FE16 /* Utility.swift */; };
 		835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */; };
+		83B276E420EAA77100CDBC4D /* BoundingBoxOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B276E320EAA77100CDBC4D /* BoundingBoxOutline.swift */; };
 		83DDFF9520E6B49C003CC18C /* FritzVisionObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDFF9420E6B49C003CC18C /* FritzVisionObjectModel.swift */; };
 		83DDFF9720E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 83DDFF9620E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel */; };
 /* End PBXBuildFile section */
@@ -87,7 +88,7 @@
 		835B7555201A8B140030FE16 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		835B7557201A8B140030FE16 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		835B7558201A8B140030FE16 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		835B7558201A8B140030FE16 /* BoundingBoxUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxUtils.swift; sourceTree = "<group>"; };
 		835B7559201A8B140030FE16 /* Predictions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predictions.swift; sourceTree = "<group>"; };
 		835B755A201A8B140030FE16 /* MultiArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiArray.swift; sourceTree = "<group>"; };
 		835B755B201A8B140030FE16 /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		835B756B201A8B2D0030FE16 /* Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchors.swift; sourceTree = "<group>"; };
 		835B756C201A8B2D0030FE16 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BlackMirrorStoryboard.storyboard; sourceTree = "<group>"; };
+		83B276E320EAA77100CDBC4D /* BoundingBoxOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBoxOutline.swift; sourceTree = "<group>"; };
 		83DDFF9420E6B49C003CC18C /* FritzVisionObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FritzVisionObjectModel.swift; sourceTree = "<group>"; };
 		83DDFF9620E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ssdlite_mobilenet_v2_coco.mlmodel; sourceTree = "<group>"; };
 		AE5BD89ECFAC366472049E82 /* Pods_Heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,7 +310,6 @@
 				835B7569201A8B2C0030FE16 /* coco_labels_list.txt */,
 				835B756C201A8B2D0030FE16 /* Utility.swift */,
 				835B756A201A8B2C0030FE16 /* SSDViewController.swift */,
-				835B756B201A8B2D0030FE16 /* Anchors.swift */,
 				835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */,
 			);
 			path = BlackMirror;
@@ -320,7 +321,7 @@
 				835B7555201A8B140030FE16 /* Math.swift */,
 				835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */,
 				835B7557201A8B140030FE16 /* Array.swift */,
-				835B7558201A8B140030FE16 /* BoundingBox.swift */,
+				835B7558201A8B140030FE16 /* BoundingBoxUtils.swift */,
 				835B7559201A8B140030FE16 /* Predictions.swift */,
 				835B755A201A8B140030FE16 /* MultiArray.swift */,
 				835B755B201A8B140030FE16 /* CVPixelBuffer+Helpers.swift */,
@@ -336,6 +337,8 @@
 				83DDFF9620E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel */,
 				83DDFF9420E6B49C003CC18C /* FritzVisionObjectModel.swift */,
 				835B7567201A8B1D0030FE16 /* SSDPostprocessor.swift */,
+				835B756B201A8B2D0030FE16 /* Anchors.swift */,
+				83B276E320EAA77100CDBC4D /* BoundingBoxOutline.swift */,
 			);
 			path = FritzVisionObject;
 			sourceTree = "<group>";
@@ -529,11 +532,12 @@
 				385CF1B31FF2EAA200F1BFF0 /* DemosViewController.swift in Sources */,
 				835B756F201A8B2D0030FE16 /* Anchors.swift in Sources */,
 				385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */,
-				835B7561201A8B150030FE16 /* BoundingBox.swift in Sources */,
+				835B7561201A8B150030FE16 /* BoundingBoxUtils.swift in Sources */,
 				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
 				835B7568201A8B1D0030FE16 /* SSDPostprocessor.swift in Sources */,
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
 				83242C2620640B2C00B955D2 /* MobileNet.mlmodel in Sources */,
+				83B276E420EAA77100CDBC4D /* BoundingBoxOutline.swift in Sources */,
 				835B7565201A8B150030FE16 /* NonMaxSuppression.swift in Sources */,
 				83DDFF9720E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel in Sources */,
 				835B7564201A8B150030FE16 /* CVPixelBuffer+Helpers.swift in Sources */,
@@ -695,11 +699,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3RGJF7P9D;
+				DEVELOPMENT_TEAM = 8FG785BY7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.appagain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -714,11 +718,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3RGJF7P9D;
+				DEVELOPMENT_TEAM = 8FG785BY7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.appagain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

@@ -16,9 +16,9 @@ public typealias FritzVisionObjectCallback = ([FritzVisionObject]?, Error?) -> V
 
 public class FritzVisionObject {
     let label: FritzVisionLabel
-    let boundingBox: BoundingBox2
+    let boundingBox: BoundingBox
 
-    init(label: FritzVisionLabel, boundingBox: BoundingBox2) {
+    init(label: FritzVisionLabel, boundingBox: BoundingBox) {
         self.label = label
         self.boundingBox = boundingBox
     }
@@ -27,7 +27,8 @@ public class FritzVisionObject {
 class FritzVisionObjectModel {
 
     let model = ssdlite_mobilenet_v2_coco().model
-    let ssdPostProcessor = SSDPostProcessor(numAnchors: 1917, numClasses: 90)
+    // let model = SSDMobilenetFeatureExtractor().model
+    let ssdPostProcessor = SSDPostProcessor()
     let semaphore = DispatchSemaphore(value: 1)
 
     let visionModel: VNCoreMLModel
@@ -44,11 +45,11 @@ class FritzVisionObjectModel {
         guard results.count == 2 else {
             return nil
         }
-        guard let boxPredictions = results[1].featureValue.multiArrayValue,
-            let classPredictions = results[0].featureValue.multiArrayValue else {
+        guard let boxPredictions = results[0].featureValue.multiArrayValue,
+            let classPredictions = results[1].featureValue.multiArrayValue else {
                 return nil
         }
-
+        let classPreds = MultiArray<Double>(classPredictions)
         let predictions = self.ssdPostProcessor.postprocess(boxPredictions: boxPredictions, classPredictions: classPredictions)
         return predictions
     }
@@ -62,7 +63,7 @@ class FritzVisionObjectModel {
 
             }
             let fritzObjects: [FritzVisionObject] = predictions.map { value in
-                FritzVisionObject(label: FritzVisionLabel(label: value.detectedClassLabel!, confidence: value.score), boundingBox: value.finalPrediction)
+                FritzVisionObject(label: FritzVisionLabel(label: value.detectedClassLabel!, confidence: value.score), boundingBox: value.transformedBox)
             }
             completion(fritzObjects, nil)
 
@@ -72,49 +73,12 @@ class FritzVisionObjectModel {
 
         self.semaphore.wait()
         do {
-            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation, options: options)
+            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: options)
             try imageRequestHandler.perform([trackingRequest])
         } catch {
             print(error)
             self.semaphore.signal()
         }
     }
-
-    enum EXIFOrientation : Int32 {
-        case topLeft = 1
-        case topRight
-        case bottomRight
-        case bottomLeft
-        case leftTop
-        case rightTop
-        case rightBottom
-        case leftBottom
-
-        var isReflect:Bool {
-            switch self {
-            case .topLeft,.bottomRight,.rightTop,.leftBottom: return false
-            default: return true
-            }
-        }
-    }
-
-    func compensatingEXIFOrientation(deviceOrientation:UIDeviceOrientation) -> EXIFOrientation
-    {
-        switch (deviceOrientation) {
-        case (.landscapeRight): return .bottomRight
-        case (.landscapeLeft): return .topLeft
-        case (.portrait): return .rightTop
-        case (.portraitUpsideDown): return .leftBottom
-
-        case (.faceUp): return .rightTop
-        case (.faceDown): return .rightTop
-        case (_): fallthrough
-        default:
-            NSLog("Called in unrecognized orientation")
-            return .rightTop
-        }
-    }
-
-
 }
 
