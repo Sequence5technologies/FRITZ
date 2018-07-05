@@ -60,7 +60,6 @@ class FritzVisionObjectModel {
             guard let predictions = self.processClassifications(for: request, error: error) else {
                 completion(nil, error)
                 return
-
             }
             let fritzObjects: [FritzVisionObject] = predictions.map { value in
                 FritzVisionObject(label: FritzVisionLabel(label: value.detectedClassLabel!, confidence: value.score), boundingBox: value.transformedBox)

@@ -34,6 +34,9 @@
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
 		83242C2620640B2C00B955D2 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 83242C2520640B2C00B955D2 /* MobileNet.mlmodel */; };
+		834A72DA20EE7C80000AC400 /* 000000000139_resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A72D920EE7C80000AC400 /* 000000000139_resized.png */; };
+		834A72DC20EE8BB3000AC400 /* SSDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A72DB20EE8BB3000AC400 /* SSDUtils.swift */; };
+		834A72DE20EE8BCF000AC400 /* SSDDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A72DD20EE8BCF000AC400 /* SSDDebug.swift */; };
 		835B7551201A8AFB0030FE16 /* SSDMobilenetFeatureExtractor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 835B7550201A8AFB0030FE16 /* SSDMobilenetFeatureExtractor.mlmodel */; };
 		835B755E201A8B150030FE16 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7555201A8B140030FE16 /* Math.swift */; };
 		835B755F201A8B150030FE16 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */; };
@@ -84,6 +87,9 @@
 		38F2E2431FE0D0B6007241CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38F2E2451FE0D0B6007241CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83242C2520640B2C00B955D2 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		834A72D920EE7C80000AC400 /* 000000000139_resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000000000139_resized.png; sourceTree = "<group>"; };
+		834A72DB20EE8BB3000AC400 /* SSDUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSDUtils.swift; sourceTree = "<group>"; };
+		834A72DD20EE8BCF000AC400 /* SSDDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSDDebug.swift; sourceTree = "<group>"; };
 		835B7550201A8AFB0030FE16 /* SSDMobilenetFeatureExtractor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SSDMobilenetFeatureExtractor.mlmodel; sourceTree = "<group>"; };
 		835B7555201A8B140030FE16 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
@@ -295,6 +301,7 @@
 		38F2E2381FE0D0B6007241CB /* Heartbeat */ = {
 			isa = PBXGroup;
 			children = (
+				834A72D920EE7C80000AC400 /* 000000000139_resized.png */,
 				38B18CB51FE2228F005AA896 /* Models */,
 				383D40C41FE18EEC00438A9B /* Source */,
 				383D40C71FE18F0400438A9B /* Media */,
@@ -337,6 +344,8 @@
 				83DDFF9620E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel */,
 				83DDFF9420E6B49C003CC18C /* FritzVisionObjectModel.swift */,
 				835B7567201A8B1D0030FE16 /* SSDPostprocessor.swift */,
+				834A72DB20EE8BB3000AC400 /* SSDUtils.swift */,
+				834A72DD20EE8BCF000AC400 /* SSDDebug.swift */,
 				835B756B201A8B2D0030FE16 /* Anchors.swift */,
 				83B276E320EAA77100CDBC4D /* BoundingBoxOutline.swift */,
 			);
@@ -418,6 +427,7 @@
 			files = (
 				38E96C02200130E500683571 /* Human.storyboard in Resources */,
 				835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */,
+				834A72DA20EE7C80000AC400 /* 000000000139_resized.png in Resources */,
 				3890742C1FFDE6A900DFF7F9 /* MobileNet.storyboard in Resources */,
 				381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */,
 				38173F3320E2DCD90036005E /* Vision.storyboard in Resources */,
@@ -537,6 +547,7 @@
 				835B7568201A8B1D0030FE16 /* SSDPostprocessor.swift in Sources */,
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
 				83242C2620640B2C00B955D2 /* MobileNet.mlmodel in Sources */,
+				834A72DE20EE8BCF000AC400 /* SSDDebug.swift in Sources */,
 				83B276E420EAA77100CDBC4D /* BoundingBoxOutline.swift in Sources */,
 				835B7565201A8B150030FE16 /* NonMaxSuppression.swift in Sources */,
 				83DDFF9720E6B4C5003CC18C /* ssdlite_mobilenet_v2_coco.mlmodel in Sources */,
@@ -561,6 +572,7 @@
 				38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */,
 				835B7570201A8B2D0030FE16 /* Utility.swift in Sources */,
 				38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */,
+				834A72DC20EE8BB3000AC400 /* SSDUtils.swift in Sources */,
 				38E96C01200130E500683571 /* HumanViewController.swift in Sources */,
 				835B7551201A8AFB0030FE16 /* SSDMobilenetFeatureExtractor.mlmodel in Sources */,
 				835B7566201A8B150030FE16 /* MLMultiArray+Image.swift in Sources */,

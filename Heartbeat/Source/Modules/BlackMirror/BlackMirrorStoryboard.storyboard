@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NSL-fe-EzX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NSL-fe-EzX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,16 +18,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOC-bz-oaD">
-                                <rect key="frame" x="171.5" y="643.5" width="32" height="15.5"/>
+                                <rect key="frame" x="172" y="643" width="32" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIl-1x-7VJ">
+                                <rect key="frame" x="37" y="183" width="300" height="300"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="KIl-1x-7VJ" firstAttribute="centerX" secondItem="mju-Oc-V0J" secondAttribute="centerX" id="Dn8-Wb-wl1"/>
+                            <constraint firstItem="KIl-1x-7VJ" firstAttribute="centerY" secondItem="mju-Oc-V0J" secondAttribute="centerY" id="E3T-cv-ISU"/>
                             <constraint firstItem="LOC-bz-oaD" firstAttribute="centerX" secondItem="7hd-se-fxp" secondAttribute="centerX" id="Y2h-z6-VIO"/>
                             <constraint firstItem="7hd-se-fxp" firstAttribute="bottom" secondItem="LOC-bz-oaD" secondAttribute="bottom" constant="8" id="dSa-8F-eXE"/>
                         </constraints>
@@ -38,6 +43,7 @@
                     <connections>
                         <outlet property="cameraView" destination="mju-Oc-V0J" id="juR-zF-j8e"/>
                         <outlet property="frameLabel" destination="LOC-bz-oaD" id="u5A-OL-Hu1"/>
+                        <outlet property="imageView" destination="KIl-1x-7VJ" id="UPA-32-D4J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hz-ya-mGv" userLabel="First Responder" sceneMemberID="firstResponder"/>

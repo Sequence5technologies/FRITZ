@@ -12,15 +12,18 @@ import Vision
 import AVFoundation
 import Accelerate
 
+
 class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var frameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+
+    
     let semaphore = DispatchSemaphore(value: 1)
     var lastExecution = Date()
     var screenHeight: Double?
     var screenWidth: Double?
 
-    var imageView: UIImageView?
 
     let objectPredictor = FritzVisionObjectModel()
 
@@ -35,7 +38,7 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
         // session.sessionPreset = AVCaptureSession.Preset.
         
         guard
-            let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front),
+            let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
             let input = try? AVCaptureDeviceInput(device: backCamera)
             else { return session }
         session.addInput(input)
@@ -46,43 +49,54 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
     var boundingBoxes: [BoundingBoxOutline] = []
     let multiClass = true
     
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        self.frameLabel.textAlignment = .left
+//        screenWidth = Double(view.frame.width)
+//        screenHeight = Double(view.frame.height)
+//        var image = UIImage(named: "000000000139_resized.png")
+//        imageView.image = image
+//        setupBoxes()
+//        runPrediction(image: image!)
+//    }
+//    func setupBoxes() {
+//        // Create shape layers for the bounding boxes.
+//        for _ in 0..<numBoxes {
+//            let box = BoundingBoxOutline()
+//            box.addToLayer(imageView.layer)
+//            self.boundingBoxes.append(box)
+//        }
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.cameraView?.layer.addSublayer(self.cameraLayer)
-        // self.cameraView?.bringSubview(toFront: self.frameLabel)
+        self.cameraView?.layer.addSublayer(self.cameraLayer)
+        self.cameraView?.bringSubview(toFront: self.frameLabel)
         self.frameLabel.textAlignment = .left
-        // let videoOutput = AVCaptureVideoDataOutput()
-        // videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
-        // self.captureSession.addOutput(videoOutput)
-        // self.captureSession.startRunning()
+        let videoOutput = AVCaptureVideoDataOutput()
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
+        self.captureSession.addOutput(videoOutput)
+        self.captureSession.startRunning()
 
-
-        
         screenWidth = Double(view.frame.width)
         screenHeight = Double(view.frame.height)
-        imageView = UIImageView()
-        let image = UIImage(named: "testImage")
-        imageView?.image = image
-        imageView?.frame = cameraView.frame
-
-        cameraView.addSubview(imageView!)
         setupBoxes()
-        runPrediction(image: image!)
     }
-    
+
+     func setupBoxes() {
+         // Create shape layers for the bounding boxes.
+         for _ in 0..<numBoxes {
+             let box = BoundingBoxOutline()
+             box.addToLayer(cameraView.layer)
+             self.boundingBoxes.append(box)
+          }
+     }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         cameraLayer.frame = cameraView.layer.bounds
     }
     
-    func setupBoxes() {
-        // Create shape layers for the bounding boxes.
-        for _ in 0..<numBoxes {
-            let box = BoundingBoxOutline()
-            box.addToLayer(imageView!.layer)
-            self.boundingBoxes.append(box)
-        }
-    }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -96,13 +110,19 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
 
     func drawBoxes(predictions: [FritzVisionObject]) {
         for (index, prediction) in predictions.enumerated() {
+            print("\(prediction.label.label): \(prediction.label.confidence)")
             let textColor: UIColor
             let textLabel = String(format: "%.2f - %@", prediction.label.confidence, prediction.label.label)
             textColor = UIColor.black
-            let box = prediction.boundingBox
-            let frame = cameraView.frame
+            var box = prediction.boundingBox
+            // box = BoundingBox.oneByOneBox()
+            let frame = view.frame
+            // let frame = imageView.frame
+            print(frame)
 
-            let rect = box.toCGRect(imgWidth: Double(frame.width), imgHeight: Double(frame.height), xOffset: Double(frame.minX), yOffset: Double(frame.minY))
+//            let rect = box.toCGRect(imgWidth: Double(frame.width), imgHeight: Double(frame.height), xOffset: Double(frame.minX), yOffset: Double(frame.minY))
+            let yOffset = (Double(frame.height) - Double(frame.width)) / 2.0
+            let rect = box.toCGRect(imgWidth: Double(frame.width), imgHeight: Double(frame.width), xOffset: Double(0.0), yOffset: yOffset)
             self.boundingBoxes[index].show(frame: rect,
                                            label: textLabel,
                                            color: UIColor.red, textColor: textColor)
@@ -116,7 +136,8 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
     func runPrediction(image: UIImage) {
         let requestOptions:[VNImageOption : Any] = [:]
         let orientation = CGImagePropertyOrientation(rawValue: UInt32(EXIFOrientation.rightTop.rawValue))
-        objectPredictor.predict(image.pixelBuffer(width: 300, height: 300)!, orientation: orientation!, options: requestOptions) { (results, error) in
+        let pixelBuffer = image.pixelBuffer(width: 300, height: 300)!
+        objectPredictor.predict(pixelBuffer, orientation: orientation!, options: requestOptions) { (results, error) in
             if let error = error {
                 print(error)
                 return
@@ -127,8 +148,6 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
                 }
             }
         }
-
-
     }
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
@@ -146,6 +165,7 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
                 print(error)
                 return
             }
+
             if let results = results {
                 DispatchQueue.main.async {
                     self.drawBoxes(predictions: results)
@@ -156,45 +176,6 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
 
     func sigmoid(_ val:Double) -> Double {
         return 1.0/(1.0 + exp(-val))
-    }
-
-    func softmax(_ values:[Double]) -> [Double] {
-        if values.count == 1 { return [1.0]}
-        guard let maxValue = values.max() else {
-            fatalError("Softmax error")
-        }
-        let expValues = values.map { exp($0 - maxValue)}
-        let expSum = expValues.reduce(0, +)
-        return expValues.map({$0/expSum})
-    }
-
-    public static func softmax2(_ x: [Double]) -> [Double] {
-        var x: [Float] = x.compactMap{ Float($0) }
-        let len = vDSP_Length(x.count)
-
-        // Find the maximum value in the input array.
-        var max: Float = 0
-        vDSP_maxv(x, 1, &max, len)
-
-        // Subtract the maximum from all the elements in the array.
-        // Now the highest value in the array is 0.
-        max = -max
-        vDSP_vsadd(x, 1, &max, &x, 1, len)
-
-        // Exponentiate all the elements in the array.
-        var count = Int32(x.count)
-        vvexpf(&x, x, &count)
-
-        // Compute the sum of all exponentiated values.
-        var sum: Float = 0
-        vDSP_sve(x, 1, &sum, len)
-
-        // Divide each element by the sum. This normalizes the array contents
-        // so that they all add up to 1.
-        vDSP_vsdiv(x, 1, &sum, &x, 1, len)
-
-        let y: [Double] = x.compactMap{ Double($0) }
-        return y
     }
 
     enum EXIFOrientation : Int32 {
