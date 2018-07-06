@@ -2,15 +2,18 @@ PODS:
   - Alamofire (4.7.2)
   - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
-  - Crashlytics (3.10.2):
-    - Fabric (~> 1.7.7)
-  - Fabric (1.7.7)
-  - Fritz/Core (1.0.0-beta.16)
-  - Fritz/ManagedModel (1.0.0-beta.16):
+  - Crashlytics (3.10.3):
+    - Fabric (~> 1.7.8)
+  - Fabric (1.7.8)
+  - Fritz/Core (1.0.0-beta.18)
+  - Fritz/ManagedModel (1.0.0-beta.18):
     - Fritz/Core
-  - Fritz/Vision (1.0.0-beta.16):
+  - Fritz/Vision (1.0.0-beta.18):
     - Fritz/Core
-  - Fritz/VisionLabelModel (1.0.0-beta.16):
+  - Fritz/VisionLabelModel (1.0.0-beta.18):
+    - Fritz/Core
+    - Fritz/Vision
+  - Fritz/VisionObjectModel (1.0.0-beta.18):
     - Fritz/Core
     - Fritz/Vision
   - R.swift (4.0.0):
@@ -23,6 +26,7 @@ DEPENDENCIES:
   - Fabric (~> 1.7)
   - Fritz/ManagedModel (~> 1.0.0-beta)
   - Fritz/VisionLabelModel (~> 1.0.0-beta)
+  - Fritz/VisionObjectModel (~> 1.0.0-beta)
   - R.swift (~> 4.0)
 
 SPEC REPOS:
@@ -31,19 +35,20 @@ SPEC REPOS:
     - AlamofireImage
     - Crashlytics
     - Fabric
-    - Fritz
     - R.swift
     - R.swift.Library
+  https://github.com/fritzlabs/cocoapods-test-repo.git:
+    - Fritz
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
-  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
-  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
-  Fritz: 0c15b62a0bb060640af7d570bf34a88b5df2a511
+  Crashlytics: 2aea305161a2122492698c75af27f2b98aa49a25
+  Fabric: fba4684a95df789565b0b27fc5b6e68f1755af32
+  Fritz: 83ee5f78bae4454b30210ce748191e9a2d4d37a0
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
 
-PODFILE CHECKSUM: a90139682ea0bd0c55d2cc41830fd292d49b9d2d
+PODFILE CHECKSUM: ee35ba8720bad811d4da8651cbc5b1cfd366e07f
 
 COCOAPODS: 1.5.3

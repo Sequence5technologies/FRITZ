@@ -455,6 +455,7 @@
 				"${PODS_ROOT}/Fritz/Frameworks/FritzManagedModel.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVision.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionLabelModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionObjectModel.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -465,6 +466,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzManagedModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVision.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionLabelModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionObjectModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

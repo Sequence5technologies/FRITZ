@@ -1,5 +1,5 @@
+source 'https://github.com/fritzlabs/cocoapods-test-repo.git'
 source 'https://github.com/CocoaPods/Specs.git'
-
 platform :ios, '11.0'
 
 use_frameworks!
@@ -16,4 +16,5 @@ target 'Heartbeat' do
   # Fritz SDKs
   pod 'Fritz/ManagedModel', '~> 1.0.0-beta'
   pod 'Fritz/VisionLabelModel', '~> 1.0.0-beta'
+  pod 'Fritz/VisionObjectModel', '~> 1.0.0-beta'
 end

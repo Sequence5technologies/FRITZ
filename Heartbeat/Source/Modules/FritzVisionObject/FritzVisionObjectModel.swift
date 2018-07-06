@@ -72,8 +72,11 @@ class FritzVisionObjectModel {
 
         self.semaphore.wait()
         do {
-            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: options)
+
+            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation, options: options)
+            let t = DebugTimer()
             try imageRequestHandler.perform([trackingRequest])
+            print(t.elapsed())
         } catch {
             print(error)
             self.semaphore.signal()
