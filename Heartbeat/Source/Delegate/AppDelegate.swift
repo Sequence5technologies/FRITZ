@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configure Fritz models
         FritzSDK.setLogLevel(.debug)
 
+        FritzCore.configure()
+
         return true
     }
 }
