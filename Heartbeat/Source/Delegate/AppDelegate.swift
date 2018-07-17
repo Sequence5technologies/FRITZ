@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
 
         // Configure Fritz models
-        FritzSDK.setLogLevel(.debug)
+        FritzCore.setLogLevel(.debug)
+        FritzCore.configure()
 
         return true
     }

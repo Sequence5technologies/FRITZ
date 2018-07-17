@@ -34,20 +34,11 @@ class MobileNetViewController: UIViewController {
         return preview
     }()
 
-    private let model = MobileNet().fritz().model
+    private let visionModel = FritzVisionLabelModel()
 
     private let sessionQueue = DispatchQueue(label: "com.fritz.heartbeat.mobilenet.session")
 
     private let captureQueue = DispatchQueue(label: "com.fritz.heartbeat.mobilenet.capture")
-
-    private lazy var classificationRequest: VNCoreMLRequest = {
-        let vnModel = try! VNCoreMLModel(for: model)
-        let request = VNCoreMLRequest(model: vnModel) { [unowned self] in
-            self.handleVisionRequestUpdate(request: $0, error: $1)
-        }
-        request.imageCropAndScaleOption = .centerCrop
-        return request
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +80,7 @@ class MobileNetViewController: UIViewController {
         coordinator.animate(
             alongsideTransition: { _ in
                 self.previewLayer.frame = CGRect(origin: .zero, size: size)
-            },
+        },
             completion: nil
         )
     }
@@ -97,18 +88,17 @@ class MobileNetViewController: UIViewController {
 
 extension MobileNetViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection){
-        connection.videoOrientation = .portrait
-        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        let requestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer)
-        try? requestHandler.perform([classificationRequest])
-    }
-
-    private func handleVisionRequestUpdate(request: VNRequest, error: Error?) {
-        guard let results = request.results as? [VNClassificationObservation], results.count > 0 else { return }
-        let observation = results[0]
-        let confidence = Int(observation.confidence * 100)
-        setResult(text: observation.identifier, confidence: confidence)
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        let image = FritzVisionImage(buffer: sampleBuffer)
+        image.metadata = FritzVisionImageMetadata()
+        image.metadata?.orientation = .rightTop
+        visionModel.predict(image) { labels, error in
+            if let labels = labels, labels.count > 0 {
+                let observation = labels[0]
+                let confidence = Int(observation.confidence * 100)
+                self.setResult(text: observation.label, confidence: confidence)
+            }
+        }
     }
 
     private func setResult(text: String, confidence: Int) {
