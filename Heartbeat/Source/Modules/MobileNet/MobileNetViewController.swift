@@ -88,12 +88,11 @@ class MobileNetViewController: UIViewController {
 
 extension MobileNetViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection){
-        let options = FritzVisionLabelModelOptions(threshold: 0.3)
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let image = FritzVisionImage(buffer: sampleBuffer)
         image.metadata = FritzVisionImageMetadata()
-        image.metadata?.orientation = .topRight
-        visionModel.predict(image, options: options) { labels, error in
+        image.metadata?.orientation = .rightTop
+        visionModel.predict(image) { labels, error in
             if let labels = labels, labels.count > 0 {
                 let observation = labels[0]
                 let confidence = Int(observation.confidence * 100)
@@ -101,7 +100,8 @@ extension MobileNetViewController: AVCaptureVideoDataOutputSampleBufferDelegate 
             }
         }
     }
-   private func setResult(text: String, confidence: Int) {
+
+    private func setResult(text: String, confidence: Int) {
         DispatchQueue.main.async {
             self.predictionLabel.text = text.capitalized
             self.confidenceLabel.text = self.confidenceString(confidence)
