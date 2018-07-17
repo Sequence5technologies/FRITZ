@@ -1,5 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/fritzlabs/cocoapods-test-repo.git'
 
 platform :ios, '11.0'
 

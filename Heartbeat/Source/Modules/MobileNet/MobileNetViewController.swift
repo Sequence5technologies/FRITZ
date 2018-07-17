@@ -92,11 +92,14 @@ extension MobileNetViewController: AVCaptureVideoDataOutputSampleBufferDelegate 
         let image = FritzVisionImage(buffer: sampleBuffer)
         image.metadata = FritzVisionImageMetadata()
         image.metadata?.orientation = .rightTop
-        visionModel.predict(image) { labels, error in
+        let options = FritzVisionLabelModelOptions(threshold: 0.1)
+        visionModel.predict(image, options: options) { labels, error in
             if let labels = labels, labels.count > 0 {
                 let observation = labels[0]
                 let confidence = Int(observation.confidence * 100)
                 self.setResult(text: observation.label, confidence: confidence)
+            } else {
+                self.setNoResult()
             }
         }
     }
@@ -106,6 +109,13 @@ extension MobileNetViewController: AVCaptureVideoDataOutputSampleBufferDelegate 
             self.predictionLabel.text = text.capitalized
             self.confidenceLabel.text = self.confidenceString(confidence)
             self.confidenceLabel.textColor = self.confidenceColor(confidence)
+        }
+    }
+
+    private func setNoResult() {
+        DispatchQueue.main.async {
+            self.predictionLabel.text = "?????"
+            self.confidenceLabel.text = ""
         }
     }
 
