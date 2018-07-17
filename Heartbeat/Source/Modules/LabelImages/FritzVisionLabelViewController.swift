@@ -12,7 +12,7 @@ import AlamofireImage
 import Fritz
 import Vision
 
-class MobileNetViewController: UIViewController {
+class FritzVisionLabelViewController: UIViewController {
 
     @IBOutlet weak var resultView: UIView! {
         didSet { resultView.layer.cornerRadius = 4 }
@@ -86,7 +86,7 @@ class MobileNetViewController: UIViewController {
     }
 }
 
-extension MobileNetViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension FritzVisionLabelViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let image = FritzVisionImage(buffer: sampleBuffer)
