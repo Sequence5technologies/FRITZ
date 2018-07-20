@@ -1,4 +1,8 @@
-# Heartbeat by Fritz
+Heartbeat by Fritz
+===================
+
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Fritz.svg)](https://img.shields.io/cocoapods/v/Fritz.svg)
+[![Twitter](https://img.shields.io/badge/twitter-@fritzlabs-blue.svg?style=flat)](http://twitter.com/fritzlabs)
 
 Heartbeat by Fritz is a collection of unique experiences built with machine learning models. Explore the code for our demos, or fork the app and build your own.
 
