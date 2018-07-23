@@ -1,9 +1,5 @@
 //
-//  ViewController.swift
-//  yolo-object-tracking
-//
-//  Created by Mikael Von Holst on 2017-12-19.
-//  Copyright © 2017 Mikael Von Holst. All rights reserved.
+//  DetectObjectsViewController.swift
 //
 
 import UIKit
@@ -13,7 +9,7 @@ import AVFoundation
 import Accelerate
 import Fritz
 
-class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+class DetectObjectsViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var frameLabel: UILabel!
     var lastExecution = Date()
@@ -40,7 +36,7 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
     }()
 
     let numBoxes = 100
-    var boundingBoxes: [BoundingBox] = []
+    var boundingBoxes: [BoundingBoxOutline] = []
     let multiClass = true
 
     override func viewDidLoad() {
@@ -66,8 +62,8 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
     func setupBoxes() {
         // Create shape layers for the bounding boxes.
         for _ in 0..<numBoxes {
-            let box = BoundingBox()
-            box.addToLayer(cameraView)
+            let box = BoundingBoxOutline()
+            box.addToLayer(cameraView.layer)
             self.boundingBoxes.append(box)
         }
     }
@@ -85,8 +81,7 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
     func drawBoxes(predictions: [FritzVisionObject], framesPerSecond: Double) {
         self.frameLabel.text = "FPS: \(framesPerSecond.format(f: ".3"))"
 
-        let filteredPredictions = predictions.filter { $0.label.label == "person" }
-        for (index, prediction) in filteredPredictions.enumerated() {
+        for (index, prediction) in predictions.enumerated() {
             let textLabel = String(format: "%.2f - %@", prediction.label.confidence, prediction.label.label)
 
             let height = Double(cameraView.frame.height)
@@ -100,16 +95,16 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
                                            color: UIColor.red, textColor: UIColor.black)
         }
 
-        for index in filteredPredictions.count..<self.numBoxes {
+        for index in predictions.count..<self.numBoxes {
             self.boundingBoxes[index].hide()
         }
     }
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-
         let options = FritzVisionObjectModelOptions(threshold: 0.5)
         let image = FritzVisionImage(buffer: sampleBuffer)
         image.metadata = FritzVisionImageMetadata()
+        image.metadata?.orientation = FritzImageOrientation.fromAVCaptureConnection(from: connection)
 
         visionModel.predict(image, options: options) { objects, error in
             if let objects = objects, objects.count > 0 {
@@ -124,8 +119,5 @@ class SSDViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
                 }
             }
         }
-
-
     }
-
 }

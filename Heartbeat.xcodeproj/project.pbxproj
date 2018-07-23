@@ -31,19 +31,12 @@
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
-		835B755E201A8B150030FE16 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7555201A8B140030FE16 /* Math.swift */; };
-		835B755F201A8B150030FE16 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */; };
-		835B7560201A8B150030FE16 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7557201A8B140030FE16 /* Array.swift */; };
 		835B7561201A8B150030FE16 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7558201A8B140030FE16 /* BoundingBox.swift */; };
-		835B7562201A8B150030FE16 /* Predictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7559201A8B140030FE16 /* Predictions.swift */; };
-		835B7563201A8B150030FE16 /* MultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B755A201A8B140030FE16 /* MultiArray.swift */; };
-		835B7564201A8B150030FE16 /* CVPixelBuffer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B755B201A8B140030FE16 /* CVPixelBuffer+Helpers.swift */; };
-		835B7565201A8B150030FE16 /* NonMaxSuppression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B755C201A8B140030FE16 /* NonMaxSuppression.swift */; };
-		835B7566201A8B150030FE16 /* MLMultiArray+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B755D201A8B140030FE16 /* MLMultiArray+Image.swift */; };
-		835B756D201A8B2D0030FE16 /* coco_labels_list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 835B7569201A8B2C0030FE16 /* coco_labels_list.txt */; };
 		835B756E201A8B2D0030FE16 /* SSDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756A201A8B2C0030FE16 /* SSDViewController.swift */; };
 		835B7570201A8B2D0030FE16 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756C201A8B2D0030FE16 /* Utility.swift */; };
 		835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */; };
+		838B528B2102432700E0D50A /* DetectObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B528A2102432700E0D50A /* DetectObjectsViewController.swift */; };
+		838B528D210243CF00E0D50A /* DetectObjectsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */; };
 		83D1E38A20FE441600DAAC90 /* Fritz-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83D1E38920FE441600DAAC90 /* Fritz-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -73,19 +66,12 @@
 		38F2E2401FE0D0B6007241CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F2E2431FE0D0B6007241CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38F2E2451FE0D0B6007241CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		835B7555201A8B140030FE16 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
-		835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
-		835B7557201A8B140030FE16 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		835B7558201A8B140030FE16 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
-		835B7559201A8B140030FE16 /* Predictions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predictions.swift; sourceTree = "<group>"; };
-		835B755A201A8B140030FE16 /* MultiArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiArray.swift; sourceTree = "<group>"; };
-		835B755B201A8B140030FE16 /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
-		835B755C201A8B140030FE16 /* NonMaxSuppression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonMaxSuppression.swift; sourceTree = "<group>"; };
-		835B755D201A8B140030FE16 /* MLMultiArray+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Image.swift"; sourceTree = "<group>"; };
-		835B7569201A8B2C0030FE16 /* coco_labels_list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coco_labels_list.txt; sourceTree = "<group>"; };
 		835B756A201A8B2C0030FE16 /* SSDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDViewController.swift; sourceTree = "<group>"; };
 		835B756C201A8B2D0030FE16 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BlackMirrorStoryboard.storyboard; sourceTree = "<group>"; };
+		838B528A2102432700E0D50A /* DetectObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectObjectsViewController.swift; sourceTree = "<group>"; };
+		838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetectObjectsStoryboard.storyboard; sourceTree = "<group>"; };
 		83D1E38920FE441600DAAC90 /* Fritz-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fritz-Info.plist"; sourceTree = "<group>"; };
 		AE5BD89ECFAC366472049E82 /* Pods_Heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1372C3DC7B399D3E8B847F4 /* Pods-Heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +139,7 @@
 				381817DA1FE2D94600050FF6 /* Common */,
 				385CF1B11FF2EA8600F1BFF0 /* Demos */,
 				38E96BFE200130CF00683571 /* Human */,
+				838B5289210242DD00E0D50A /* DetectObjects */,
 				389074281FFDE68900DFF7F9 /* LabelImages */,
 				38BCA57A1FF53BDD009ABCC6 /* MNIST */,
 				381817D91FE2D93F00050FF6 /* Root */,
@@ -278,29 +265,21 @@
 		835B7549201A7AB70030FE16 /* BlackMirror */ = {
 			isa = PBXGroup;
 			children = (
-				835B7554201A8B140030FE16 /* CoreMLHelpers */,
-				835B7569201A8B2C0030FE16 /* coco_labels_list.txt */,
 				835B756C201A8B2D0030FE16 /* Utility.swift */,
+				835B7558201A8B140030FE16 /* BoundingBox.swift */,
 				835B756A201A8B2C0030FE16 /* SSDViewController.swift */,
 				835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */,
 			);
 			path = BlackMirror;
 			sourceTree = "<group>";
 		};
-		835B7554201A8B140030FE16 /* CoreMLHelpers */ = {
+		838B5289210242DD00E0D50A /* DetectObjects */ = {
 			isa = PBXGroup;
 			children = (
-				835B7555201A8B140030FE16 /* Math.swift */,
-				835B7556201A8B140030FE16 /* UIImage+CVPixelBuffer.swift */,
-				835B7557201A8B140030FE16 /* Array.swift */,
-				835B7558201A8B140030FE16 /* BoundingBox.swift */,
-				835B7559201A8B140030FE16 /* Predictions.swift */,
-				835B755A201A8B140030FE16 /* MultiArray.swift */,
-				835B755B201A8B140030FE16 /* CVPixelBuffer+Helpers.swift */,
-				835B755C201A8B140030FE16 /* NonMaxSuppression.swift */,
-				835B755D201A8B140030FE16 /* MLMultiArray+Image.swift */,
+				838B528A2102432700E0D50A /* DetectObjectsViewController.swift */,
+				838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */,
 			);
-			path = CoreMLHelpers;
+			path = DetectObjects;
 			sourceTree = "<group>";
 		};
 		8E4F2C91079D1F45793D461F /* Pods */ = {
@@ -380,10 +359,10 @@
 				835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */,
 				3890742C1FFDE6A900DFF7F9 /* LabelImages.storyboard in Resources */,
 				381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */,
-				835B756D201A8B2D0030FE16 /* coco_labels_list.txt in Resources */,
 				38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */,
 				83D1E38A20FE441600DAAC90 /* Fritz-Info.plist in Resources */,
 				38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */,
+				838B528D210243CF00E0D50A /* DetectObjectsStoryboard.storyboard in Resources */,
 				385CF1B51FF2EAAA00F1BFF0 /* Demos.storyboard in Resources */,
 				38BCA5851FF53C87009ABCC6 /* MNIST.storyboard in Resources */,
 			);
@@ -496,28 +475,21 @@
 				835B7561201A8B150030FE16 /* BoundingBox.swift in Sources */,
 				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
-				835B7565201A8B150030FE16 /* NonMaxSuppression.swift in Sources */,
-				835B7564201A8B150030FE16 /* CVPixelBuffer+Helpers.swift in Sources */,
 				38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */,
 				3890742A1FFDE6A000DFF7F9 /* FritzVisionLabelViewController.swift in Sources */,
-				835B755F201A8B150030FE16 /* UIImage+CVPixelBuffer.swift in Sources */,
 				835B756E201A8B2D0030FE16 /* SSDViewController.swift in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
-				835B7560201A8B150030FE16 /* Array.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
+				838B528B2102432700E0D50A /* DetectObjectsViewController.swift in Sources */,
 				38E96BFB2001308B00683571 /* GenderNet.mlmodel in Sources */,
-				835B7563201A8B150030FE16 /* MultiArray.swift in Sources */,
 				38BCA5821FF53C47009ABCC6 /* Stroke.swift in Sources */,
 				38E96BF82001308B00683571 /* Models+Fritz.swift in Sources */,
 				38E96C042001310000683571 /* NavigationController.swift in Sources */,
 				38E96BFA2001308B00683571 /* AgeNet.mlmodel in Sources */,
-				835B755E201A8B150030FE16 /* Math.swift in Sources */,
-				835B7562201A8B150030FE16 /* Predictions.swift in Sources */,
 				38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */,
 				835B7570201A8B2D0030FE16 /* Utility.swift in Sources */,
 				38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */,
 				38E96C01200130E500683571 /* HumanViewController.swift in Sources */,
-				835B7566201A8B150030FE16 /* MLMultiArray+Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
