@@ -6,7 +6,7 @@ Heartbeat by Fritz
 
 Heartbeat by Fritz is a collection of unique experiences built with machine learning models. Explore the code for our demos, or fork the repo and build your own app.
 
-Heartbeat by Fritz is also availalbe from the [App Store](https://itunes.apple.com/us/app/heartbeat-by-fritz/id1325206416).
+Heartbeat by Fritz is also available from the [App Store](https://itunes.apple.com/us/app/heartbeat-by-fritz/id1325206416).
 
 
 ## About Fritz
