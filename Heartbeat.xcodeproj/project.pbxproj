@@ -31,6 +31,12 @@
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
+		833E545C2123A9EB007EFA8A /* StyleTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E545B2123A9EB007EFA8A /* StyleTransferViewController.swift */; };
+		833E545E2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 833E545D2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard */; };
+		833E54602123AB68007EFA8A /* StyleTransferInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E545F2123AB68007EFA8A /* StyleTransferInput.swift */; };
+		833E54622123AB71007EFA8A /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E54612123AB71007EFA8A /* VideoPreviewView.swift */; };
+		833E54692123AB78007EFA8A /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E54642123AB78007EFA8A /* OpenGLPixelBufferView.m */; };
+		833E546A2123AB78007EFA8A /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 833E54652123AB78007EFA8A /* ShaderUtilities.c */; };
 		835B7561201A8B150030FE16 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B7558201A8B140030FE16 /* BoundingBox.swift */; };
 		835B756E201A8B2D0030FE16 /* SSDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756A201A8B2C0030FE16 /* SSDViewController.swift */; };
 		835B7570201A8B2D0030FE16 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835B756C201A8B2D0030FE16 /* Utility.swift */; };
@@ -66,6 +72,15 @@
 		38F2E2401FE0D0B6007241CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F2E2431FE0D0B6007241CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38F2E2451FE0D0B6007241CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		833E545B2123A9EB007EFA8A /* StyleTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTransferViewController.swift; sourceTree = "<group>"; };
+		833E545D2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StyleTransferStoryboard.storyboard; sourceTree = "<group>"; };
+		833E545F2123AB68007EFA8A /* StyleTransferInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleTransferInput.swift; sourceTree = "<group>"; };
+		833E54612123AB71007EFA8A /* VideoPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
+		833E54642123AB78007EFA8A /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
+		833E54652123AB78007EFA8A /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
+		833E54662123AB78007EFA8A /* OpenGLPixelBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLPixelBufferView.h; sourceTree = "<group>"; };
+		833E54672123AB78007EFA8A /* Heartbeat-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Heartbeat-Bridging-Header.h"; sourceTree = "<group>"; };
+		833E54682123AB78007EFA8A /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
 		835B7558201A8B140030FE16 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
 		835B756A201A8B2C0030FE16 /* SSDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDViewController.swift; sourceTree = "<group>"; };
 		835B756C201A8B2D0030FE16 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -135,6 +150,7 @@
 		383D40C61FE18EFA00438A9B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				833E545A2123A9D6007EFA8A /* StyleTransfer */,
 				835B7549201A7AB70030FE16 /* BlackMirror */,
 				381817DA1FE2D94600050FF6 /* Common */,
 				385CF1B11FF2EA8600F1BFF0 /* Demos */,
@@ -262,6 +278,30 @@
 			path = Heartbeat;
 			sourceTree = "<group>";
 		};
+		833E545A2123A9D6007EFA8A /* StyleTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				833E54632123AB78007EFA8A /* Apple OpenGL Buffer View */,
+				833E545B2123A9EB007EFA8A /* StyleTransferViewController.swift */,
+				833E545F2123AB68007EFA8A /* StyleTransferInput.swift */,
+				833E54612123AB71007EFA8A /* VideoPreviewView.swift */,
+				833E545D2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard */,
+			);
+			path = StyleTransfer;
+			sourceTree = "<group>";
+		};
+		833E54632123AB78007EFA8A /* Apple OpenGL Buffer View */ = {
+			isa = PBXGroup;
+			children = (
+				833E54642123AB78007EFA8A /* OpenGLPixelBufferView.m */,
+				833E54652123AB78007EFA8A /* ShaderUtilities.c */,
+				833E54662123AB78007EFA8A /* OpenGLPixelBufferView.h */,
+				833E54672123AB78007EFA8A /* Heartbeat-Bridging-Header.h */,
+				833E54682123AB78007EFA8A /* ShaderUtilities.h */,
+			);
+			path = "Apple OpenGL Buffer View";
+			sourceTree = "<group>";
+		};
 		835B7549201A7AB70030FE16 /* BlackMirror */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38E96C02200130E500683571 /* Human.storyboard in Resources */,
+				833E545E2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard in Resources */,
 				835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */,
 				3890742C1FFDE6A900DFF7F9 /* LabelImages.storyboard in Resources */,
 				381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */,
@@ -385,6 +426,7 @@
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVision.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionLabelModel.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionObjectModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionStyleModel.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -396,6 +438,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVision.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionLabelModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionObjectModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionStyleModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,11 +517,15 @@
 				385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */,
 				835B7561201A8B150030FE16 /* BoundingBox.swift in Sources */,
 				38B18CC01FE224BA005AA896 /* MNIST.mlmodel in Sources */,
+				833E54622123AB71007EFA8A /* VideoPreviewView.swift in Sources */,
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
+				833E54692123AB78007EFA8A /* OpenGLPixelBufferView.m in Sources */,
 				38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */,
 				3890742A1FFDE6A000DFF7F9 /* FritzVisionLabelViewController.swift in Sources */,
 				835B756E201A8B2D0030FE16 /* SSDViewController.swift in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
+				833E545C2123A9EB007EFA8A /* StyleTransferViewController.swift in Sources */,
+				833E546A2123AB78007EFA8A /* ShaderUtilities.c in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
 				838B528B2102432700E0D50A /* DetectObjectsViewController.swift in Sources */,
 				38E96BFB2001308B00683571 /* GenderNet.mlmodel in Sources */,
@@ -490,6 +537,7 @@
 				835B7570201A8B2D0030FE16 /* Utility.swift in Sources */,
 				38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */,
 				38E96C01200130E500683571 /* HumanViewController.swift in Sources */,
+				833E54602123AB68007EFA8A /* StyleTransferInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
