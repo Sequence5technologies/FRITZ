@@ -680,6 +680,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeat/Source/Modules/StyleTransfer/Apple OpenGL Buffer View/Heartbeat-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -699,6 +700,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeat/Source/Modules/StyleTransfer/Apple OpenGL Buffer View/Heartbeat-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
