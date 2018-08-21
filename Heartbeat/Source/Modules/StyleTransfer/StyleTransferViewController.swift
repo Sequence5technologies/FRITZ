@@ -25,12 +25,14 @@ class StyleTransferViewController: UIViewController
     let models = FritzVisionStyleModel.allModels()
     
     var activeModel: FritzVisionStyleModel?
+    var activeModelIndex: Int?
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         activeModel = models[0]
+        activeModelIndex = 0
         captureController.activeModel = activeModel
         view.backgroundColor = UIColor.black
         view.addSubview(previewView)
@@ -89,14 +91,13 @@ class StyleTransferViewController: UIViewController
 
     func activateNextStyle()
     {
-        print("Switch")
-        if let activeModel = activeModel {
-            let currentModelIndex = models.index(of: activeModel)!
-            if currentModelIndex == models.count - 1 {
-                self.activeModel = nil
-            } else {
-                self.activeModel = models[currentModelIndex + 1]
-            }
+        if let modelIndex = self.activeModelIndex, modelIndex == models.count - 1 {
+            self.activeModel = nil
+            self.activeModelIndex = nil
+        } else if let activeModel = activeModel,
+            let modelIndex = self.activeModelIndex {
+            self.activeModel = models[modelIndex + 1]
+            self.activeModelIndex = modelIndex + 1
         } else {
             activeModel = models.first
         }
@@ -195,8 +196,11 @@ class CameraSessionController : NSObject, AVCaptureVideoDataOutputSampleBufferDe
     let videoOutputQueue = DispatchQueue(label: "queue.video.output", qos: DispatchQoS.userInitiated, attributes: [], autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.workItem, target: nil)
     // ...
     let callbackLockingQueue = DispatchQueue(label: "queue.session.callback.lock", qos: DispatchQoS.default, attributes: [], autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.workItem, target: nil)
-    
-    
+
+    let modelRunningQueue = DispatchQueue(label: "queue.model.output", qos: DispatchQoS.userInitiated, attributes: [], autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.workItem, target: nil)
+
+    var lastExecution = Date()
+
     func configure()
     {
         let callerQueue = DispatchQueue.main
@@ -272,7 +276,6 @@ class CameraSessionController : NSObject, AVCaptureVideoDataOutputSampleBufferDe
     
     func stopRunning()
     {
-        print("HI")
         sessionQueue.sync {
             guard running else { return }
             
@@ -281,52 +284,9 @@ class CameraSessionController : NSObject, AVCaptureVideoDataOutputSampleBufferDe
         }
     }
 
-    public func predict(_ pixelBuffer: CVPixelBuffer, completion: @escaping (CVPixelBuffer?, Error?) -> Void) {
-
-        print("PREDICTING")
-        let trackingRequest = VNCoreMLRequest(model: _activeModel!.visionModel!) { (request, error) in
-            guard let results = request.results as? [VNPixelBufferObservation] else {
-                completion(nil, nil)
-                return
-            }
-
-            guard results.count == 1 else {
-                completion(nil, nil)
-                return
-            }
-            completion(results[0].pixelBuffer, nil)
-        }
-
-        trackingRequest.imageCropAndScaleOption = VNImageCropAndScaleOption.scaleFit
-
-        do {
-            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer)
-            try imageRequestHandler.perform([trackingRequest])
-            print("FINISHED PREDICTING")
-        } catch {
-            completion(nil, error)
-        }
-    }
-    private lazy var request: VNCoreMLRequest = {
-        VNCoreMLRequest(model: _activeModel!.visionModel!) { [unowned self] (request, error) in
-            guard let results = request.results as? [VNPixelBufferObservation] else {
-                return
-            }
-
-            guard results.count == 1 else {
-                return
-            }
-            self.callbackQueue.async {
-                self._rendererCallback!(results[0].pixelBuffer)
-            }
-        }
-    }()
-
-
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection)
     {
-        print("Capturing output")
-        // Obtain callback and renderer functions behind lock
+        // Obtain callback and renderer functions behind lock.  This helps
         var callback: ((CVPixelBuffer) -> Void)?
         var model: FritzVisionStyleModel?
 
@@ -335,18 +295,19 @@ class CameraSessionController : NSObject, AVCaptureVideoDataOutputSampleBufferDe
             model = _activeModel
         }
 
-        if let callback = callback,
-            let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
+        if let callback = callback {
             if let model = model {
-                let image = FritzVisionImage(imageBuffer: imageBuffer)
-
+                let image = FritzVisionImage(buffer: sampleBuffer)
                 model.predict(image) { (stylizedBuffer, error) in
-                    guard let stylizedBuffer = stylizedBuffer  else { return }
+                    guard let stylizedBuffer = stylizedBuffer else { return }
+                    let msTaken = Date().timeIntervalSince(self.lastExecution)
+                    self.lastExecution = Date()
+                    print("Frames Per second \(1.0 / msTaken)")
                     self.callbackQueue.async {
                         callback(stylizedBuffer)
                     }
                 }
-            } else {
+            } else if let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
                 callbackQueue.async {
                     callback(imageBuffer)
                 }
@@ -354,10 +315,6 @@ class CameraSessionController : NSObject, AVCaptureVideoDataOutputSampleBufferDe
         }
     }
 
-    public func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection)
-    {
-        print("dropped samples")
-    }
 }
 
 // Camera and Photo Library authorization handling
