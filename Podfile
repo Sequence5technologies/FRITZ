@@ -15,5 +15,6 @@ target 'Heartbeat' do
   pod 'Fritz/ManagedModel'
   pod 'Fritz/VisionLabelModel'
   pod 'Fritz/VisionObjectModel'
+  pod 'Fritz/VisionStyleModel'
   pod 'R.swift', '~> 4.0'
 end

@@ -170,6 +170,34 @@
                                             <segue destination="hR8-dO-7fb" kind="show" id="VMQ-as-IBw"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Si2-Vg-Bd2" detailTextLabel="IIa-36-1ls" rowHeight="120" style="IBUITableViewCellStyleSubtitle" id="hL4-YL-o48" customClass="DemoTableViewCell" customModule="Heartbeat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="635" width="375" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hL4-YL-o48" id="JKc-b2-l1D">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="119.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="STYLE TRANSFER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Si2-Vg-Bd2">
+                                                    <rect key="frame" x="16" y="36" width="183.5" height="26.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Apply stylistic effects to live video." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IIa-36-1ls">
+                                                    <rect key="frame" x="16" y="66.5" width="202.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="0.80078125" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="35r-fg-fXb" kind="show" id="MXO-Nr-9oh"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -225,6 +253,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dn1-pX-Dek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="497"/>
+        </scene>
+        <!--StyleTransferStoryboard-->
+        <scene sceneID="UJL-Tj-wtf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StyleTransferStoryboard" id="35r-fg-fXb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4BF-3C-10C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="638"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RXQ-Fb-gJH">
