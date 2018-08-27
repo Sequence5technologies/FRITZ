@@ -104,7 +104,7 @@ class DetectObjectsViewController: UIViewController, AVCaptureVideoDataOutputSam
         let options = FritzVisionObjectModelOptions(threshold: 0.5)
         let image = FritzVisionImage(buffer: sampleBuffer)
         image.metadata = FritzVisionImageMetadata()
-        image.metadata?.orientation = FritzImageOrientation.fromAVCaptureConnection(from: connection)
+        image.metadata?.orientation = FritzImageOrientation(from: connection)
 
         visionModel.predict(image, options: options) { objects, error in
             if let objects = objects, objects.count > 0 {
