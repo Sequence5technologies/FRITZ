@@ -94,7 +94,7 @@ class StyleTransferViewController: UIViewController
         if let modelIndex = self.activeModelIndex, modelIndex == models.count - 1 {
             self.activeModel = nil
             self.activeModelIndex = nil
-        } else if let activeModel = activeModel,
+        } else if let _ = activeModel,
             let modelIndex = self.activeModelIndex {
             self.activeModel = models[modelIndex + 1]
             self.activeModelIndex = modelIndex + 1
