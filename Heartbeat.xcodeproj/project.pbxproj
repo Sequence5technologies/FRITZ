@@ -23,10 +23,6 @@
 		38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BCA5801FF53C47009ABCC6 /* StrokeSettings.swift */; };
 		38BCA5851FF53C87009ABCC6 /* MNIST.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BCA5841FF53C87009ABCC6 /* MNIST.storyboard */; };
 		38E96BF82001308B00683571 /* Models+Fritz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF42001308B00683571 /* Models+Fritz.swift */; };
-		38E96BFA2001308B00683571 /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF62001308B00683571 /* AgeNet.mlmodel */; };
-		38E96BFB2001308B00683571 /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BF72001308B00683571 /* GenderNet.mlmodel */; };
-		38E96C01200130E500683571 /* HumanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E96BFF200130E500683571 /* HumanViewController.swift */; };
-		38E96C02200130E500683571 /* Human.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E96C00200130E500683571 /* Human.storyboard */; };
 		38E96C042001310000683571 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E96C032001310000683571 /* NavigationController.swift */; };
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
@@ -62,10 +58,6 @@
 		38BCA5801FF53C47009ABCC6 /* StrokeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeSettings.swift; sourceTree = "<group>"; };
 		38BCA5841FF53C87009ABCC6 /* MNIST.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MNIST.storyboard; sourceTree = "<group>"; };
 		38E96BF42001308B00683571 /* Models+Fritz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Models+Fritz.swift"; sourceTree = "<group>"; };
-		38E96BF62001308B00683571 /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
-		38E96BF72001308B00683571 /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
-		38E96BFF200130E500683571 /* HumanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanViewController.swift; sourceTree = "<group>"; };
-		38E96C00200130E500683571 /* Human.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Human.storyboard; sourceTree = "<group>"; };
 		38E96C032001310000683571 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		38F2E2361FE0D0B6007241CB /* Heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartbeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2E2391FE0D0B6007241CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,7 +146,6 @@
 				835B7549201A7AB70030FE16 /* BlackMirror */,
 				381817DA1FE2D94600050FF6 /* Common */,
 				385CF1B11FF2EA8600F1BFF0 /* Demos */,
-				38E96BFE200130CF00683571 /* Human */,
 				838B5289210242DD00E0D50A /* DetectObjects */,
 				389074281FFDE68900DFF7F9 /* LabelImages */,
 				38BCA57A1FF53BDD009ABCC6 /* MNIST */,
@@ -213,8 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				38B18CBF1FE224BA005AA896 /* MNIST.mlmodel */,
-				38E96BF62001308B00683571 /* AgeNet.mlmodel */,
-				38E96BF72001308B00683571 /* GenderNet.mlmodel */,
 				38E96BF42001308B00683571 /* Models+Fritz.swift */,
 			);
 			path = Models;
@@ -238,15 +227,6 @@
 				38BCA57E1FF53C47009ABCC6 /* TouchDrawView.swift */,
 			);
 			path = "Draw View";
-			sourceTree = "<group>";
-		};
-		38E96BFE200130CF00683571 /* Human */ = {
-			isa = PBXGroup;
-			children = (
-				38E96BFF200130E500683571 /* HumanViewController.swift */,
-				38E96C00200130E500683571 /* Human.storyboard */,
-			);
-			path = Human;
 			sourceTree = "<group>";
 		};
 		38F2E22D1FE0D0B6007241CB = {
@@ -395,7 +375,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38E96C02200130E500683571 /* Human.storyboard in Resources */,
 				833E545E2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard in Resources */,
 				835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */,
 				3890742C1FFDE6A900DFF7F9 /* LabelImages.storyboard in Resources */,
@@ -528,15 +507,12 @@
 				833E546A2123AB78007EFA8A /* ShaderUtilities.c in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
 				838B528B2102432700E0D50A /* DetectObjectsViewController.swift in Sources */,
-				38E96BFB2001308B00683571 /* GenderNet.mlmodel in Sources */,
 				38BCA5821FF53C47009ABCC6 /* Stroke.swift in Sources */,
 				38E96BF82001308B00683571 /* Models+Fritz.swift in Sources */,
 				38E96C042001310000683571 /* NavigationController.swift in Sources */,
-				38E96BFA2001308B00683571 /* AgeNet.mlmodel in Sources */,
 				38BCA57C1FF53BF9009ABCC6 /* MNISTViewController.swift in Sources */,
 				835B7570201A8B2D0030FE16 /* Utility.swift in Sources */,
 				38BCA5811FF53C47009ABCC6 /* TouchDrawView.swift in Sources */,
-				38E96C01200130E500683571 /* HumanViewController.swift in Sources */,
 				833E54602123AB68007EFA8A /* StyleTransferInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,6 +646,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D1372C3DC7B399D3E8B847F4 /* Pods-Heartbeat.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -690,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF3EEEC0D5C3BD7048C6B741 /* Pods-Heartbeat.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

@@ -12,12 +12,3 @@ extension MNIST: SwiftIdentifiedModel {
     static let packagedModelVersion = 1
 }
 
-extension AgeNet: SwiftIdentifiedModel {
-    static let modelIdentifier = "5b376c236b3b40e2826061218c682499"
-    static let packagedModelVersion = 1
-}
-
-extension GenderNet: SwiftIdentifiedModel {
-    static let modelIdentifier = "1aa1620864174fbcbba8efdd17d9dd32"
-    static let packagedModelVersion = 1
-}
