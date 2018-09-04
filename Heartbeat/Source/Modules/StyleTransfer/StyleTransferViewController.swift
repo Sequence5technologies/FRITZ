@@ -38,7 +38,6 @@ class StyleTransferViewController: UIViewController
         view.addSubview(previewView)
         view.bringSubview(toFront: self.frameLabel)
 
-
         // Tap anywhere on the screen to change the current model (hack for now)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped)))
     }
@@ -100,6 +99,7 @@ class StyleTransferViewController: UIViewController
             self.activeModelIndex = modelIndex + 1
         } else {
             activeModel = models.first
+            self.activeModelIndex = 0
         }
 
         captureController.activeModel = activeModel
