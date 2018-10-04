@@ -51,7 +51,6 @@ class DetectObjectsViewController: UIViewController, AVCaptureVideoDataOutputSam
         setupBoxes()
         screenWidth = Double(view.frame.width)
         screenHeight = Double(view.frame.height)
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -84,6 +83,7 @@ class DetectObjectsViewController: UIViewController, AVCaptureVideoDataOutputSam
         for (index, prediction) in predictions.enumerated() {
             let textLabel = String(format: "%.2f - %@", prediction.label.confidence, prediction.label.label)
 
+            // Effectively center cropping the bounding box frame.
             let height = Double(cameraView.frame.height)
             let width = Double(cameraView.frame.width)
             let yOffset = (height - width) / 2

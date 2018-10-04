@@ -14,6 +14,7 @@ import Vision
 import CoreML
 import Fritz
 
+
 class StyleTransferViewController: UIViewController
 {
 
@@ -65,9 +66,8 @@ class StyleTransferViewController: UIViewController
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        // TODO use Auto Layout :(
-        let maxDimension = max(view.bounds.size.width, view.bounds.size.height)
-        previewView.frame = CGRect(x: (view.bounds.size.width - maxDimension) / 2, y: (view.bounds.size.height - maxDimension) / 2, width: maxDimension, height: maxDimension)
+        // TODO use Auto Layout :( Right now we're only supporting Portrait device orientation
+        previewView.frame = view.frame
     }
     override func viewWillDisappear(_ animated: Bool) {
         captureController.rendererCallback = nil
@@ -104,8 +104,6 @@ class StyleTransferViewController: UIViewController
 
         captureController.activeModel = activeModel
     }
-
-
 }
 
 /*
@@ -240,7 +238,7 @@ class CameraSessionController : NSObject, AVCaptureVideoDataOutputSampleBufferDe
             guard session.canAddOutput(captureVideoOutput) else { fatalError("Cannot add output") }
             
             session.beginConfiguration()
-            session.sessionPreset = AVCaptureSession.Preset.hd1280x720
+            session.sessionPreset = AVCaptureSession.Preset.vga640x480
             session.addInput(captureVideoInput)
             session.addOutput(captureVideoOutput)
             session.commitConfiguration()
@@ -252,7 +250,6 @@ class CameraSessionController : NSObject, AVCaptureVideoDataOutputSampleBufferDe
     func tearDown()
     {
         sessionQueue.sync {
-            print("stopping")
             guard session != nil else { return }
             
             // TODO: unregister notifications

@@ -18,16 +18,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bS3-6d-ydJ">
-                                <rect key="frame" x="133" y="593" width="109" height="21"/>
+                                <rect key="frame" x="133" y="626" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bS3-6d-ydJ" firstAttribute="centerX" secondItem="FbN-Nf-yF9" secondAttribute="centerX" id="jmp-Jj-0UX"/>
-                            <constraint firstItem="bS3-6d-ydJ" firstAttribute="top" secondItem="cpN-cf-UIx" secondAttribute="top" constant="573" id="snF-Ih-QLJ"/>
+                            <constraint firstItem="bS3-6d-ydJ" firstAttribute="centerX" secondItem="FbN-Nf-yF9" secondAttribute="centerX" id="4gW-1a-V4N"/>
+                            <constraint firstAttribute="bottom" secondItem="bS3-6d-ydJ" secondAttribute="bottom" constant="20" symbolic="YES" id="HeN-st-1lQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cpN-cf-UIx"/>
                     </view>

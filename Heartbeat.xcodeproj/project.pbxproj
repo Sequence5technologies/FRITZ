@@ -39,6 +39,8 @@
 		835B7572201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */; };
 		838B528B2102432700E0D50A /* DetectObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B528A2102432700E0D50A /* DetectObjectsViewController.swift */; };
 		838B528D210243CF00E0D50A /* DetectObjectsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */; };
+		83AC97D72149CB8600E86B44 /* ImageSegmentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC97D62149CB8600E86B44 /* ImageSegmentationViewController.swift */; };
+		83AC97D92149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AC97D82149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard */; };
 		83D1E38A20FE441600DAAC90 /* Fritz-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83D1E38920FE441600DAAC90 /* Fritz-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		835B7571201A8CE00030FE16 /* BlackMirrorStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BlackMirrorStoryboard.storyboard; sourceTree = "<group>"; };
 		838B528A2102432700E0D50A /* DetectObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectObjectsViewController.swift; sourceTree = "<group>"; };
 		838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetectObjectsStoryboard.storyboard; sourceTree = "<group>"; };
+		83AC97D62149CB8600E86B44 /* ImageSegmentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmentationViewController.swift; sourceTree = "<group>"; };
+		83AC97D82149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageSegmentationStoryboard.storyboard; sourceTree = "<group>"; };
 		83D1E38920FE441600DAAC90 /* Fritz-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fritz-Info.plist"; sourceTree = "<group>"; };
 		AE5BD89ECFAC366472049E82 /* Pods_Heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1372C3DC7B399D3E8B847F4 /* Pods-Heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 		383D40C61FE18EFA00438A9B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				83AC97D52149CB7100E86B44 /* ImageSegmentation */,
 				833E545A2123A9D6007EFA8A /* StyleTransfer */,
 				835B7549201A7AB70030FE16 /* BlackMirror */,
 				381817DA1FE2D94600050FF6 /* Common */,
@@ -302,6 +307,15 @@
 			path = DetectObjects;
 			sourceTree = "<group>";
 		};
+		83AC97D52149CB7100E86B44 /* ImageSegmentation */ = {
+			isa = PBXGroup;
+			children = (
+				83AC97D62149CB8600E86B44 /* ImageSegmentationViewController.swift */,
+				83AC97D82149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard */,
+			);
+			path = ImageSegmentation;
+			sourceTree = "<group>";
+		};
 		8E4F2C91079D1F45793D461F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +397,7 @@
 				83D1E38A20FE441600DAAC90 /* Fritz-Info.plist in Resources */,
 				38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */,
 				838B528D210243CF00E0D50A /* DetectObjectsStoryboard.storyboard in Resources */,
+				83AC97D92149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard in Resources */,
 				385CF1B51FF2EAAA00F1BFF0 /* Demos.storyboard in Resources */,
 				38BCA5851FF53C87009ABCC6 /* MNIST.storyboard in Resources */,
 			);
@@ -401,10 +416,13 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzCore.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/CoreMLHelpers.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzManagedModel.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVision.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionLabelModel.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionObjectModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionPeopleSegmentationModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionSegmentationModel.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionStyleModel.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
@@ -413,10 +431,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreMLHelpers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzManagedModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVision.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionLabelModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionObjectModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPeopleSegmentationModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionSegmentationModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionStyleModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 			);
@@ -430,14 +451,18 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"$(SRCROOT)/Heartbeat/rswift.workaround.file",
 			);
 			name = R.swift;
 			outputPaths = (
+				"$(SRCROOT)/Heartbeat/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Heartbeat\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Heartbeat\"\n# Solution as per https://github.com/mac-cain13/R.swift/issues/456#issuecomment-426344064\ndate > \"$SRCROOT/Heartbeat/rswift.workaround.file\"\n";
 		};
 		383D40CC1FE1901700438A9B /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -501,6 +526,7 @@
 				833E54692123AB78007EFA8A /* OpenGLPixelBufferView.m in Sources */,
 				38BCA5831FF53C47009ABCC6 /* StrokeSettings.swift in Sources */,
 				3890742A1FFDE6A000DFF7F9 /* FritzVisionLabelViewController.swift in Sources */,
+				83AC97D72149CB8600E86B44 /* ImageSegmentationViewController.swift in Sources */,
 				835B756E201A8B2D0030FE16 /* SSDViewController.swift in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				833E545C2123A9EB007EFA8A /* StyleTransferViewController.swift in Sources */,

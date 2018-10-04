@@ -9,7 +9,7 @@
 import UIKit
 import Crashlytics
 import Fabric
-import Fritz
+import FritzCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
 
         // Configure Fritz models
-        FritzCore.setLogLevel(.debug)
+        // FritzCore.setLogLevel(.debug)
         FritzCore.configure()
 
         return true
