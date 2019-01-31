@@ -11,7 +11,7 @@ target 'Heartbeat' do
   pod 'AlamofireImage', '~> 3.3'
   pod 'Crashlytics', '~> 3.9'
   pod 'Fabric', '~> 1.7'
-  pod 'Fritz', '~> 2.1.0-beta'
+  pod 'Fritz'
   pod 'Fritz/VisionObjectModel'
   pod 'Fritz/VisionStyleModel'
   pod 'Fritz/VisionLabelModel'

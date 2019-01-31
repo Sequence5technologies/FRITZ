@@ -5,32 +5,37 @@ PODS:
   - Crashlytics (3.10.8):
     - Fabric (~> 1.7.12)
   - Fabric (1.7.12)
-  - Fritz (2.1.0-beta.2):
-    - Fritz/ManagedModel (= 2.1.0-beta.2)
-  - Fritz/Core (2.1.0-beta.2)
-  - Fritz/CoreMLHelpers (2.1.0-beta.2)
-  - Fritz/ManagedModel (2.1.0-beta.2):
+  - Fritz (4.2.1):
+    - Fritz/ManagedModel (= 4.2.1)
+  - Fritz/Core (4.2.1)
+  - Fritz/CoreMLHelpers (4.2.1)
+  - Fritz/ManagedModel (4.2.1):
     - Fritz/Core
-  - Fritz/Vision (2.1.0-beta.2):
+  - Fritz/Vision (4.2.1):
     - Fritz/Core
     - Fritz/CoreMLHelpers
-  - Fritz/VisionLabelModel (2.1.0-beta.2):
+  - Fritz/VisionLabelModel (4.2.1):
     - Fritz/Core
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionObjectModel (2.1.0-beta.2):
+  - Fritz/VisionObjectModel (4.2.1):
     - Fritz/Core
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionSegmentationModel/People (2.1.0-beta.2):
+  - Fritz/VisionSegmentationModel/People (4.2.1):
     - Fritz/ManagedModel
     - Fritz/VisionSegmentationModelBase
-  - Fritz/VisionSegmentationModelBase (2.1.0-beta.2):
+  - Fritz/VisionSegmentationModelBase (4.2.1):
     - Fritz/Core
     - Fritz/CoreMLHelpers
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionStyleModel (2.1.0-beta.2):
+  - Fritz/VisionStyleModel (4.2.1):
+    - Fritz/VisionStyleModel/Paintings (= 4.2.1)
+    - Fritz/VisionStyleModelBase
+  - Fritz/VisionStyleModel/Paintings (4.2.1):
+    - Fritz/VisionStyleModelBase
+  - Fritz/VisionStyleModelBase (4.2.1):
     - Fritz/Core
     - Fritz/ManagedModel
     - Fritz/Vision
@@ -42,7 +47,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.3)
   - Crashlytics (~> 3.9)
   - Fabric (~> 1.7)
-  - Fritz (~> 2.1.0-beta)
+  - Fritz
   - Fritz/VisionLabelModel
   - Fritz/VisionObjectModel
   - Fritz/VisionSegmentationModel/People
@@ -55,20 +60,19 @@ SPEC REPOS:
     - AlamofireImage
     - Crashlytics
     - Fabric
+    - Fritz
     - R.swift
     - R.swift.Library
-  https://github.com/fritzlabs/cocoapods-test-repo.git:
-    - Fritz
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   Crashlytics: 058dc1ba579f6c100bc60a6878703779bff383c4
   Fabric: d7387db9a31aadff63b147a4b91d982c53afaa4f
-  Fritz: 71f26eb33f08a4068c658d0b5e7d03be2a67bce6
+  Fritz: 88eb1bc516bb027d5899af4a4ee2b7ce316065d3
   R.swift: 31fa1bd537fa81307815cc622122f33331f32174
   R.swift.Library: 3c21b823839bf5a6769dc7f96cb44479dab51b1b
 
-PODFILE CHECKSUM: d9c58cff5ff5d91cb6b39b718154e61926b33a78
+PODFILE CHECKSUM: 4dec8cc74702dd816332fc554aecb053ac1f9ba5
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2
