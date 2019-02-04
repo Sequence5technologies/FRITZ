@@ -17,15 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-<<<<<<< HEAD
-	<string>1.4.0</string>
-	<key>CFBundleVersion</key>
-	<string>130</string>
-=======
 	<string>1.6.2</string>
 	<key>CFBundleVersion</key>
 	<string>180</string>
->>>>>>> private/master
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

@@ -143,19 +143,11 @@ extension ImageSegmentationViewController: AVCaptureVideoDataOutputSampleBufferD
 
         visionModel.predict(image, options: options) { [weak self] (mask, error) in
             guard let mask = mask else { return }
-<<<<<<< HEAD
-            DispatchQueue.main.async {
-                let backgroundVideo = UIImage(pixelBuffer: image.rotate()!)
-                self?.imageView.image = backgroundVideo
-//                self.maskView.image = mask.toImageMask(classIndex: FritzVisionPeopleClass.person.rawValue, threshold: 0.2)
-                self?.maskView.image = mask.toImageMask()
-=======
             let maskImage = mask.toImageMask(of: FritzVisionPeopleClass.person, threshold: 0.70, minThresholdAccepted: 0.25)
             let backgroundVideo = UIImage(pixelBuffer: image.rotate()!)
             DispatchQueue.main.async {
                 self?.imageView.image = backgroundVideo
                 self?.maskView.image = maskImage
->>>>>>> private/master
                 self?.cameraImageView.image = backgroundVideo
             }
         }
