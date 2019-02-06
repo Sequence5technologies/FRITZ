@@ -37,7 +37,7 @@ class StyleTransferViewController: UIViewController
         captureController.activeModel = activeModel
         view.backgroundColor = UIColor.black
         view.addSubview(previewView)
-        view.bringSubview(toFront: self.frameLabel)
+        view.bringSubviewToFront(self.frameLabel)
 
         // Tap anywhere on the screen to change the current model (hack for now)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped)))

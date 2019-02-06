@@ -1,53 +1,58 @@
 PODS:
-  - Alamofire (4.7.3)
-  - AlamofireImage (3.4.1):
-    - Alamofire (~> 4.7)
-  - Crashlytics (3.10.8):
-    - Fabric (~> 1.7.12)
-  - Fabric (1.7.12)
-  - Fritz (2.1.0-beta.2):
-    - Fritz/ManagedModel (= 2.1.0-beta.2)
-  - Fritz/Core (2.1.0-beta.2)
-  - Fritz/CoreMLHelpers (2.1.0-beta.2)
-  - Fritz/ManagedModel (2.1.0-beta.2):
+  - Alamofire (4.8.0)
+  - AlamofireImage (3.5.0):
+    - Alamofire (~> 4.8)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
+  - Fritz (2.4.0):
+    - Fritz/ManagedModel (= 2.4.0)
+  - Fritz/Core (2.4.0)
+  - Fritz/CoreMLHelpers (2.4.0)
+  - Fritz/ManagedModel (2.4.0):
     - Fritz/Core
-  - Fritz/Vision (2.1.0-beta.2):
+  - Fritz/Vision (2.4.0):
     - Fritz/Core
     - Fritz/CoreMLHelpers
-  - Fritz/VisionLabelModel (2.1.0-beta.2):
+  - Fritz/VisionLabelModel (2.4.0):
     - Fritz/Core
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionObjectModel (2.1.0-beta.2):
+  - Fritz/VisionObjectModel (2.4.0):
     - Fritz/Core
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionSegmentationModel/People (2.1.0-beta.2):
+  - Fritz/VisionSegmentationModel/People (2.4.0):
     - Fritz/ManagedModel
     - Fritz/VisionSegmentationModelBase
-  - Fritz/VisionSegmentationModelBase (2.1.0-beta.2):
+  - Fritz/VisionSegmentationModelBase (2.4.0):
     - Fritz/Core
     - Fritz/CoreMLHelpers
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionStyleModel (2.1.0-beta.2):
+  - Fritz/VisionStyleModel (2.4.0):
+    - Fritz/VisionStyleModel/Paintings (= 2.4.0)
+    - Fritz/VisionStyleModelBase
+  - Fritz/VisionStyleModel/Paintings (2.4.0):
+    - Fritz/VisionStyleModelBase
+  - Fritz/VisionStyleModelBase (2.4.0):
     - Fritz/Core
     - Fritz/ManagedModel
     - Fritz/Vision
   - R.swift (5.0.0.alpha.2):
     - R.swift.Library (~> 5.0.0.alpha.2)
-  - R.swift.Library (5.0.0.alpha.2)
+  - R.swift.Library (5.0.0)
 
 DEPENDENCIES:
-  - AlamofireImage (~> 3.3)
+  - AlamofireImage (~> 3.4)
   - Crashlytics (~> 3.9)
   - Fabric (~> 1.7)
-  - Fritz (~> 2.1.0-beta)
+  - Fritz (~> 2.4.0)
   - Fritz/VisionLabelModel
   - Fritz/VisionObjectModel
   - Fritz/VisionSegmentationModel/People
   - Fritz/VisionStyleModel
-  - R.swift (~> 5.0.0.alpha)
+  - R.swift (= 5.0.0.alpha.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -55,20 +60,19 @@ SPEC REPOS:
     - AlamofireImage
     - Crashlytics
     - Fabric
+    - Fritz
     - R.swift
     - R.swift.Library
-  https://github.com/fritzlabs/cocoapods-test-repo.git:
-    - Fritz
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
-  Crashlytics: 058dc1ba579f6c100bc60a6878703779bff383c4
-  Fabric: d7387db9a31aadff63b147a4b91d982c53afaa4f
-  Fritz: 71f26eb33f08a4068c658d0b5e7d03be2a67bce6
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  Fritz: cdaf688ed4163d28a163ec94d0f7e6e7ffaec101
   R.swift: 31fa1bd537fa81307815cc622122f33331f32174
-  R.swift.Library: 3c21b823839bf5a6769dc7f96cb44479dab51b1b
+  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
 
-PODFILE CHECKSUM: d9c58cff5ff5d91cb6b39b718154e61926b33a78
+PODFILE CHECKSUM: 9cbc6fb4137225e5825e4720d394902185ee2e5c
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2
