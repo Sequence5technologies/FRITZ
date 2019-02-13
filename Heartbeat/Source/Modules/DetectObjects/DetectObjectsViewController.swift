@@ -87,7 +87,7 @@ class DetectObjectsViewController: UIViewController, AVCaptureVideoDataOutputSam
         self.frameLabel.text = "FPS: \(framesPerSecond.format(f: ".3"))"
 
         for (index, prediction) in predictions.enumerated() {
-            let textLabel = String(format: "%.2f - %@", prediction.label.confidence, prediction.label.label)
+            let textLabel = String(format: "%.2f - %@", prediction.confidence, prediction.label)
 
             // Effectively center cropping the bounding box frame.
             let height = Double(cameraView.frame.height)
@@ -107,7 +107,10 @@ class DetectObjectsViewController: UIViewController, AVCaptureVideoDataOutputSam
     }
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        let options = FritzVisionObjectModelOptions(threshold: 0.5)
+        let options = FritzVisionObjectModelOptions()
+        options.imageCropAndScaleOption = .centerCrop
+        options.threshold = 0.5
+
         let image = FritzVisionImage(buffer: sampleBuffer)
         image.metadata = FritzVisionImageMetadata()
         image.metadata?.orientation = FritzImageOrientation(from: connection)

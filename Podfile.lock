@@ -1,42 +1,37 @@
 PODS:
-  - Alamofire (4.8.0)
+  - Alamofire (4.8.1)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
-  - Fritz (2.4.0):
-    - Fritz/ManagedModel (= 2.4.0)
-  - Fritz/Core (2.4.0)
-  - Fritz/CoreMLHelpers (2.4.0)
-  - Fritz/ManagedModel (2.4.0):
+  - Fritz (3.0.0):
+    - Fritz/ManagedModel (= 3.0.0)
+  - Fritz/Core (3.0.0)
+  - Fritz/CoreMLHelpers (3.0.0)
+  - Fritz/ManagedModel (3.0.0):
     - Fritz/Core
-  - Fritz/Vision (2.4.0):
-    - Fritz/Core
-    - Fritz/CoreMLHelpers
-  - Fritz/VisionLabelModel (2.4.0):
-    - Fritz/Core
-    - Fritz/ManagedModel
-    - Fritz/Vision
-  - Fritz/VisionObjectModel (2.4.0):
-    - Fritz/Core
-    - Fritz/ManagedModel
-    - Fritz/Vision
-  - Fritz/VisionSegmentationModel/People (2.4.0):
-    - Fritz/ManagedModel
-    - Fritz/VisionSegmentationModelBase
-  - Fritz/VisionSegmentationModelBase (2.4.0):
+  - Fritz/Vision (3.0.0):
     - Fritz/Core
     - Fritz/CoreMLHelpers
     - Fritz/ManagedModel
-    - Fritz/Vision
-  - Fritz/VisionStyleModel (2.4.0):
-    - Fritz/VisionStyleModel/Paintings (= 2.4.0)
-    - Fritz/VisionStyleModelBase
-  - Fritz/VisionStyleModel/Paintings (2.4.0):
-    - Fritz/VisionStyleModelBase
-  - Fritz/VisionStyleModelBase (2.4.0):
+  - Fritz/VisionLabelModel (3.0.0):
     - Fritz/Core
+    - Fritz/ManagedModel
+    - Fritz/Vision
+  - Fritz/VisionObjectModel (3.0.0):
+    - Fritz/Core
+    - Fritz/ManagedModel
+    - Fritz/Vision
+  - Fritz/VisionPoseModel (3.0.0):
+    - Fritz/ManagedModel
+    - Fritz/Vision
+  - Fritz/VisionSegmentationModel/People (3.0.0):
+    - Fritz/ManagedModel
+    - Fritz/Vision
+  - Fritz/VisionStyleModel (3.0.0):
+    - Fritz/VisionStyleModel/Paintings (= 3.0.0)
+  - Fritz/VisionStyleModel/Paintings (3.0.0):
     - Fritz/ManagedModel
     - Fritz/Vision
   - R.swift (5.0.0.alpha.2):
@@ -47,9 +42,10 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.4)
   - Crashlytics (~> 3.9)
   - Fabric (~> 1.7)
-  - Fritz (~> 2.4.0)
+  - Fritz (~> 3.0.0)
   - Fritz/VisionLabelModel
   - Fritz/VisionObjectModel
+  - Fritz/VisionPoseModel
   - Fritz/VisionSegmentationModel/People
   - Fritz/VisionStyleModel
   - R.swift (= 5.0.0.alpha.2)
@@ -65,14 +61,14 @@ SPEC REPOS:
     - R.swift.Library
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
-  Fritz: cdaf688ed4163d28a163ec94d0f7e6e7ffaec101
+  Fritz: dd09b8350005a0b2148cd4c143bed5b636e169fd
   R.swift: 31fa1bd537fa81307815cc622122f33331f32174
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
 
-PODFILE CHECKSUM: 9cbc6fb4137225e5825e4720d394902185ee2e5c
+PODFILE CHECKSUM: f28df09e6990e04aa90eac2a503d80b2a90bc211
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.6.0

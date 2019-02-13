@@ -26,8 +26,11 @@
 		833E54622123AB71007EFA8A /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E54612123AB71007EFA8A /* VideoPreviewView.swift */; };
 		833E54692123AB78007EFA8A /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E54642123AB78007EFA8A /* OpenGLPixelBufferView.m */; };
 		833E546A2123AB78007EFA8A /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 833E54652123AB78007EFA8A /* ShaderUtilities.c */; };
+		837AB098220AAAE100789E44 /* PoseDetectionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837AB097220AAAE100789E44 /* PoseDetectionStoryboard.storyboard */; };
 		838B528B2102432700E0D50A /* DetectObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B528A2102432700E0D50A /* DetectObjectsViewController.swift */; };
 		838B528D210243CF00E0D50A /* DetectObjectsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */; };
+		8396CA2D220A9FDC00742120 /* PoseDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8396CA2C220A9FDC00742120 /* PoseDetectionViewController.swift */; };
+		8396CA2F220AA00300742120 /* CustomBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8396CA2E220AA00300742120 /* CustomBlurView.swift */; };
 		83AC97D72149CB8600E86B44 /* ImageSegmentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC97D62149CB8600E86B44 /* ImageSegmentationViewController.swift */; };
 		83AC97D92149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AC97D82149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard */; };
 		83D1E38A20FE441600DAAC90 /* Fritz-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83D1E38920FE441600DAAC90 /* Fritz-Info.plist */; };
@@ -57,8 +60,11 @@
 		833E54662123AB78007EFA8A /* OpenGLPixelBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLPixelBufferView.h; sourceTree = "<group>"; };
 		833E54672123AB78007EFA8A /* Heartbeat-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Heartbeat-Bridging-Header.h"; sourceTree = "<group>"; };
 		833E54682123AB78007EFA8A /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
+		837AB097220AAAE100789E44 /* PoseDetectionStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PoseDetectionStoryboard.storyboard; sourceTree = "<group>"; };
 		838B528A2102432700E0D50A /* DetectObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectObjectsViewController.swift; sourceTree = "<group>"; };
 		838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetectObjectsStoryboard.storyboard; sourceTree = "<group>"; };
+		8396CA2C220A9FDC00742120 /* PoseDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetectionViewController.swift; sourceTree = "<group>"; };
+		8396CA2E220AA00300742120 /* CustomBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlurView.swift; sourceTree = "<group>"; };
 		83AC97D62149CB8600E86B44 /* ImageSegmentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmentationViewController.swift; sourceTree = "<group>"; };
 		83AC97D82149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageSegmentationStoryboard.storyboard; sourceTree = "<group>"; };
 		83D1E38920FE441600DAAC90 /* Fritz-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fritz-Info.plist"; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 		383D40C61FE18EFA00438A9B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8396CA2B220A9FBC00742120 /* PoseDetection */,
 				83AC97D52149CB7100E86B44 /* ImageSegmentation */,
 				833E545A2123A9D6007EFA8A /* StyleTransfer */,
 				381817DA1FE2D94600050FF6 /* Common */,
@@ -242,10 +249,20 @@
 			path = DetectObjects;
 			sourceTree = "<group>";
 		};
+		8396CA2B220A9FBC00742120 /* PoseDetection */ = {
+			isa = PBXGroup;
+			children = (
+				8396CA2C220A9FDC00742120 /* PoseDetectionViewController.swift */,
+				837AB097220AAAE100789E44 /* PoseDetectionStoryboard.storyboard */,
+			);
+			path = PoseDetection;
+			sourceTree = "<group>";
+		};
 		83AC97D52149CB7100E86B44 /* ImageSegmentation */ = {
 			isa = PBXGroup;
 			children = (
 				83AC97D62149CB8600E86B44 /* ImageSegmentationViewController.swift */,
+				8396CA2E220AA00300742120 /* CustomBlurView.swift */,
 				83AC97D82149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard */,
 			);
 			path = ImageSegmentation;
@@ -332,6 +349,7 @@
 				38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */,
 				838B528D210243CF00E0D50A /* DetectObjectsStoryboard.storyboard in Resources */,
 				83AC97D92149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard in Resources */,
+				837AB098220AAAE100789E44 /* PoseDetectionStoryboard.storyboard in Resources */,
 				385CF1B51FF2EAAA00F1BFF0 /* Demos.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,7 +425,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzCore.framework",
@@ -416,11 +434,9 @@
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVision.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionLabelModel.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionObjectModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionPoseModel.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionPeopleSegmentationModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionSegmentationModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionStyleModel.framework",
 				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionStyleModelPaintings.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionStyleModelBase.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -433,16 +449,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVision.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionLabelModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionObjectModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPoseModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPeopleSegmentationModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionSegmentationModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionStyleModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionStyleModelPaintings.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionStyleModelBase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -462,9 +476,11 @@
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				833E545C2123A9EB007EFA8A /* StyleTransferViewController.swift in Sources */,
 				833E546A2123AB78007EFA8A /* ShaderUtilities.c in Sources */,
+				8396CA2F220AA00300742120 /* CustomBlurView.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
 				838B528B2102432700E0D50A /* DetectObjectsViewController.swift in Sources */,
 				38E96C042001310000683571 /* NavigationController.swift in Sources */,
+				8396CA2D220A9FDC00742120 /* PoseDetectionViewController.swift in Sources */,
 				833E54602123AB68007EFA8A /* StyleTransferInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

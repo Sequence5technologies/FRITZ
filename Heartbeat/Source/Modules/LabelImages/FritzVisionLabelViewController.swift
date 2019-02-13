@@ -40,6 +40,7 @@ class FritzVisionLabelViewController: UIViewController {
 
     private let captureQueue = DispatchQueue(label: "com.fritz.heartbeat.mobilenet.capture")
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,7 +92,9 @@ extension FritzVisionLabelViewController: AVCaptureVideoDataOutputSampleBufferDe
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let image = FritzVisionImage(buffer: sampleBuffer)
         image.metadata = FritzVisionImageMetadata()
-        let options = FritzVisionLabelModelOptions(threshold: 0.1)
+        let options = FritzVisionLabelModelOptions()
+        options.threshold = 0.1
+
         visionModel.predict(image, options: options) { labels, error in
             if let labels = labels, labels.count > 0 {
                 let observation = labels[0]

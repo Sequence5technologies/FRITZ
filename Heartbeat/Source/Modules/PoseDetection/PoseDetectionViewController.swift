@@ -1,5 +1,5 @@
 //
-//  ImageSegmentationViewController
+//  PoseDetectionViewController
 //  Heartbeat
 //
 //  Created by Chris Kelly on 9/12/2018.
@@ -14,50 +14,26 @@ import Fritz
 import VideoToolbox
 
 
+class PoseDetectionViewController: UIViewController {
 
-class ImageSegmentationViewController: UIViewController {
-
-    @IBOutlet weak var cameraView: UIView!
-
-    var cameraImageView: UIImageView!
-
-    var imageView: UIImageView!
-
-    var maskView: UIImageView!
+    var cameraView: UIImageView!
 
     private lazy var cameraSession = AVCaptureSession()
 
-    private let visionModel = FritzVisionPeopleSegmentationModel()
+    private let visionModel = FritzVisionPoseModel()
 
     private let sessionQueue = DispatchQueue(label: "com.fritz.heartbeat.mobilenet.session")
 
     private let captureQueue = DispatchQueue(label: "com.fritz.heartbeat.mobilenet.capture", qos: DispatchQoS.userInitiated)
 
+    internal var poseThreshold: Double = 0.3
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let bounds = cameraView.layer.bounds
-
-        cameraImageView = UIImageView(frame: bounds)
-        maskView = UIImageView(frame: bounds)
-        imageView = UIImageView(frame: bounds)
-        // Adding mask view
-
-        imageView.contentMode = .scaleAspectFill
-        cameraImageView.contentMode = .scaleAspectFill
-        maskView.contentMode = .scaleAspectFill
-
-        // add blurview
-        let blurView = CustomBlurView(withRadius: 6.0)
-        blurView.frame = self.cameraView.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
-        cameraImageView.addSubview(blurView)
-
-        imageView.mask = maskView
-
-        cameraView.addSubview(cameraImageView)
-        cameraView.addSubview(imageView)
+        cameraView = UIImageView(frame: view.frame)
+        cameraView.contentMode = .scaleAspectFill
+        view.addSubview(cameraView)
 
         guard let device = AVCaptureDevice.default(for: .video), let input = try? AVCaptureDeviceInput(device: device) else { return }
 
@@ -68,7 +44,6 @@ class ImageSegmentationViewController: UIViewController {
 
         sessionQueue.async {
             self.cameraSession.beginConfiguration()
-            // self.cameraSession.sessionPreset = AVCaptureSession.Preset.vga640x480
             self.cameraSession.addInput(input)
             self.cameraSession.addOutput(output)
             self.cameraSession.commitConfiguration()
@@ -85,10 +60,7 @@ class ImageSegmentationViewController: UIViewController {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
-        cameraImageView.frame = cameraView.bounds
-        imageView.frame = cameraView.bounds
-        maskView.frame = cameraView.bounds
+        cameraView.frame = view.frame
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -97,23 +69,31 @@ class ImageSegmentationViewController: UIViewController {
 }
 
 
-extension ImageSegmentationViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension PoseDetectionViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
 
         let image = FritzVisionImage(buffer: sampleBuffer)
         image.metadata = FritzVisionImageMetadata()
-        let options = FritzVisionSegmentationModelOptions()
-        options.imageCropAndScaleOption = .scaleFit
 
-        visionModel.predict(image, options: options) { [weak self] (mask, error) in
-            guard let mask = mask else { return }
-            let maskImage = mask.toImageMask(of: FritzVisionPeopleClass.person, threshold: 0.70, minThresholdAccepted: 0.25)
-            let backgroundVideo = UIImage(pixelBuffer: image.rotate()!)
+        let options = FritzVisionPoseModelOptions()
+        options.minPoseThreshold = poseThreshold
+
+        visionModel.predict(image, options: options) { [weak self] (results, error) in
+            guard let poseResult = results, let pose = poseResult.decodePose() else {
+                // Handle case where failed to detect a pose, still draw empty image
+                if let rotated = image.rotate() {
+                    let img = UIImage(pixelBuffer: rotated)
+                    DispatchQueue.main.async {
+                        self?.cameraView.image = img
+                    }
+                }
+                return
+            }
+
+            let img = poseResult.drawPose(pose)
             DispatchQueue.main.async {
-                self?.imageView.image = backgroundVideo
-                self?.maskView.image = maskImage
-                self?.cameraImageView.image = backgroundVideo
+                self?.cameraView.image = img
             }
         }
     }
