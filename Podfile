@@ -1,5 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
+
 platform :ios, '11.0'
 
 use_frameworks!
@@ -12,7 +13,7 @@ target 'Heartbeat' do
   pod 'Crashlytics', '~> 3.9'
   pod 'Fabric', '~> 1.7'
 
-  pod 'Fritz', '~> 3.0.0'
+  pod 'Fritz', '~> 3.0.1'
   pod 'Fritz/VisionObjectModel'
   pod 'Fritz/VisionStyleModel'
   pod 'Fritz/VisionLabelModel'

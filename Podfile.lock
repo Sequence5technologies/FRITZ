@@ -5,33 +5,33 @@ PODS:
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
-  - Fritz (3.0.0):
-    - Fritz/ManagedModel (= 3.0.0)
-  - Fritz/Core (3.0.0)
-  - Fritz/CoreMLHelpers (3.0.0)
-  - Fritz/ManagedModel (3.0.0):
+  - Fritz (3.0.1):
+    - Fritz/ManagedModel (= 3.0.1)
+  - Fritz/Core (3.0.1)
+  - Fritz/CoreMLHelpers (3.0.1)
+  - Fritz/ManagedModel (3.0.1):
     - Fritz/Core
-  - Fritz/Vision (3.0.0):
+  - Fritz/Vision (3.0.1):
     - Fritz/Core
     - Fritz/CoreMLHelpers
     - Fritz/ManagedModel
-  - Fritz/VisionLabelModel (3.0.0):
+  - Fritz/VisionLabelModel (3.0.1):
     - Fritz/Core
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionObjectModel (3.0.0):
+  - Fritz/VisionObjectModel (3.0.1):
     - Fritz/Core
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionPoseModel (3.0.0):
+  - Fritz/VisionPoseModel (3.0.1):
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionSegmentationModel/People (3.0.0):
+  - Fritz/VisionSegmentationModel/People (3.0.1):
     - Fritz/ManagedModel
     - Fritz/Vision
-  - Fritz/VisionStyleModel (3.0.0):
-    - Fritz/VisionStyleModel/Paintings (= 3.0.0)
-  - Fritz/VisionStyleModel/Paintings (3.0.0):
+  - Fritz/VisionStyleModel (3.0.1):
+    - Fritz/VisionStyleModel/Paintings (= 3.0.1)
+  - Fritz/VisionStyleModel/Paintings (3.0.1):
     - Fritz/ManagedModel
     - Fritz/Vision
   - R.swift (5.0.0.alpha.2):
@@ -42,7 +42,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.4)
   - Crashlytics (~> 3.9)
   - Fabric (~> 1.7)
-  - Fritz (~> 3.0.0)
+  - Fritz (~> 3.0.1)
   - Fritz/VisionLabelModel
   - Fritz/VisionObjectModel
   - Fritz/VisionPoseModel
@@ -65,10 +65,10 @@ SPEC CHECKSUMS:
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
-  Fritz: dd09b8350005a0b2148cd4c143bed5b636e169fd
+  Fritz: 415848247f28b6acbce1af9dfbc66507f4296ccf
   R.swift: 31fa1bd537fa81307815cc622122f33331f32174
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
 
-PODFILE CHECKSUM: f28df09e6990e04aa90eac2a503d80b2a90bc211
+PODFILE CHECKSUM: 54363b770ac069f2ea2cedb3109aee6ad727a4c6
 
 COCOAPODS: 1.6.0
