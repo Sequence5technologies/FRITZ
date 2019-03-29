@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Fritz
 
 class DemosViewController: UITableViewController {
 
@@ -18,7 +19,19 @@ class DemosViewController: UITableViewController {
         super.viewDidLoad()
 
         title = "Demos".uppercased()
-
+        tableView.register(DemoTableViewCell.self, forCellReuseIdentifier: "DemoTableViewCell")
+        tableView.register(LinkTableViewCell.self, forCellReuseIdentifier: "LinkTableViewCell")
         clearsSelectionOnViewWillAppear = true
     }
+
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let _ = tableView.cellForRow(at: indexPath) as? LinkTableViewCell, let url = URL(string: "https://app.fritz.ai/register") {
+            UIApplication.shared.open(url)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+
+    }
+
+    
 }
