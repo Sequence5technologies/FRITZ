@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SegmentSliderCell" customModule="Heartbeat" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="AoM-pl-b7r" customClass="SegmentSliderCell" customModule="Heartbeat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AoM-pl-b7r" id="6Kd-EI-yWQ">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W9k-AK-W7C">
+                        <rect key="frame" x="20" y="7" width="374" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="zyK-8c-0XQ"/>
+                        </constraints>
+                        <segments>
+                            <segment title="First"/>
+                            <segment title="Second"/>
+                            <segment title=""/>
+                            <segment title=""/>
+                        </segments>
+                        <connections>
+                            <action selector="valueChanged:" destination="AoM-pl-b7r" eventType="valueChanged" id="y4D-sW-oUJ"/>
+                        </connections>
+                    </segmentedControl>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="W9k-AK-W7C" secondAttribute="trailing" constant="20" id="CUE-Qg-2Y4"/>
+                    <constraint firstItem="W9k-AK-W7C" firstAttribute="leading" secondItem="6Kd-EI-yWQ" secondAttribute="leading" constant="20" id="VAD-bx-bw9"/>
+                    <constraint firstItem="W9k-AK-W7C" firstAttribute="top" secondItem="6Kd-EI-yWQ" secondAttribute="top" constant="7" id="mUT-yA-lyM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="segmentSlider" destination="W9k-AK-W7C" id="dDx-wu-zLt"/>
+            </connections>
+            <point key="canvasLocation" x="-149.27536231884059" y="-60.267857142857139"/>
+        </tableViewCell>
+    </objects>
+</document>
