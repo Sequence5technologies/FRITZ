@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import AlamofireImage
 import Photos
 import Vision
 import CoreML

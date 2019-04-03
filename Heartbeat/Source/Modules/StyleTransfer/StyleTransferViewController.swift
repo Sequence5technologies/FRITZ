@@ -8,362 +8,168 @@
 
 import UIKit
 import AVFoundation
-import AlamofireImage
 import Photos
 import Vision
 import CoreML
 import Fritz
 
 
-class StyleTransferViewController: UIViewController
-{
+
+
+extension FritzVisionStyleModel: ImagePredictor {
+    func predict(_ image: FritzVisionImage?, options: ConfigurableOptions, completion: (UIImage?, Error?) -> Void) {
+
+        guard let fritzImage = image else {
+            completion(nil, nil)
+            return
+        }
+
+        let options =  FritzVisionStyleModelOptions()
+        options.forceCoreMLPrediction = true
+        predict(fritzImage, options: options) { (buffer: CVPixelBuffer?, error: Error?) in
+            guard let stylizedBuffer = buffer else {
+                completion(nil, error)
+                return
+            }
+            let uiImage = UIImage(pixelBuffer: stylizedBuffer)
+            completion(uiImage, nil)
+        }
+    }
+}
+
+
+final class StyleTransfer: HeartbeatFeature {
+    static var tagName: String? = "heartbeat-ios-style-transfer"
+
+    let model: FritzVisionStyleModel
+
+    let fritzModel: FritzModel
+
+    var options: ConfigurableOptions = [:]
+
+    public weak var delegate: RunImageModelDelegate?
+
+    public init(model: FritzVisionStyleModel, fritzModel: FritzModel) {
+        self.model = model
+        self.fritzModel = fritzModel
+    }
+
+    enum StyleModels: String, RawRepresentable, CaseIterable {
+        case customStyleTransfer = "custom_style_transfer"
+        // Generally the raw
+        case starryNight
+        case pinkBlueRhombus
+        case theScream
+        case bicentennialPrint
+        case poppyField
+        case kaleidoscope
+        case femmes
+        case headOfClown
+        case horsesOnSeashore
+        case theTrial
+        case ritmoPlastico
+    }
+
+
+    static func build(from heartbeatModel: FritzModel, featureModel model: FritzMLModel) -> StyleTransfer? {
+        guard let modelType = StyleModels(rawValue: heartbeatModel.featureName) else { return nil }
+
+        switch modelType {
+        case .customStyleTransfer:
+            if let model = try? FritzVisionStyleModel(model: model) {
+                return StyleTransfer(model: model, fritzModel:heartbeatModel)
+            }
+            return nil
+        default:
+            // A bit of a hacky way to get the prepackaged models.
+            if let model = FritzVisionStyleModel.value(forKey: modelType.rawValue) as? FritzVisionStyleModel {
+                return StyleTransfer(model: model, fritzModel:heartbeatModel)
+            }
+            return nil
+        }
+    }
+
+    static func build(from heartbeatModel: FritzModel) -> StyleTransfer? {
+        guard let modelType = StyleModels(rawValue: heartbeatModel.featureName) else { return nil }
+
+        switch modelType {
+        case .customStyleTransfer:
+            return nil
+        default:
+            if let paintingStyle = PaintingStyleModel.Style.getFromName(heartbeatModel.featureName) {
+                return StyleTransfer(model: paintingStyle.build(), fritzModel:heartbeatModel)
+            }
+            return nil
+        }
+    }
+}
+
+
+class StyleTransferViewController: FeatureViewController<StyleTransfer> {
 
     @IBOutlet weak var frameLabel: UILabel!
-    lazy var captureController = CameraSessionController()
-    
-    var previewView = VideoPreviewView()
 
-    let models = FritzVisionStyleModel.allModels()
-    
-    var activeModel: FritzVisionStyleModel?
-    var activeModelIndex: Int?
-
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
+        setUpModels()
+        self.showBackgroundView = true
+        self.sessionPreset = AVCaptureSession.Preset.vga640x480
         super.viewDidLoad()
-
-        activeModel = models[0]
-        activeModelIndex = 0
-        captureController.activeModel = activeModel
-        view.backgroundColor = UIColor.black
-        view.addSubview(previewView)
-        view.bringSubviewToFront(self.frameLabel)
-
         // Tap anywhere on the screen to change the current model (hack for now)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped)))
+        self.feature = modelGroup.selectedModel?.buildFeature()
     }
     
-    @objc func tapped()
-    {
+    @objc func tapped() {
         activateNextStyle()
     }
-    
-    override func viewDidAppear(_ animated: Bool)
-    {
-        checkAuthorization(for: .camera) { [unowned self] (success) in
-            if success {
-                self.configureCaptureController()
-            } else {
-                showAuthorizationRequiredAlert(for: .camera, from: self)
-            }
+
+    func setUpModels() {
+        var models: [FritzModel] = []
+
+        for paintingStyle in PaintingStyleModel.Style.allCases {
+            let styleModel = paintingStyle.build()
+            let fritzModel = FritzModel(
+                with: styleModel.managedModel,
+                predefinedFeatureName: paintingStyle.name)
+            models.append(fritzModel)
         }
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .portrait }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        // TODO use Auto Layout :( Right now we're only supporting Portrait device orientation
-        previewView.frame = view.frame
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        captureController.rendererCallback = nil
-        captureController.activeModel = nil
-    }
-    
-    
-    // Session handling
-    func configureCaptureController()
-    {
-        captureController.configure()
-        captureController.rendererCallback = displaySampleCallback
-        captureController.startRunning()
-    }
-    
-    func displaySampleCallback(samples: CVPixelBuffer)
-    {
-        previewView.display(buffer: samples)
+        modelGroup = ModelGroupManager<StyleTransfer>(models: models, selectedModel: models[0])
     }
 
-    func activateNextStyle()
-    {
-        if let modelIndex = self.activeModelIndex, modelIndex == models.count - 1 {
-            self.activeModel = nil
-            self.activeModelIndex = nil
-        } else if let _ = activeModel,
-            let modelIndex = self.activeModelIndex {
-            self.activeModel = models[modelIndex + 1]
-            self.activeModelIndex = modelIndex + 1
-        } else {
-            activeModel = models.first
-            self.activeModelIndex = 0
+    func updateFeature(_ fritzModel: FritzModel) {
+        if let feature: StyleTransfer = fritzModel.buildFeature() {
+            let currentFeature = self.feature
+            self.feature = feature
+            self.showBackgroundView = false
+            currentFeature?.delegate = nil
+        }
+    }
+
+    func activateNextStyle() {
+        let allModels = modelGroup.models
+
+        // No index, choose first one,
+        guard let selectedModel = modelGroup.selectedModel,
+            let index = allModels.index(of: selectedModel),
+            index != allModels.count - 1 else {
+                // If there is not a selected model, or the model is the last
+                // model, start at the beginining. Ideally, we would show the plain
+                // image, but there is a small still untraced bug in the FritzCameraViewController blocking that.
+                let newModel = modelGroup.models[0]
+                modelGroup.selectedModel = newModel
+                updateFeature(newModel)
+
+                return
         }
 
-        captureController.activeModel = activeModel
+        // Normal model, just take the next one
+        let nextModel = allModels[index + 1]
+        modelGroup.selectedModel = nextModel
+        updateFeature(nextModel)
     }
 }
 
-/*
- Camera and video capture session controller
- 
- 
- pixelRenderer - Function that transforms pixels, typically this will be done by our ML model.
- rendererCallback - Function that handles rendered pixels, typically by displaying them.
- 
- These are protected variables, and may be changed at any time.
- 
- 
- callbackQueue - The main queue for displaying rendered pixels.
- sessionQueue - A serial queue to lock access to the AVCaptureSession.
- videoOutputQueue - A high priority queue to process samples.
- callbackLockingQueue - A serial queue used to protect access to the callback and renderer functions.
- 
- These are the locking queues currently used. We could make this more sophisticated by adopting a true
- producer/consumer dispatch model, but since we don't care about dropped frames we can simplify our architecture.
- */
-class CameraSessionController : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate
-{
-    var session: AVCaptureSession!
-    var device: AVCaptureDevice!
-    
-    var captureVideoInput: AVCaptureInput!
-    var captureVideoOutput: AVCaptureVideoDataOutput!
-    
-    var running: Bool = false
-    
-    // Internal storage for atomic lamdas
-    private var _rendererCallback: ((CVPixelBuffer) -> Void)?
-    private var _pixelRenderer: ((CVPixelBuffer) -> CVPixelBuffer)?
-    private var _activeModel: FritzVisionStyleModel?
 
-    // Computed properties for atomic lamda access
-    var activeModel: FritzVisionStyleModel? {
-        set {
-            callbackLockingQueue.sync {
-                _activeModel = newValue
-            }
-        }
-        get {
-            var activeModel: FritzVisionStyleModel?
-            callbackLockingQueue.sync {
-                activeModel = _activeModel
-            }
-            return activeModel
-        }
-    }
+class StyleTransferChooseFeatureTableViewController: ChooseModelTableViewController<StyleTransfer> { }
 
-    // Computed properties for atomic lamda access
-    var pixelRenderer: ((CVPixelBuffer) -> CVPixelBuffer)? {
-        set {
-            callbackLockingQueue.sync {
-                _pixelRenderer = newValue
-            }
-        }
-        get {
-            var renderer: ((CVPixelBuffer) -> CVPixelBuffer)?
-            callbackLockingQueue.sync {
-                renderer = _pixelRenderer
-            }
-            return renderer
-        }
-    }
-    
-    var rendererCallback: ((CVPixelBuffer) -> Void)? {
-        set {
-            callbackLockingQueue.sync {
-                _rendererCallback = newValue
-            }
-        }
-        get {
-            var callback: ((CVPixelBuffer) -> Void)?
-            callbackLockingQueue.sync {
-                callback = _rendererCallback
-            }
-            return callback
-        }
-    }
-    
-    // ...
-    var callbackQueue: DispatchQueue!
-    // ...
-    let sessionQueue = DispatchQueue(label: "queue.session", qos: DispatchQoS.default, attributes: [], autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.workItem, target: nil)
-    // ...
-    let videoOutputQueue = DispatchQueue(label: "queue.video.output", qos: DispatchQoS.userInitiated, attributes: [], autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.workItem, target: nil)
-    // ...
-    let callbackLockingQueue = DispatchQueue(label: "queue.session.callback.lock", qos: DispatchQoS.default, attributes: [], autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.workItem, target: nil)
-
-    let modelRunningQueue = DispatchQueue(label: "queue.model.output", qos: DispatchQoS.userInitiated, attributes: [], autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.workItem, target: nil)
-
-    var lastExecution = Date()
-
-    func configure()
-    {
-        let callerQueue = DispatchQueue.main
-        
-        sessionQueue.sync {
-            guard session == nil else { return }
-            
-            callbackQueue = callerQueue
-            
-            // TODO: register for AVCaptureSessionRuntimeError, AVCaptureSessionDidStartRunning, AVCaptureSessionDidStopRunning, AVCaptureSessionWasInterrupted, AVCaptureSessionInterruptionEndedNotification
-            // TODO: register for UIApplicationWillEnterForegroundNotification in case runtime error reason was AVErrorDeviceIsNotAvailableInBackground
-            
-            session = AVCaptureSession()
-            
-            if let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) {
-                device = backCamera
-            } else {
-                fatalError("Unable to acess the back camera. Please make sure the device supports a front-facing camera.")
-            }
-            
-            try! device.lockForConfiguration()
-            device.activeVideoMinFrameDuration = CMTime(value: 1, timescale: 5)
-            device.activeVideoMaxFrameDuration = CMTime(value: 1, timescale: 15)
-            device.unlockForConfiguration()
-            
-            guard let videoInput = try? AVCaptureDeviceInput(device: device) else {
-                fatalError("Unable to obtain video input for default camera.")
-            }
-            captureVideoInput = videoInput
-            
-            captureVideoOutput = AVCaptureVideoDataOutput()
-            captureVideoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA as UInt32]
-            captureVideoOutput.setSampleBufferDelegate(self, queue: videoOutputQueue)
-            captureVideoOutput.alwaysDiscardsLateVideoFrames = true
-            
-            guard session.canAddInput(captureVideoInput) else { fatalError("Cannot add input") }
-            guard session.canAddOutput(captureVideoOutput) else { fatalError("Cannot add output") }
-            
-            session.beginConfiguration()
-            session.sessionPreset = AVCaptureSession.Preset.vga640x480
-            session.addInput(captureVideoInput)
-            session.addOutput(captureVideoOutput)
-            session.commitConfiguration()
-            
-            captureVideoOutput.connection(with: .video)?.videoOrientation = .portrait
-        }
-    }
-    
-    func tearDown()
-    {
-        sessionQueue.sync {
-            guard session != nil else { return }
-            
-            // TODO: unregister notifications
-            
-            session = nil
-            device = nil
-            captureVideoOutput = nil
-            captureVideoInput = nil
-        }
-    }
-    
-    func startRunning()
-    {
-        sessionQueue.sync {
-            guard !running else { return }
-            
-            running = true
-            session.startRunning()
-        }
-    }
-    
-    func stopRunning()
-    {
-        sessionQueue.sync {
-            guard running else { return }
-            
-            session.stopRunning()
-            running = false
-        }
-    }
-
-    public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection)
-    {
-        // Obtain callback and renderer functions behind lock.  This helps
-        var callback: ((CVPixelBuffer) -> Void)?
-        var model: FritzVisionStyleModel?
-
-        callbackLockingQueue.sync {
-            callback = _rendererCallback
-            model = _activeModel
-        }
-
-        if let callback = callback {
-            if let model = model {
-                let image = FritzVisionImage(buffer: sampleBuffer)
-                model.predict(image) { (stylizedBuffer, error) in
-                    guard let stylizedBuffer = stylizedBuffer else { return }
-                    let msTaken = Date().timeIntervalSince(self.lastExecution)
-                    self.lastExecution = Date()
-                    print("Frames Per second \(1.0 / msTaken)")
-                    self.callbackQueue.async {
-                        callback(stylizedBuffer)
-                    }
-                }
-            } else if let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
-                callbackQueue.async {
-                    callback(imageBuffer)
-                }
-            }
-        }
-    }
-
-}
-
-// Camera and Photo Library authorization handling
-enum AuthorizationType {
-    case camera
-    case photoLibrary
-}
-
-private func checkAuthorization(for type: AuthorizationType, _ completion: @escaping ((_ autorized: Bool) -> Void))
-{
-    switch type {
-    case .camera:
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized:
-            completion(true)
-            
-        case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video, completionHandler: completion)
-
-        case .denied:
-            fallthrough
-        case .restricted:
-            completion(false)
-        }
-    case .photoLibrary:
-        switch PHPhotoLibrary.authorizationStatus() {
-        case .authorized:
-            completion(true)
-            
-        case .notDetermined:
-            PHPhotoLibrary.requestAuthorization({ (status) in
-                completion(status == .authorized)
-            })
-            
-        case .denied:
-            fallthrough
-        case .restricted:
-            completion(false)
-        }
-    }
-}
-
-private func showAuthorizationRequiredAlert(for type: AuthorizationType, from controller: UIViewController)
-{
-    let alertController: UIAlertController
-    if type == .camera {
-        alertController = UIAlertController(title: "Camera Access", message: "Camera Access is requied to run this demo and can be changed in Settings | Privacy | Camera.", preferredStyle: .alert)
-    } else {
-        alertController = UIAlertController(title: "Photo Library Access", message: "Photo Library Access is requied to run this demo and can be changed in Settings | Privacy | Photos.", preferredStyle: .alert)
-    }
-    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
-        alertController.dismiss(animated: true, completion: nil)
-    }))
-    controller.present(alertController, animated: true, completion: nil)
-}
+class StyleTransferConfigureFeatureViewController: ConfigureFeaturePopoverViewController<StyleTransfer> { }
