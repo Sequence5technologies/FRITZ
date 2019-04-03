@@ -1,5 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
-
+source 'git@github.com:CocoaPods/Specs.git'
 
 platform :ios, '11.0'
 
@@ -9,11 +8,10 @@ inhibit_all_warnings!
 project 'Heartbeat.xcodeproj'
 
 target 'Heartbeat' do
-  pod 'AlamofireImage', '~> 3.4'
   pod 'Crashlytics', '~> 3.9'
   pod 'Fabric', '~> 1.7'
 
-  pod 'Fritz', '~> 3.0.1'
+  pod 'Fritz', '~> 3.2.0-beta.1'
   pod 'Fritz/VisionObjectModel'
   pod 'Fritz/VisionStyleModel'
   pod 'Fritz/VisionLabelModel'

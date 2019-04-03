@@ -25,6 +25,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // FritzCore.setLogLevel(.debug)
         FritzCore.configure()
 
+        // Hacky way of loading generic view controllers.  Because Storyboards use Objective-C,
+        // Can't instantiate generic ViewControllers from storyboard definition.
+        // These view controllers extend the generic FeatureViewController with a specific Feature type.
+        ImageSegmentationViewController.load()
+        StyleTransferViewController.load()
+        FlexibleStyleTransferViewController.load()
+        PoseEstimationViewController.load()
+
+        ImageSegmentationConfigureFeatureViewController.load()
+        ImageSegmentationChooseFeatureTableViewController.load()
+
+        FlexibleStyleTransferChooseFeatureTableViewController.load()
+        FlexibleStyleTransferConfigureFeatureViewController.load()
+
+        PoseEstimationChooseFeatureTableViewController.load()
+        PoseEstimationConfigureFeatureViewController.load()
+
+        StyleTransferChooseFeatureTableViewController.load()
+        StyleTransferConfigureFeatureViewController.load()
+
         return true
     }
 }

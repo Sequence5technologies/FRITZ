@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		196DDFB830E752A761DB57B8 /* Pods_Heartbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5BD89ECFAC366472049E82 /* Pods_Heartbeat.framework */; };
+		28448A5506CF4A475BFCAE40 /* Pods_Heartbeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A005C1FBB73C4AAB5040597D /* Pods_Heartbeat.framework */; };
 		381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381817E21FE2DADD00050FF6 /* RootViewController.swift */; };
 		381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381817E41FE2DAE400050FF6 /* Root.storyboard */; };
 		383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383D40CA1FE18FAC00438A9B /* R.generated.swift */; };
@@ -20,20 +20,36 @@
 		38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2E2391FE0D0B6007241CB /* AppDelegate.swift */; };
 		38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2401FE0D0B6007241CB /* Assets.xcassets */; };
 		38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F2E2421FE0D0B6007241CB /* LaunchScreen.storyboard */; };
+		8325F7E922323110007C1D38 /* FlexibleStyleTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325F7E822323110007C1D38 /* FlexibleStyleTransferViewController.swift */; };
+		8325F7EB22323128007C1D38 /* FlexibleStyleTransferViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8325F7EA22323128007C1D38 /* FlexibleStyleTransferViewController.storyboard */; };
+		8325F7F1223238DC007C1D38 /* SegmentSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325F7F0223238DC007C1D38 /* SegmentSliderCell.swift */; };
+		8325F7F3223243FB007C1D38 /* SegmentSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8325F7F2223243FB007C1D38 /* SegmentSliderCell.xib */; };
+		8325F7F522325A29007C1D38 /* LinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325F7F422325A29007C1D38 /* LinkTableViewCell.swift */; };
 		833E545C2123A9EB007EFA8A /* StyleTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E545B2123A9EB007EFA8A /* StyleTransferViewController.swift */; };
 		833E545E2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 833E545D2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard */; };
-		833E54602123AB68007EFA8A /* StyleTransferInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E545F2123AB68007EFA8A /* StyleTransferInput.swift */; };
-		833E54622123AB71007EFA8A /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E54612123AB71007EFA8A /* VideoPreviewView.swift */; };
-		833E54692123AB78007EFA8A /* OpenGLPixelBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E54642123AB78007EFA8A /* OpenGLPixelBufferView.m */; };
-		833E546A2123AB78007EFA8A /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 833E54652123AB78007EFA8A /* ShaderUtilities.c */; };
+		833FD7F12242CEFA00B19DF4 /* kaleidoscope_512x512_a025_stable_flexible.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 833FD7F02242CEFA00B19DF4 /* kaleidoscope_512x512_a025_stable_flexible.mlmodel */; };
 		837AB098220AAAE100789E44 /* PoseEstimationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837AB097220AAAE100789E44 /* PoseEstimationStoryboard.storyboard */; };
 		838B528B2102432700E0D50A /* DetectObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B528A2102432700E0D50A /* DetectObjectsViewController.swift */; };
 		838B528D210243CF00E0D50A /* DetectObjectsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */; };
+		839231F2222F76F1001182EB /* ChooseModelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839231F1222F76F1001182EB /* ChooseModelTableViewController.swift */; };
+		839231F4222F8DF9001182EB /* ConfigureFeaturePopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839231F3222F8DF9001182EB /* ConfigureFeaturePopover.swift */; };
+		839231F6222F9282001182EB /* FritzModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839231F5222F9282001182EB /* FritzModel.swift */; };
+		8392321622305FAE001182EB /* FritzCameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8392321522305FAE001182EB /* FritzCameraSession.swift */; };
+		8392321B2230673D001182EB /* ModelOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8392321A2230673D001182EB /* ModelOptions.storyboard */; };
+		8392321D22306CAE001182EB /* FritzCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8392321C22306CAE001182EB /* FritzCameraViewController.swift */; };
 		8396CA2D220A9FDC00742120 /* PoseEstimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8396CA2C220A9FDC00742120 /* PoseEstimationViewController.swift */; };
-		8396CA2F220AA00300742120 /* CustomBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8396CA2E220AA00300742120 /* CustomBlurView.swift */; };
 		83AC97D72149CB8600E86B44 /* ImageSegmentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC97D62149CB8600E86B44 /* ImageSegmentationViewController.swift */; };
 		83AC97D92149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AC97D82149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard */; };
 		83D1E38A20FE441600DAAC90 /* Fritz-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83D1E38920FE441600DAAC90 /* Fritz-Info.plist */; };
+		83F8B4962231932C00686149 /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F8B4952231932C00686149 /* FeatureViewController.swift */; };
+		83F8B4982231934F00686149 /* ModelGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F8B4972231934F00686149 /* ModelGroupManager.swift */; };
+		83F8B49A2231A65C00686149 /* HeartbeatFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F8B4992231A65C00686149 /* HeartbeatFeature.swift */; };
+		83F8B49C2231BD9200686149 /* FeatureContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F8B49B2231BD9200686149 /* FeatureContainer.xib */; };
+		83F8B49F2231C4DB00686149 /* ChooseModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F8B49E2231C4DB00686149 /* ChooseModelCell.swift */; };
+		83F8B4A12231CAB400686149 /* ChooseModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F8B4A02231CAB300686149 /* ChooseModelCell.xib */; };
+		83F8B4A32231E25800686149 /* RangeSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F8B4A22231E25800686149 /* RangeSliderCell.xib */; };
+		83F8B4A522320AD200686149 /* RangeSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F8B4A422320AD200686149 /* RangeSliderCell.swift */; };
+		83F8B4A722320AF700686149 /* FeatureOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F8B4A622320AF700686149 /* FeatureOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,26 +67,39 @@
 		38F2E2401FE0D0B6007241CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F2E2431FE0D0B6007241CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38F2E2451FE0D0B6007241CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8325F7E822323110007C1D38 /* FlexibleStyleTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleStyleTransferViewController.swift; sourceTree = "<group>"; };
+		8325F7EA22323128007C1D38 /* FlexibleStyleTransferViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlexibleStyleTransferViewController.storyboard; sourceTree = "<group>"; };
+		8325F7F0223238DC007C1D38 /* SegmentSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSliderCell.swift; sourceTree = "<group>"; };
+		8325F7F2223243FB007C1D38 /* SegmentSliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentSliderCell.xib; sourceTree = "<group>"; };
+		8325F7F422325A29007C1D38 /* LinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkTableViewCell.swift; sourceTree = "<group>"; };
 		833E545B2123A9EB007EFA8A /* StyleTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTransferViewController.swift; sourceTree = "<group>"; };
 		833E545D2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StyleTransferStoryboard.storyboard; sourceTree = "<group>"; };
-		833E545F2123AB68007EFA8A /* StyleTransferInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleTransferInput.swift; sourceTree = "<group>"; };
-		833E54612123AB71007EFA8A /* VideoPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
-		833E54642123AB78007EFA8A /* OpenGLPixelBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLPixelBufferView.m; sourceTree = "<group>"; };
-		833E54652123AB78007EFA8A /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
-		833E54662123AB78007EFA8A /* OpenGLPixelBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLPixelBufferView.h; sourceTree = "<group>"; };
-		833E54672123AB78007EFA8A /* Heartbeat-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Heartbeat-Bridging-Header.h"; sourceTree = "<group>"; };
-		833E54682123AB78007EFA8A /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
+		833FD7F02242CEFA00B19DF4 /* kaleidoscope_512x512_a025_stable_flexible.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = kaleidoscope_512x512_a025_stable_flexible.mlmodel; sourceTree = "<group>"; };
 		837AB097220AAAE100789E44 /* PoseEstimationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PoseEstimationStoryboard.storyboard; sourceTree = "<group>"; };
 		838B528A2102432700E0D50A /* DetectObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectObjectsViewController.swift; sourceTree = "<group>"; };
 		838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetectObjectsStoryboard.storyboard; sourceTree = "<group>"; };
+		839231F1222F76F1001182EB /* ChooseModelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseModelTableViewController.swift; sourceTree = "<group>"; };
+		839231F3222F8DF9001182EB /* ConfigureFeaturePopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureFeaturePopover.swift; sourceTree = "<group>"; };
+		839231F5222F9282001182EB /* FritzModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FritzModel.swift; sourceTree = "<group>"; };
+		8392321522305FAE001182EB /* FritzCameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FritzCameraSession.swift; sourceTree = "<group>"; };
+		8392321A2230673D001182EB /* ModelOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModelOptions.storyboard; sourceTree = "<group>"; };
+		8392321C22306CAE001182EB /* FritzCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FritzCameraViewController.swift; sourceTree = "<group>"; };
 		8396CA2C220A9FDC00742120 /* PoseEstimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseEstimationViewController.swift; sourceTree = "<group>"; };
-		8396CA2E220AA00300742120 /* CustomBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlurView.swift; sourceTree = "<group>"; };
 		83AC97D62149CB8600E86B44 /* ImageSegmentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmentationViewController.swift; sourceTree = "<group>"; };
 		83AC97D82149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageSegmentationStoryboard.storyboard; sourceTree = "<group>"; };
 		83D1E38920FE441600DAAC90 /* Fritz-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fritz-Info.plist"; sourceTree = "<group>"; };
-		AE5BD89ECFAC366472049E82 /* Pods_Heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1372C3DC7B399D3E8B847F4 /* Pods-Heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
-		EF3EEEC0D5C3BD7048C6B741 /* Pods-Heartbeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartbeat/Pods-Heartbeat.release.xcconfig"; sourceTree = "<group>"; };
+		83F8B4952231932C00686149 /* FeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
+		83F8B4972231934F00686149 /* ModelGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGroupManager.swift; sourceTree = "<group>"; };
+		83F8B4992231A65C00686149 /* HeartbeatFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartbeatFeature.swift; sourceTree = "<group>"; };
+		83F8B49B2231BD9200686149 /* FeatureContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureContainer.xib; sourceTree = "<group>"; };
+		83F8B49E2231C4DB00686149 /* ChooseModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseModelCell.swift; sourceTree = "<group>"; };
+		83F8B4A02231CAB300686149 /* ChooseModelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseModelCell.xib; sourceTree = "<group>"; };
+		83F8B4A22231E25800686149 /* RangeSliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RangeSliderCell.xib; sourceTree = "<group>"; };
+		83F8B4A422320AD200686149 /* RangeSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderCell.swift; sourceTree = "<group>"; };
+		83F8B4A622320AF700686149 /* FeatureOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureOptions.swift; sourceTree = "<group>"; };
+		956A2168D4F789F3B7903789 /* Pods-Heartbeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.debug.xcconfig"; path = "Target Support Files/Pods-Heartbeat/Pods-Heartbeat.debug.xcconfig"; sourceTree = "<group>"; };
+		A005C1FBB73C4AAB5040597D /* Pods_Heartbeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartbeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6F8B7AA6A04E42F27DB181D /* Pods-Heartbeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartbeat.release.xcconfig"; path = "Target Support Files/Pods-Heartbeat/Pods-Heartbeat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,21 +107,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				196DDFB830E752A761DB57B8 /* Pods_Heartbeat.framework in Frameworks */,
+				28448A5506CF4A475BFCAE40 /* Pods_Heartbeat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1506ADEE4B587282C7177E1F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AE5BD89ECFAC366472049E82 /* Pods_Heartbeat.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		381817D91FE2D93F00050FF6 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +126,14 @@
 		381817DA1FE2D94600050FF6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8392321722306677001182EB /* ModelOptions */,
+				83F8B4972231934F00686149 /* ModelGroupManager.swift */,
+				83F8B4992231A65C00686149 /* HeartbeatFeature.swift */,
+				83F8B4952231932C00686149 /* FeatureViewController.swift */,
+				83F8B49B2231BD9200686149 /* FeatureContainer.xib */,
+				8392321C22306CAE001182EB /* FritzCameraViewController.swift */,
+				8392321522305FAE001182EB /* FritzCameraSession.swift */,
+				839231F5222F9282001182EB /* FritzModel.swift */,
 				38E96C032001310000683571 /* NavigationController.swift */,
 			);
 			path = Common;
@@ -133,6 +162,7 @@
 				8396CA2B220A9FBC00742120 /* PoseEstimation */,
 				83AC97D52149CB7100E86B44 /* ImageSegmentation */,
 				833E545A2123A9D6007EFA8A /* StyleTransfer */,
+				8325F7E7223230F7007C1D38 /* FlexibleStyleTransfer */,
 				381817DA1FE2D94600050FF6 /* Common */,
 				385CF1B11FF2EA8600F1BFF0 /* Demos */,
 				838B5289210242DD00E0D50A /* DetectObjects */,
@@ -175,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				385CF1B71FF2F14700F1BFF0 /* DemoTableViewCell.swift */,
+				8325F7F422325A29007C1D38 /* LinkTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -193,8 +224,8 @@
 			children = (
 				38F2E2381FE0D0B6007241CB /* Heartbeat */,
 				38F2E2371FE0D0B6007241CB /* Products */,
-				8E4F2C91079D1F45793D461F /* Pods */,
-				1506ADEE4B587282C7177E1F /* Frameworks */,
+				BB7C1803FE2702C0510B0BC9 /* Pods */,
+				9391FB33D956C00A350392C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,28 +247,23 @@
 			path = Heartbeat;
 			sourceTree = "<group>";
 		};
+		8325F7E7223230F7007C1D38 /* FlexibleStyleTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				833FD7F02242CEFA00B19DF4 /* kaleidoscope_512x512_a025_stable_flexible.mlmodel */,
+				8325F7E822323110007C1D38 /* FlexibleStyleTransferViewController.swift */,
+				8325F7EA22323128007C1D38 /* FlexibleStyleTransferViewController.storyboard */,
+			);
+			path = FlexibleStyleTransfer;
+			sourceTree = "<group>";
+		};
 		833E545A2123A9D6007EFA8A /* StyleTransfer */ = {
 			isa = PBXGroup;
 			children = (
-				833E54632123AB78007EFA8A /* Apple OpenGL Buffer View */,
 				833E545B2123A9EB007EFA8A /* StyleTransferViewController.swift */,
-				833E545F2123AB68007EFA8A /* StyleTransferInput.swift */,
-				833E54612123AB71007EFA8A /* VideoPreviewView.swift */,
 				833E545D2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard */,
 			);
 			path = StyleTransfer;
-			sourceTree = "<group>";
-		};
-		833E54632123AB78007EFA8A /* Apple OpenGL Buffer View */ = {
-			isa = PBXGroup;
-			children = (
-				833E54642123AB78007EFA8A /* OpenGLPixelBufferView.m */,
-				833E54652123AB78007EFA8A /* ShaderUtilities.c */,
-				833E54662123AB78007EFA8A /* OpenGLPixelBufferView.h */,
-				833E54672123AB78007EFA8A /* Heartbeat-Bridging-Header.h */,
-				833E54682123AB78007EFA8A /* ShaderUtilities.h */,
-			);
-			path = "Apple OpenGL Buffer View";
 			sourceTree = "<group>";
 		};
 		838B5289210242DD00E0D50A /* DetectObjects */ = {
@@ -247,6 +273,18 @@
 				838B528C210243CF00E0D50A /* DetectObjectsStoryboard.storyboard */,
 			);
 			path = DetectObjects;
+			sourceTree = "<group>";
+		};
+		8392321722306677001182EB /* ModelOptions */ = {
+			isa = PBXGroup;
+			children = (
+				83F8B4A622320AF700686149 /* FeatureOptions.swift */,
+				839231F1222F76F1001182EB /* ChooseModelTableViewController.swift */,
+				839231F3222F8DF9001182EB /* ConfigureFeaturePopover.swift */,
+				8392321A2230673D001182EB /* ModelOptions.storyboard */,
+				83F8B49D2231C4C200686149 /* ConfigureModelCells */,
+			);
+			path = ModelOptions;
 			sourceTree = "<group>";
 		};
 		8396CA2B220A9FBC00742120 /* PoseEstimation */ = {
@@ -262,19 +300,39 @@
 			isa = PBXGroup;
 			children = (
 				83AC97D62149CB8600E86B44 /* ImageSegmentationViewController.swift */,
-				8396CA2E220AA00300742120 /* CustomBlurView.swift */,
 				83AC97D82149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard */,
 			);
 			path = ImageSegmentation;
 			sourceTree = "<group>";
 		};
-		8E4F2C91079D1F45793D461F /* Pods */ = {
+		83F8B49D2231C4C200686149 /* ConfigureModelCells */ = {
 			isa = PBXGroup;
 			children = (
-				D1372C3DC7B399D3E8B847F4 /* Pods-Heartbeat.debug.xcconfig */,
-				EF3EEEC0D5C3BD7048C6B741 /* Pods-Heartbeat.release.xcconfig */,
+				83F8B4A02231CAB300686149 /* ChooseModelCell.xib */,
+				83F8B49E2231C4DB00686149 /* ChooseModelCell.swift */,
+				8325F7F0223238DC007C1D38 /* SegmentSliderCell.swift */,
+				8325F7F2223243FB007C1D38 /* SegmentSliderCell.xib */,
+				83F8B4A422320AD200686149 /* RangeSliderCell.swift */,
+				83F8B4A22231E25800686149 /* RangeSliderCell.xib */,
 			);
-			name = Pods;
+			path = ConfigureModelCells;
+			sourceTree = "<group>";
+		};
+		9391FB33D956C00A350392C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A005C1FBB73C4AAB5040597D /* Pods_Heartbeat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB7C1803FE2702C0510B0BC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				956A2168D4F789F3B7903789 /* Pods-Heartbeat.debug.xcconfig */,
+				B6F8B7AA6A04E42F27DB181D /* Pods-Heartbeat.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,14 +342,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38F2E2481FE0D0B6007241CB /* Build configuration list for PBXNativeTarget "Heartbeat" */;
 			buildPhases = (
-				5CB4378877FF69BA957F9C57 /* [CP] Check Pods Manifest.lock */,
+				39C1F35169703D964DFF36A6 /* [CP] Check Pods Manifest.lock */,
 				383D40CC1FE1901700438A9B /* Swift Lint */,
 				383D40C31FE18EA000438A9B /* R.swift */,
 				38F2E2321FE0D0B6007241CB /* Sources */,
 				38F2E2331FE0D0B6007241CB /* Frameworks */,
 				38F2E2341FE0D0B6007241CB /* Resources */,
 				38B18CC31FE22C91005AA896 /* Fabric */,
-				C1EDC323C5AA1266FC22D2A2 /* [CP] Embed Pods Frameworks */,
+				11A5C91ECCDE385C0A8797EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,13 +399,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8392321B2230673D001182EB /* ModelOptions.storyboard in Resources */,
+				83F8B4A12231CAB400686149 /* ChooseModelCell.xib in Resources */,
 				833E545E2123A9FA007EFA8A /* StyleTransferStoryboard.storyboard in Resources */,
 				3890742C1FFDE6A900DFF7F9 /* LabelImages.storyboard in Resources */,
 				381817E51FE2DAE400050FF6 /* Root.storyboard in Resources */,
+				8325F7EB22323128007C1D38 /* FlexibleStyleTransferViewController.storyboard in Resources */,
+				83F8B49C2231BD9200686149 /* FeatureContainer.xib in Resources */,
 				38F2E2441FE0D0B6007241CB /* LaunchScreen.storyboard in Resources */,
 				83D1E38A20FE441600DAAC90 /* Fritz-Info.plist in Resources */,
+				83F8B4A32231E25800686149 /* RangeSliderCell.xib in Resources */,
 				38F2E2411FE0D0B6007241CB /* Assets.xcassets in Resources */,
 				838B528D210243CF00E0D50A /* DetectObjectsStoryboard.storyboard in Resources */,
+				8325F7F3223243FB007C1D38 /* SegmentSliderCell.xib in Resources */,
 				83AC97D92149CB9400E86B44 /* ImageSegmentationStoryboard.storyboard in Resources */,
 				837AB098220AAAE100789E44 /* PoseEstimationStoryboard.storyboard in Resources */,
 				385CF1B51FF2EAAA00F1BFF0 /* Demos.storyboard in Resources */,
@@ -357,6 +421,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		11A5C91ECCDE385C0A8797EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzCore.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/Fritz.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/CoreMLHelpers.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzManagedModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVision.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionLabelModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionObjectModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionPoseModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionPeopleSegmentationModel.framework",
+				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionStyleModelPaintings.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fritz.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreMLHelpers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzManagedModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVision.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionLabelModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionObjectModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPoseModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPeopleSegmentationModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionStyleModelPaintings.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		383D40C31FE18EA000438A9B /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,62 +507,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 3ab14d933cbf3577dd7434aa17e1171fdd726172 a7e273788cbf79557095d9bd720a5d71abef69142d7a82ef17e9d88751ee49d8";
 		};
-		5CB4378877FF69BA957F9C57 /* [CP] Check Pods Manifest.lock */ = {
+		39C1F35169703D964DFF36A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Heartbeat-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C1EDC323C5AA1266FC22D2A2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzCore.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/CoreMLHelpers.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzManagedModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVision.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionLabelModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionObjectModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionPoseModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionPeopleSegmentationModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionStyleModelPaintings.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreMLHelpers.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzManagedModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVision.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionLabelModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionObjectModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPoseModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPeopleSegmentationModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionStyleModelPaintings.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -466,22 +536,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8392321D22306CAE001182EB /* FritzCameraViewController.swift in Sources */,
 				385CF1B31FF2EAA200F1BFF0 /* DemosViewController.swift in Sources */,
+				839231F4222F8DF9001182EB /* ConfigureFeaturePopover.swift in Sources */,
+				839231F6222F9282001182EB /* FritzModel.swift in Sources */,
 				385CF1B81FF2F14700F1BFF0 /* DemoTableViewCell.swift in Sources */,
-				833E54622123AB71007EFA8A /* VideoPreviewView.swift in Sources */,
+				8325F7F522325A29007C1D38 /* LinkTableViewCell.swift in Sources */,
 				381817E31FE2DADD00050FF6 /* RootViewController.swift in Sources */,
-				833E54692123AB78007EFA8A /* OpenGLPixelBufferView.m in Sources */,
+				83F8B4962231932C00686149 /* FeatureViewController.swift in Sources */,
+				833FD7F12242CEFA00B19DF4 /* kaleidoscope_512x512_a025_stable_flexible.mlmodel in Sources */,
 				3890742A1FFDE6A000DFF7F9 /* FritzVisionLabelViewController.swift in Sources */,
+				8325F7F1223238DC007C1D38 /* SegmentSliderCell.swift in Sources */,
 				83AC97D72149CB8600E86B44 /* ImageSegmentationViewController.swift in Sources */,
+				83F8B4A722320AF700686149 /* FeatureOptions.swift in Sources */,
+				8325F7E922323110007C1D38 /* FlexibleStyleTransferViewController.swift in Sources */,
+				83F8B49A2231A65C00686149 /* HeartbeatFeature.swift in Sources */,
 				38F2E23A1FE0D0B6007241CB /* AppDelegate.swift in Sources */,
 				833E545C2123A9EB007EFA8A /* StyleTransferViewController.swift in Sources */,
-				833E546A2123AB78007EFA8A /* ShaderUtilities.c in Sources */,
-				8396CA2F220AA00300742120 /* CustomBlurView.swift in Sources */,
+				83F8B4982231934F00686149 /* ModelGroupManager.swift in Sources */,
 				383D40CB1FE18FAC00438A9B /* R.generated.swift in Sources */,
+				83F8B49F2231C4DB00686149 /* ChooseModelCell.swift in Sources */,
 				838B528B2102432700E0D50A /* DetectObjectsViewController.swift in Sources */,
+				8392321622305FAE001182EB /* FritzCameraSession.swift in Sources */,
+				83F8B4A522320AD200686149 /* RangeSliderCell.swift in Sources */,
 				38E96C042001310000683571 /* NavigationController.swift in Sources */,
+				839231F2222F76F1001182EB /* ChooseModelTableViewController.swift in Sources */,
 				8396CA2D220A9FDC00742120 /* PoseEstimationViewController.swift in Sources */,
-				833E54602123AB68007EFA8A /* StyleTransferInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +692,7 @@
 		};
 		38F2E2491FE0D0B6007241CB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1372C3DC7B399D3E8B847F4 /* Pods-Heartbeat.debug.xcconfig */;
+			baseConfigurationReference = 956A2168D4F789F3B7903789 /* Pods-Heartbeat.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -620,12 +700,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3RGJF7P9D;
 				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeat/Source/Modules/StyleTransfer/Apple OpenGL Buffer View/Heartbeat-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -633,7 +712,7 @@
 		};
 		38F2E24A1FE0D0B6007241CB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF3EEEC0D5C3BD7048C6B741 /* Pods-Heartbeat.release.xcconfig */;
+			baseConfigurationReference = B6F8B7AA6A04E42F27DB181D /* Pods-Heartbeat.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -641,12 +720,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3RGJF7P9D;
 				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fritz.Heartbeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeat/Source/Modules/StyleTransfer/Apple OpenGL Buffer View/Heartbeat-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

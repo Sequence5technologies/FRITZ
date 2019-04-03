@@ -8,114 +8,101 @@
 
 import UIKit
 import AVFoundation
-import AlamofireImage
 import Vision
 import Fritz
 import VideoToolbox
 
 
+extension FritzVisionSegmentationModel: ImagePredictor {
 
-class ImageSegmentationViewController: UIViewController {
+    func predict(_ image: FritzVisionImage?, options: ConfigurableOptions, completion: (UIImage?, Error?) -> Void) {
 
-    @IBOutlet weak var cameraView: UIView!
+        guard let fritzImage = image else { return }
 
-    var cameraImageView: UIImageView!
+        let unsafeOptions = FritzVisionSegmentationModelOptions.defaults as! FritzVisionSegmentationModelOptions
 
-    var imageView: UIImageView!
+        self.predict(fritzImage, options: unsafeOptions) { (mask, error) in
+            guard let mask = mask else {
+                return
+            }
 
-    var maskView: UIImageView!
+            let minThreshold = Double((options[.minThreshold] as! RangeValue).value)
+            let alpha = UInt8((options[.alpha] as! RangeValue).value)
 
-    private lazy var cameraSession = AVCaptureSession()
+            let image = mask.toImageMask(minThreshold: minThreshold, alpha: alpha)
+            completion(image, error)
+        }
+    }
+}
 
-    private let visionModel = FritzVisionPeopleSegmentationModel()
+/// Image Segmentation feature. Segments images into different classes.  For more information, see https://docs.fritz.ai/develop/vision/image-segmentation/about.html.
+final class ImageSegmentation: HeartbeatFeature {
 
-    private let sessionQueue = DispatchQueue(label: "com.fritz.heartbeat.mobilenet.session")
+    static let tagName: String? = "heartbeat-ios-image-segmentation"
 
-    private let captureQueue = DispatchQueue(label: "com.fritz.heartbeat.mobilenet.capture", qos: DispatchQoS.userInitiated)
+    var options: [ConfigurableOptionType:FeatureOption] = [
+        .minThreshold: RangeValue(optionType: .minThreshold, min: 0.0, max: 1.0, value: 0.5),
+        .alpha: RangeValue(optionType: .alpha, min: 0.0, max: 255.0, value: 255.0)
+    ]
+
+    let model: FritzVisionSegmentationModel
+
+    let fritzModel: FritzModel
+
+    public weak var delegate: RunImageModelDelegate?
+
+    public init(model: FritzVisionSegmentationModel, fritzModel: FritzModel) {
+        self.model = model
+        self.fritzModel = fritzModel
+    }
+
+    enum SegmentationModels: String, RawRepresentable {
+        case peopleSegmentation = "people_image_segmentation"
+        case livingRoomSegmentation = "living_room_segmentation"
+        case outdoorSegmentation = "outdoor_image_segmentation"
+    }
+
+    static func build(from heartbeatModel: FritzModel, featureModel model: FritzMLModel) -> ImageSegmentation? {
+        guard let modelType = SegmentationModels(rawValue: heartbeatModel.featureName) else { return nil }
+
+        var segmentationModel: FritzVisionSegmentationModel? = nil
+        switch modelType {
+        case .peopleSegmentation:
+            segmentationModel = FritzVisionPeopleSegmentationModel(model: model)
+
+        case .livingRoomSegmentation:
+            segmentationModel = FritzVisionLivingRoomSegmentationModel(model: model)
+
+        case .outdoorSegmentation:
+            segmentationModel = FritzVisionOutdoorSegmentationModel(model: model)
+        }
+        if let segmentationModel = segmentationModel {
+            return ImageSegmentation(model: segmentationModel, fritzModel: heartbeatModel)
+        }
+        return nil
+    }
+}
+
+
+class ImageSegmentationViewController: FeatureViewController<ImageSegmentation> {
+
+
 
     override func viewDidLoad() {
+        // People segmentation model is included in the default build.
+        let peopleSeg = FritzModel(
+            with: FritzVisionPeopleSegmentationModel().managedModel,
+            predefinedFeatureName: "people_image_segmentation")
+        self.showBackgroundView = true
+        let models = [peopleSeg]
+        modelGroup = ModelGroupManager<ImageSegmentation>(models: models, selectedModel: peopleSeg)
+
         super.viewDidLoad()
-
-        let bounds = cameraView.layer.bounds
-
-        cameraImageView = UIImageView(frame: bounds)
-        maskView = UIImageView(frame: bounds)
-        imageView = UIImageView(frame: bounds)
-        // Adding mask view
-
-        imageView.contentMode = .scaleAspectFill
-        cameraImageView.contentMode = .scaleAspectFill
-        maskView.contentMode = .scaleAspectFill
-
-        // add blurview
-        let blurView = CustomBlurView(withRadius: 6.0)
-        blurView.frame = self.cameraView.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
-        cameraImageView.addSubview(blurView)
-
-        imageView.mask = maskView
-
-        cameraView.addSubview(cameraImageView)
-        cameraView.addSubview(imageView)
-
-        guard let device = AVCaptureDevice.default(for: .video), let input = try? AVCaptureDeviceInput(device: device) else { return }
-
-        let output = AVCaptureVideoDataOutput()
-        output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA as UInt32]
-        output.alwaysDiscardsLateVideoFrames = true
-        output.setSampleBufferDelegate(self, queue: captureQueue)
-
-        sessionQueue.async {
-            self.cameraSession.beginConfiguration()
-            // self.cameraSession.sessionPreset = AVCaptureSession.Preset.vga640x480
-            self.cameraSession.addInput(input)
-            self.cameraSession.addOutput(output)
-            self.cameraSession.commitConfiguration()
-        }
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        sessionQueue.async {
-            self.cameraSession.startRunning()
-        }
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        cameraImageView.frame = cameraView.bounds
-        imageView.frame = cameraView.bounds
-        maskView.frame = cameraView.bounds
-    }
-
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
+        self.feature = ImageSegmentation(model: FritzVisionPeopleSegmentationModel(), fritzModel: peopleSeg)
     }
 }
 
 
-extension ImageSegmentationViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+class ImageSegmentationChooseFeatureTableViewController: ChooseModelTableViewController<ImageSegmentation> { }
 
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-
-        let image = FritzVisionImage(buffer: sampleBuffer)
-        image.metadata = FritzVisionImageMetadata()
-        let options = FritzVisionSegmentationModelOptions()
-        options.imageCropAndScaleOption = .scaleFit
-
-        visionModel.predict(image, options: options) { [weak self] (mask, error) in
-            guard let mask = mask else { return }
-            let maskImage = mask.toImageMask(of: FritzVisionPeopleClass.person, threshold: 0.70, minThresholdAccepted: 0.25)
-            let backgroundVideo = UIImage(pixelBuffer: image.rotate()!)
-            DispatchQueue.main.async {
-                self?.imageView.image = backgroundVideo
-                self?.maskView.image = maskImage
-                self?.cameraImageView.image = backgroundVideo
-            }
-        }
-    }
-}
-
+class ImageSegmentationConfigureFeatureViewController: ConfigureFeaturePopoverViewController<ImageSegmentation> { }
