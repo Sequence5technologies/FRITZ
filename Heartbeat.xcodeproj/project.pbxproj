@@ -430,16 +430,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Heartbeat/Pods-Heartbeat-frameworks.sh",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzCore.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/Fritz.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/CoreMLHelpers.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzManagedModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVision.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionLabelModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionObjectModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionPoseModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionPeopleSegmentationModel.framework",
-				"${PODS_ROOT}/Fritz/Frameworks/FritzVisionStyleModelPaintings.framework",
+				"${PODS_ROOT}/FritzBase/Frameworks/FritzCore.framework",
+				"${PODS_ROOT}/FritzBase/Frameworks/Fritz.framework",
+				"${PODS_ROOT}/FritzBase/Frameworks/CoreMLHelpers.framework",
+				"${PODS_ROOT}/FritzBase/Frameworks/FritzManagedModel.framework",
+				"${PODS_ROOT}/FritzBase/Frameworks/FritzVision.framework",
+				"${PODS_ROOT}/FritzVisionLabelModel/Frameworks/FritzVisionLabelModel.framework",
+				"${PODS_ROOT}/FritzVisionObjectModel/Frameworks/FritzVisionObjectModel.framework",
+				"${PODS_ROOT}/FritzVisionPeopleSegmentationModel/Frameworks/FritzVisionPeopleSegmentationModel.framework",
+				"${PODS_ROOT}/FritzVisionPoseModel/Frameworks/FritzVisionPoseModel.framework",
+				"${PODS_ROOT}/FritzVisionStyleModelPaintings/Frameworks/FritzVisionStyleModelPaintings.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -453,8 +453,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVision.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionLabelModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionObjectModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPoseModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPeopleSegmentationModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionPoseModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FritzVisionStyleModelPaintings.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 			);
@@ -698,7 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3RGJF7P9D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -718,7 +718,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T3RGJF7P9D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Heartbeat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
