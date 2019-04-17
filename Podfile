@@ -11,7 +11,7 @@ target 'Heartbeat' do
   pod 'Crashlytics', '~> 3.9'
   pod 'Fabric', '~> 1.7'
 
-  pod 'Fritz', '~> 3.2.0-beta.1'
+  pod 'Fritz', '~> 3.2.4'
   pod 'Fritz/VisionObjectModel'
   pod 'Fritz/VisionStyleModel'
   pod 'Fritz/VisionLabelModel'

@@ -2,28 +2,40 @@ PODS:
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
-  - Fritz (3.2.0):
-    - Fritz/ManagedModel (= 3.2.0)
-  - Fritz/Core (3.2.0)
-  - Fritz/CoreMLHelpers (3.2.0)
-  - Fritz/ManagedModel (3.2.0):
-    - Fritz/Core
-  - Fritz/Vision (3.2.0):
-    - Fritz/Core
-    - Fritz/CoreMLHelpers
-    - Fritz/ManagedModel
-  - Fritz/VisionLabelModel (3.2.0):
-    - Fritz/Vision
-  - Fritz/VisionObjectModel (3.2.0):
-    - Fritz/Vision
-  - Fritz/VisionPoseModel (3.2.0):
-    - Fritz/Vision
-  - Fritz/VisionSegmentationModel/People (3.2.0):
-    - Fritz/Vision
-  - Fritz/VisionStyleModel (3.2.0):
-    - Fritz/VisionStyleModel/Paintings (= 3.2.0)
-  - Fritz/VisionStyleModel/Paintings (3.2.0):
-    - Fritz/Vision
+  - Fritz (3.2.4):
+    - Fritz/Vision (= 3.2.4)
+  - Fritz/Vision (3.2.4):
+    - FritzBase/Vision
+  - Fritz/VisionLabelModel (3.2.4):
+    - FritzVisionLabelModel
+  - Fritz/VisionObjectModel (3.2.4):
+    - FritzVisionObjectModel
+  - Fritz/VisionPoseModel (3.2.4):
+    - FritzVisionPoseModel
+  - Fritz/VisionSegmentationModel/People (3.2.4):
+    - FritzVisionPeopleSegmentationModel
+  - Fritz/VisionStyleModel (3.2.4):
+    - Fritz/VisionStyleModel/Paintings (= 3.2.4)
+  - Fritz/VisionStyleModel/Paintings (3.2.4):
+    - FritzVisionStyleModelPaintings
+  - FritzBase/Core (3.2.4)
+  - FritzBase/CoreMLHelpers (3.2.4)
+  - FritzBase/ManagedModel (3.2.4):
+    - FritzBase/Core
+  - FritzBase/Vision (3.2.4):
+    - FritzBase/Core
+    - FritzBase/CoreMLHelpers
+    - FritzBase/ManagedModel
+  - FritzVisionLabelModel (3.2.4):
+    - FritzBase/Vision
+  - FritzVisionObjectModel (3.2.4):
+    - FritzBase/Vision
+  - FritzVisionPeopleSegmentationModel (3.2.4):
+    - FritzBase/Vision
+  - FritzVisionPoseModel (3.2.4):
+    - FritzBase/Vision
+  - FritzVisionStyleModelPaintings (3.2.4):
+    - FritzBase/Vision
   - R.swift (5.0.0.alpha.2):
     - R.swift.Library (~> 5.0.0.alpha.2)
   - R.swift.Library (5.0.1)
@@ -31,7 +43,7 @@ PODS:
 DEPENDENCIES:
   - Crashlytics (~> 3.9)
   - Fabric (~> 1.7)
-  - Fritz (~> 3.2.0-beta.1)
+  - Fritz (~> 3.2.4)
   - Fritz/VisionLabelModel
   - Fritz/VisionObjectModel
   - Fritz/VisionPoseModel
@@ -44,16 +56,28 @@ SPEC REPOS:
     - Crashlytics
     - Fabric
     - Fritz
+    - FritzBase
+    - FritzVisionLabelModel
+    - FritzVisionObjectModel
+    - FritzVisionPeopleSegmentationModel
+    - FritzVisionPoseModel
+    - FritzVisionStyleModelPaintings
     - R.swift
     - R.swift.Library
 
 SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
-  Fritz: b582c55d6d4f823dfb87cafc7823d3b8067dad37
+  Fritz: 4981de4fb3e866624d25b15039ef714a404ab283
+  FritzBase: cbd4e9344ed7c342ee537dd4cacb7a18acf89e3b
+  FritzVisionLabelModel: cdff33f5afb90dca439cf08e2c9c666fa4f898a4
+  FritzVisionObjectModel: e469e1933762582592bed46d9aef6908e5f51c87
+  FritzVisionPeopleSegmentationModel: cb399d25ce1c09a4729e6ea76c124b0934d8dd8a
+  FritzVisionPoseModel: a67e0ec7b3ac8bb96d358c1ec598bbc0f5a27e9f
+  FritzVisionStyleModelPaintings: 0b09e86f96f935415fe6f321ed31775b1bbdbe5f
   R.swift: 31fa1bd537fa81307815cc622122f33331f32174
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
 
-PODFILE CHECKSUM: 613fcdd5767cb3819d0d2b3fba8890327873cc08
+PODFILE CHECKSUM: 10df85f2847ca138186b2958c5870c114cc9d10b
 
 COCOAPODS: 1.6.1
