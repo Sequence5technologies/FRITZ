@@ -11,52 +11,66 @@ import Fritz
 
 
 /// Manages available models for a HeartbeatFeature, including currently selected fetaure.
-class ModelGroupManager<Feature: HeartbeatFeature> {
-    var models: [FritzModel]
-    var selectedModel: FritzModel?
+class ModelGroupManager {
+  var models: [FritzModelDetails]
+  var selectedPredictorDetails: FritzModelDetails?
+  let tagName: String?
 
-    init(models: [FritzModel], selectedModel: FritzModel?) {
-        self.models = models
-        self.selectedModel = selectedModel
-    }
+  init(initialModel model: FritzModelDetails, tagName: String?) {
+    self.models = [model]
+    self.selectedPredictorDetails = model
+    self.tagName = tagName
+  }
 
-    convenience init() {
-        self.init(models: [], selectedModel: nil)
-    }
+  init(with models: [FritzModelDetails], initialModel model: FritzModelDetails?, tagName: String?) {
+    self.models = models
+    self.selectedPredictorDetails = model
+    self.tagName = tagName
+  }
 
-    // Fetch models for tags.
-    func fetchModels(for tags: [String]) {
-        let tags = ModelTagManager(tags: tags)
-        tags.fetchManagedModelsForTags { models, error in
-            guard let managedModels = models else { return }
 
-            var newModels: [FritzModel] = []
+  init() {
+    self.models = []
+    self.selectedPredictorDetails = nil
+    self.tagName = nil
+  }
 
-            // Indices of models in existing models that were also shared by the
-            // tags response.  Helpful if you have models on device that are not tagged.
-            var commonModelIndices: [Int] = []
+  // Fetch models for tags.
+  func fetchModels() {
+    guard let tagName = tagName else { return }
+    let tags = ModelTagManager(tags: [tagName])
+    tags.fetchManagedModelsForTags { models, error in
+      guard let managedModels = models else { return }
 
-            for model in managedModels {
-                let newHeartbeatModel = FritzModel(with: model)
+      var newModels: [FritzModelDetails] = []
 
-                if let index = self.models.index(of: newHeartbeatModel) {
-                    commonModelIndices.append(index)
-                    newModels.append(self.models[index])
-                } else {
-                    newModels.append(newHeartbeatModel)
-                }
-            }
+      // Indices of models in existing models that were also shared by the
+      // tags response.  Helpful if you have models on device that are not tagged.
+      var commonModelIndices: [Int] = []
 
-            // add existing models to newModels that were not udpated in tag query.
-            for (i, model) in self.models.enumerated() {
-                if commonModelIndices.contains(i) {
-                    continue
-                }
-                newModels.append(model)
-            }
+      for model in managedModels {
+        let featureName = model.activeModelConfig.metadata?["fritz_feature"] ?? ""
+        let featureDescription = HeartbeatFeaturePredictors.init(rawValue: featureName)
+        let newHeartbeatModel = FritzModelDetails(with: model, featureDescription: featureDescription ?? .unknown)
 
-            self.models = newModels
+        if let index = self.models.firstIndex(of: newHeartbeatModel) {
+          commonModelIndices.append(index)
+          newModels.append(self.models[index])
+        } else {
+          newModels.append(newHeartbeatModel)
         }
+      }
+
+      // add existing models to newModels that were not udpated in tag query.
+      for (i, model) in self.models.enumerated() {
+        if commonModelIndices.contains(i) {
+          continue
+        }
+        newModels.append(model)
+      }
+
+      self.models = newModels
     }
+  }
 }
 

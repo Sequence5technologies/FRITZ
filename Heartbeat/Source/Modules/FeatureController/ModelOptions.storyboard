@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l86-8w-FuU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Configure-->
+        <scene sceneID="I4y-Lx-iM7">
+            <objects>
+                <tableViewController storyboardIdentifier="ConfigurePredictor" modalPresentationStyle="overCurrentContext" id="l86-8w-FuU" customClass="ConfigureFeaturePopoverViewController" customModule="Heartbeat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="5" id="BRh-Bs-cDC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="NBU-r6-rRp" detailTextLabel="Up9-Tb-Ao0" style="IBUITableViewCellStyleValue1" id="wod-eK-aWl">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wod-eK-aWl" id="I5C-Ov-SQ4">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NBU-r6-rRp">
+                                            <rect key="frame" x="16" y="12" width="47.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Up9-Tb-Ao0">
+                                            <rect key="frame" x="296" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="l86-8w-FuU" id="D78-Lt-eh9"/>
+                            <outlet property="delegate" destination="l86-8w-FuU" id="UG4-T6-PeN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Configure" id="OPx-5O-qNr">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="CTz-Ki-uM6">
+                            <connections>
+                                <segue destination="Ngv-5f-5D6" kind="unwind" unwindAction="unwindWithCancelWithSegue:" id="FQw-Wr-rcd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Apply" id="2bx-kt-pAb">
+                            <connections>
+                                <segue destination="Ngv-5f-5D6" kind="unwind" unwindAction="unwindWithUpdateWithSegue:" id="nYW-2l-asU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="7a7-gC-daL" kind="show" identifier="ChooseModel" id="ySt-2T-tdJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iD0-2K-RHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ngv-5f-5D6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-4514" y="34"/>
+        </scene>
+        <!--Choose Model Table View Controller-->
+        <scene sceneID="5HM-0p-u0Y">
+            <objects>
+                <tableViewController id="7a7-gC-daL" customClass="ChooseModelTableViewController" customModule="Heartbeat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="cmN-5m-Vm3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ModelCell" id="VGW-Gb-URc">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VGW-Gb-URc" id="2r9-dT-Is9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7a7-gC-daL" id="fZr-v1-bAB"/>
+                            <outlet property="delegate" destination="7a7-gC-daL" id="gBH-Tz-JF0"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="bkC-kP-sdR" kind="unwind" identifier="SelectModel" unwindAction="unwindWithSelectedRowWithSegue:" id="Cv0-zb-K6m"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xgv-K7-fYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bkC-kP-sdR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-3076" y="214"/>
+        </scene>
+    </scenes>
+</document>
