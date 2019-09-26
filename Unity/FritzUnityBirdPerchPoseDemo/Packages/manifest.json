@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ai.fritz.vision-unity": "https://github.com/fritzlabs/fritz-vision-unity.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.ads": "2.0.8",
@@ -14,6 +15,7 @@
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.1.0",
     "com.unity.ugui": "1.0.0",
+    "com.unity.xr.arcore": "2.1.1",
     "com.unity.xr.arfoundation": "2.1.3",
     "com.unity.xr.arkit": "2.1.1",
     "com.unity.modules.ai": "1.0.0",
@@ -47,5 +49,11 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "ai.fritz.vision-unity": {
+      "hash": "0043b986d465d68ec38c054d5de2beab351b343f",
+      "revision": "HEAD"
+    }
   }
 }

@@ -95,7 +95,21 @@ public class FritzVisionUnity : MonoBehaviour
 			return;
 		}
 
-#if UNITY_IOS && !UNITY_EDITOR
+#if UNITY_ANDROID && !UNITY_EDITOR
+
+        XRCameraImage image;
+        if (!cameraManager.TryGetLatestImage(out image))
+        {
+            image.Dispose();
+            return;
+        }
+
+        FritzPoseManager.ProcessPoseFromImageAsync(image);
+
+        // You must dispose the CameraImage to avoid resource leaks.
+        image.Dispose();
+
+#elif UNITY_IOS && !UNITY_EDITOR
         var cameraParams = new XRCameraParams
         {
             zNear = m_Cam.nearClipPlane,
@@ -112,10 +126,10 @@ public class FritzVisionUnity : MonoBehaviour
             return;
         }
 
-        FritzPoseManager.ProcessPoseAsync(frame.nativePtr);
+        FritzPoseManager.ProcessPoseFromFrameAsync(frame);
 
 #else
-		var randomPosition = debugPoint;
+        var randomPosition = debugPoint;
 		randomPosition.x = randomPosition.x * UnityEngine.Random.Range(-0.5f, 0.5f);
 		randomPosition.y = randomPosition.y * UnityEngine.Random.Range(-0.5f, 0.5f);
 
@@ -174,9 +188,6 @@ public class FritzVisionUnity : MonoBehaviour
 			var rotation = Quaternion.LookRotation(m_Cam.transform.position - bird.transform.position);
 			bird.transform.rotation = Quaternion.Slerp(bird.transform.rotation, rotation, Time.deltaTime * 10f);
 		}
-
-
-
 
 		return;
 	}
