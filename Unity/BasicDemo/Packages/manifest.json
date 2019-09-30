@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "ai.fritz.vision-unity": "https://github.com/fritzlabs/fritz-vision-unity.git",
+    "ai.fritz.vision": "https://github.com/fritzlabs/fritz-unity-sdk.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.ads": "2.0.8",
@@ -50,11 +50,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "lock": {
-    "ai.fritz.vision-unity": {
-      "hash": "0043b986d465d68ec38c054d5de2beab351b343f",
-      "revision": "HEAD"
-    }
   }
 }
