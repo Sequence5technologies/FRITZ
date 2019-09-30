@@ -27,7 +27,7 @@ Fritz AI is the machine learning platform for iOS and Android developers. Teach 
 
 **Step 1: Create a Fritz AI Account**
 
-[Sign up](https://app.fritz.ai/register) for a free account on Fritz AI in order to get started.
+[Sign up](https://app.fritz.ai/register?utm_source=github&utm_campaign=fritz-examples) for a free account on Fritz AI in order to get started.
 
 **Step 2: Clone / Fork the fritz-examples repository and open the PetMonitoringApp in Android Studio**
 
@@ -47,18 +47,18 @@ With your Android device connected, select `Run > Run App` from the top nav. Whe
 
 ## Official Documentation
 
-[SDK Documentation](https://docs.fritz.ai/)
+[SDK Documentation](https://docs.fritz.ai/?utm_source=github&utm_campaign=fritz-examples)
 
-[Android API Docs](https://docs.fritz.ai/android/latest/index.html)
+[Android API Docs](https://docs.fritz.ai/android/latest/index.html?utm_source=github&utm_campaign=fritz-examples)
 
 ## Join the community
 
-[Heartbeat](https://heartbeat.fritz.ai/?utm_source=github&utm_campaign=fritz-examples) is a community of developers interested in the intersection of mobile and machine learning. [Chat with us in Slack](https://www.fritz.ai/slack) and stay up to date on the latest mobile ML news with our [Newsletter](https://mobileml.us16.list-manage.com/subscribe?u=de53bead690affb8e9a21de8f&id=68acb5c0fd).
+[Heartbeat](https://heartbeat.fritz.ai/?utm_source=github&utm_campaign=fritz-examples) is a community of developers interested in the intersection of mobile and machine learning. [Chat with us in Slack](https://www.fritz.ai/slack?utm_source=github&utm_campaign=fritz-examples) and stay up to date on the latest mobile ML news with our [Newsletter](https://mobileml.us16.list-manage.com/subscribe?u=de53bead690affb8e9a21de8f&id=68acb5c0fd).
 
 ## Help
 
 For any questions or issues, you can:
 
 - Submit an issue on this repo
-- Go to our [Help Center](https://docs.fritz.ai/help-center/index.html)
-- Message us directly in [Slack](https://www.fritz.ai/slack)
+- Go to our [Help Center](https://docs.fritz.ai/help-center/index.html?utm_source=github&utm_campaign=fritz-examples)
+- Message us directly in [Slack](https://www.fritz.ai/slack?utm_source=github&utm_campaign=fritz-examples)
