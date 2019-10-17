@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.Android;
+using AI.Fritz.Vision;
 
 
 public class FritzVisionUnity : MonoBehaviour
