@@ -1,0 +1,36 @@
+PODS:
+  - Fritz (4.3.0-beta.1):
+    - Fritz/Vision (= 4.3.0-beta.1)
+  - Fritz/Vision (4.3.0-beta.1):
+    - FritzBase/Vision (= 4.3.0-beta.1)
+  - Fritz/VisionObjectModel/Fast (4.3.0-beta.1):
+    - FritzVisionObjectModelFast (= 4.3.0-beta.1)
+  - FritzBase/Core (4.3.0-beta.1)
+  - FritzBase/CoreMLHelpers (4.3.0-beta.1)
+  - FritzBase/ManagedModel (4.3.0-beta.1):
+    - FritzBase/Core (= 4.3.0-beta.1)
+  - FritzBase/Vision (4.3.0-beta.1):
+    - FritzBase/Core (= 4.3.0-beta.1)
+    - FritzBase/CoreMLHelpers (= 4.3.0-beta.1)
+    - FritzBase/ManagedModel (= 4.3.0-beta.1)
+  - FritzVisionObjectModelFast (4.3.0-beta.1):
+    - FritzBase/Vision (= 4.3.0-beta.1)
+
+DEPENDENCIES:
+  - Fritz (~> 4.3.0-beta.1)
+  - Fritz/VisionObjectModel/Fast
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Fritz
+    - FritzBase
+    - FritzVisionObjectModelFast
+
+SPEC CHECKSUMS:
+  Fritz: 1fbd4c3dd8656eb782357740a40fc2f8563a6682
+  FritzBase: 47926fee4182e7532d72ebe234b3c36964261de1
+  FritzVisionObjectModelFast: 2b53ed6c2620eaa081a53823aa2ec2f8313b441d
+
+PODFILE CHECKSUM: 4650adf4951e49a62f29bbb99821b3b81e23a81f
+
+COCOAPODS: 1.8.4
