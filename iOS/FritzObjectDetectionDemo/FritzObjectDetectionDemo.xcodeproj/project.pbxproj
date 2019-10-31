@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B3BCBFE2360AE3600898CF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3BCBFD2360AE3600898CF5 /* AppDelegate.swift */; };
+		3B3BCC002360AE3600898CF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3BCBFF2360AE3600898CF5 /* SceneDelegate.swift */; };
+		3B3BCC022360AE3600898CF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3BCC012360AE3600898CF5 /* ViewController.swift */; };
+		3B3BCC052360AE3600898CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3BCC032360AE3600898CF5 /* Main.storyboard */; };
+		3B3BCC072360AE3700898CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3BCC062360AE3700898CF5 /* Assets.xcassets */; };
+		3B3BCC0A2360AE3700898CF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3BCC082360AE3700898CF5 /* LaunchScreen.storyboard */; };
+		3B3BCC122360AED400898CF5 /* Fritz-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3BCC112360AED400898CF5 /* Fritz-Info.plist */; };
+		BDF6888CDADEB5AF0CCC0FA6 /* Pods_FritzObjectDetectionDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4D70C2E170B6741E0000FF /* Pods_FritzObjectDetectionDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B3BCBFA2360AE3600898CF5 /* FritzObjectDetectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FritzObjectDetectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B3BCBFD2360AE3600898CF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3B3BCBFF2360AE3600898CF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3B3BCC012360AE3600898CF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B3BCC042360AE3600898CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B3BCC062360AE3700898CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B3BCC092360AE3700898CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B3BCC0B2360AE3700898CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B3BCC112360AED400898CF5 /* Fritz-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fritz-Info.plist"; sourceTree = "<group>"; };
+		80B57F58F06E412BF8CEA44F /* Pods-FritzObjectDetectionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FritzObjectDetectionDemo.release.xcconfig"; path = "Target Support Files/Pods-FritzObjectDetectionDemo/Pods-FritzObjectDetectionDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A5A66077100E267087F5017C /* Pods-FritzObjectDetectionDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FritzObjectDetectionDemo.debug.xcconfig"; path = "Target Support Files/Pods-FritzObjectDetectionDemo/Pods-FritzObjectDetectionDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		ED4D70C2E170B6741E0000FF /* Pods_FritzObjectDetectionDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FritzObjectDetectionDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B3BCBF72360AE3600898CF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDF6888CDADEB5AF0CCC0FA6 /* Pods_FritzObjectDetectionDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B3BCBF12360AE3600898CF5 = {
+			isa = PBXGroup;
+			children = (
+				3B3BCBFC2360AE3600898CF5 /* FritzObjectDetectionDemo */,
+				3B3BCBFB2360AE3600898CF5 /* Products */,
+				C4BF6B27527268175F03B925 /* Pods */,
+				507B40F62954FE952FB51362 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3B3BCBFB2360AE3600898CF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B3BCBFA2360AE3600898CF5 /* FritzObjectDetectionDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B3BCBFC2360AE3600898CF5 /* FritzObjectDetectionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3B3BCC112360AED400898CF5 /* Fritz-Info.plist */,
+				3B3BCBFD2360AE3600898CF5 /* AppDelegate.swift */,
+				3B3BCBFF2360AE3600898CF5 /* SceneDelegate.swift */,
+				3B3BCC012360AE3600898CF5 /* ViewController.swift */,
+				3B3BCC032360AE3600898CF5 /* Main.storyboard */,
+				3B3BCC062360AE3700898CF5 /* Assets.xcassets */,
+				3B3BCC082360AE3700898CF5 /* LaunchScreen.storyboard */,
+				3B3BCC0B2360AE3700898CF5 /* Info.plist */,
+			);
+			path = FritzObjectDetectionDemo;
+			sourceTree = "<group>";
+		};
+		507B40F62954FE952FB51362 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED4D70C2E170B6741E0000FF /* Pods_FritzObjectDetectionDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4BF6B27527268175F03B925 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5A66077100E267087F5017C /* Pods-FritzObjectDetectionDemo.debug.xcconfig */,
+				80B57F58F06E412BF8CEA44F /* Pods-FritzObjectDetectionDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B3BCBF92360AE3600898CF5 /* FritzObjectDetectionDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B3BCC0E2360AE3700898CF5 /* Build configuration list for PBXNativeTarget "FritzObjectDetectionDemo" */;
+			buildPhases = (
+				05857ECE8C80580563E7EB9D /* [CP] Check Pods Manifest.lock */,
+				3B3BCBF62360AE3600898CF5 /* Sources */,
+				3B3BCBF72360AE3600898CF5 /* Frameworks */,
+				3B3BCBF82360AE3600898CF5 /* Resources */,
+				6E82804561854BACD8C840FE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FritzObjectDetectionDemo;
+			productName = FritzObjectDetectionDemo;
+			productReference = 3B3BCBFA2360AE3600898CF5 /* FritzObjectDetectionDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B3BCBF22360AE3600898CF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Fritz AI";
+				TargetAttributes = {
+					3B3BCBF92360AE3600898CF5 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 3B3BCBF52360AE3600898CF5 /* Build configuration list for PBXProject "FritzObjectDetectionDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B3BCBF12360AE3600898CF5;
+			productRefGroup = 3B3BCBFB2360AE3600898CF5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B3BCBF92360AE3600898CF5 /* FritzObjectDetectionDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B3BCBF82360AE3600898CF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3BCC0A2360AE3700898CF5 /* LaunchScreen.storyboard in Resources */,
+				3B3BCC072360AE3700898CF5 /* Assets.xcassets in Resources */,
+				3B3BCC122360AED400898CF5 /* Fritz-Info.plist in Resources */,
+				3B3BCC052360AE3600898CF5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05857ECE8C80580563E7EB9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FritzObjectDetectionDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E82804561854BACD8C840FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FritzObjectDetectionDemo/Pods-FritzObjectDetectionDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FritzObjectDetectionDemo/Pods-FritzObjectDetectionDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FritzObjectDetectionDemo/Pods-FritzObjectDetectionDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B3BCBF62360AE3600898CF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3BCC022360AE3600898CF5 /* ViewController.swift in Sources */,
+				3B3BCBFE2360AE3600898CF5 /* AppDelegate.swift in Sources */,
+				3B3BCC002360AE3600898CF5 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B3BCC032360AE3600898CF5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3BCC042360AE3600898CF5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B3BCC082360AE3700898CF5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3BCC092360AE3700898CF5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B3BCC0C2360AE3700898CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3B3BCC0D2360AE3700898CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B3BCC0F2360AE3700898CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5A66077100E267087F5017C /* Pods-FritzObjectDetectionDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T3RGJF7P9D;
+				INFOPLIST_FILE = FritzObjectDetectionDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.fritz.FritzObjectDetectionDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B3BCC102360AE3700898CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80B57F58F06E412BF8CEA44F /* Pods-FritzObjectDetectionDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T3RGJF7P9D;
+				INFOPLIST_FILE = FritzObjectDetectionDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.fritz.FritzObjectDetectionDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B3BCBF52360AE3600898CF5 /* Build configuration list for PBXProject "FritzObjectDetectionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B3BCC0C2360AE3700898CF5 /* Debug */,
+				3B3BCC0D2360AE3700898CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B3BCC0E2360AE3700898CF5 /* Build configuration list for PBXNativeTarget "FritzObjectDetectionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B3BCC0F2360AE3700898CF5 /* Debug */,
+				3B3BCC102360AE3700898CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B3BCBF22360AE3600898CF5 /* Project object */;
+}
