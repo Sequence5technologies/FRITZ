@@ -7,15 +7,15 @@ Fritz AI is the machine learning platform for iOS and Android developers. Teach 
 
 **Vision API: Prebuilt models that you can simply drop into your apps:**
 
-- [Image Segmentation](https://www.fritz.ai/features/image-segmentation.html?utm_source=github&utm_campaign=fritz-examples): Create pixel level masks of different objects in a scene. ([code](HeartbeatDemoApp/app/src/main/java/ai/fritz/aistudio/activities/vision/ImageSegmentationActivity.java))
-- [Image Labeling](https://www.fritz.ai/features/image-labeling.html?utm_source=github&utm_campaign=fritz-examples): Classify different objects in an video or image.([code](HeartbeatDemoApp/app/src/main/java/ai/fritz/aistudio/activities/vision/ImageLabelingActivity.java))
-- [Pose Estimation](https://www.fritz.ai/features/pose-estimation.html?utm_source=github&utm_campaign=fritz-examples): Identify and track a person's body position.([code](HeartbeatDemoApp/app/src/main/java/ai/fritz/aistudio/activities/vision/PoseEstimationActivity.java))
-- [Object Detection](https://www.fritz.ai/features/object-detection.html?utm_source=github&utm_campaign=fritz-examples): Detect multiple objects and track their location.([code](HeartbeatDemoApp/app/src/main/java/ai/fritz/aistudio/activities/vision/ObjectDetectionActivity.java))
-- [Style Transfer](https://www.fritz.ai/features/style-transfer.html?utm_source=github&utm_campaign=fritz-examples): Transform photos and videos into artistic masterpieces.([code](HeartbeatDemoApp/app/src/main/java/ai/fritz/aistudio/activities/vision/StyleTransferActivity.java))
+- [Image Segmentation](https://www.fritz.ai/features/image-segmentation.html?utm_source=github&utm_campaign=fritz-examples): Create pixel level masks of different objects in a scene. ([code](FritzAIStudio/app/src/main/java/ai/fritz/aistudio/activities/vision/ImageSegmentationActivity.java))
+- [Image Labeling](https://www.fritz.ai/features/image-labeling.html?utm_source=github&utm_campaign=fritz-examples): Classify different objects in an video or image.([code](FritzAIStudio/app/src/main/java/ai/fritz/aistudio/activities/vision/ImageLabelingActivity.java))
+- [Pose Estimation](https://www.fritz.ai/features/pose-estimation.html?utm_source=github&utm_campaign=fritz-examples): Identify and track a person's body position.([code](FritzAIStudio/app/src/main/java/ai/fritz/aistudio/activities/vision/PoseEstimationActivity.java))
+- [Object Detection](https://www.fritz.ai/features/object-detection.html?utm_source=github&utm_campaign=fritz-examples): Detect multiple objects and track their location.([code](FritzAIStudio/app/src/main/java/ai/fritz/aistudio/activities/vision/ObjectDetectionActivity.java))
+- [Style Transfer](https://www.fritz.ai/features/style-transfer.html?utm_source=github&utm_campaign=fritz-examples): Transform photos and videos into artistic masterpieces.([code](FritzAIStudio/app/src/main/java/ai/fritz/aistudio/activities/vision/StyleTransferActivity.java))
 
 **Custom Models: Deploy, Monitor, and Update your own models:**
 
-We currently support both TensorFlow Lite ([code](HeartbeatDemoApp/app/src/main/java/ai/fritz/aistudio/activities/custommodel/CustomTFLiteActivity.java)) and TensorFlow Mobile ([code]([HeartbeatDemoApp/app/src/main/java/ai/fritz/aistudio/activities/custommodel/CustomTFMobileActivity.java)) for Android.
+We currently support both TensorFlow Lite ([code](FritzAIStudio/app/src/main/java/ai/fritz/aistudio/activities/custommodel/CustomTFLiteActivity.java)) and TensorFlow Mobile ([code](FritzAIStudio/app/src/main/java/ai/fritz/aistudio/activities/custommodel/CustomTFMobileActivity.java)) for Android.
 
 - [Analytics and Monitoring](https://www.fritz.ai/features/analytics-monitoring.html?utm_source=github&utm_campaign=fritz-examples): Monitor machine learning models running on-device with Fritz.
 - [Model Management](https://www.fritz.ai/features/model-management.html?utm_source=github&utm_campaign=fritz-examples): Iterate on your ML models over-the-air, without having to release your app.
