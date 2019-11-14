@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import ai.fritz.core.Fritz;
 import ai.fritz.core.utils.BitmapUtils;
-import ai.fritz.fritzvisionpeoplesegmentationaccurate.PeopleSegmentationOnDeviceModelAccurate;
+import ai.fritz.peoplesegmentationmodelaccurate.PeopleSegmentationOnDeviceModelAccurate;
 import ai.fritz.vision.FritzVision;
 import ai.fritz.vision.FritzVisionImage;
 import ai.fritz.vision.FritzVisionOrientation;

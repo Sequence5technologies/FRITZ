@@ -7,7 +7,7 @@ import java.util.List;
 
 import ai.fritz.core.FritzOnDeviceModel;
 import ai.fritz.aistudio.activities.BaseLiveVideoActivity;
-import ai.fritz.poseestimationmodel.PoseEstimationOnDeviceModel;
+import ai.fritz.poseestimationmodelfast.PoseEstimationOnDeviceModelFast;
 import ai.fritz.vision.FritzVision;
 import ai.fritz.vision.FritzVisionImage;
 import ai.fritz.vision.poseestimation.FritzVisionPosePredictor;
@@ -21,7 +21,7 @@ public class PoseEstimationActivity extends BaseLiveVideoActivity {
 
     @Override
     protected void onCameraSetup(final Size cameraSize) {
-        FritzOnDeviceModel onDeviceModel = new PoseEstimationOnDeviceModel();
+        FritzOnDeviceModel onDeviceModel = new PoseEstimationOnDeviceModelFast();
         posePredictor = FritzVision.PoseEstimation.getPredictor(onDeviceModel);
     }
 

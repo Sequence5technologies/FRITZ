@@ -15,7 +15,7 @@ import com.github.veritas1.verticalslidecolorpicker.VerticalSlideColorPicker;
 
 import java.io.IOException;
 
-import ai.fritz.fritzvisionhairsegmentationmodel.HairSegmentationOnDeviceModelFast;
+import ai.fritz.hairsegmentationmodelfast.HairSegmentationOnDeviceModelFast;
 import ai.fritz.haircoloring.R;
 import ai.fritz.haircoloring.views.AutoFitTextureView;
 import ai.fritz.vision.FritzSurfaceView;

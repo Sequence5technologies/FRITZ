@@ -20,7 +20,7 @@ import ai.fritz.vision.FritzVisionOrientation;
 import ai.fritz.vision.ImageRotation;
 import ai.fritz.vision.imagelabeling.FritzVisionLabelPredictor;
 import ai.fritz.vision.imagelabeling.FritzVisionLabelResult;
-import ai.fritz.visionlabel.ImageLabelOnDeviceModel;
+import ai.fritz.labelmodelfast.ImageLabelOnDeviceModelFast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -65,7 +65,7 @@ public class ImageLabelingActivity extends BaseCameraActivity implements ImageRe
     @Override
     public void onPreviewSizeChosen(final Size size, final Size cameraSize, final int rotation) {
         imgRotation = FritzVisionOrientation.getImageRotationFromCamera(this, cameraId);
-        FritzOnDeviceModel onDeviceModel = new ImageLabelOnDeviceModel();
+        FritzOnDeviceModel onDeviceModel = new ImageLabelOnDeviceModelFast();
         predictor = FritzVision.ImageLabeling.getPredictor(onDeviceModel);
     }
 

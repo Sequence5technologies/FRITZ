@@ -20,7 +20,7 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import ai.fritz.core.Fritz;
-import ai.fritz.fritzvisionpetsegmentationmodel.PetSegmentationOnDeviceModelFast;
+import ai.fritz.petsegmentationmodelfast.PetSegmentationOnDeviceModelFast;
 import ai.fritz.vision.FritzVision;
 import ai.fritz.vision.FritzVisionImage;
 import ai.fritz.vision.FritzVisionOrientation;

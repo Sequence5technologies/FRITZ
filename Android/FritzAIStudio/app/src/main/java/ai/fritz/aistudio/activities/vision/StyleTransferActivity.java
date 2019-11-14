@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.util.Size;
 
 import ai.fritz.core.FritzOnDeviceModel;
-import ai.fritz.fritzvisionstylepaintings.PaintingStyles;
 import ai.fritz.aistudio.R;
 import ai.fritz.aistudio.activities.BaseRecordingActivity;
+import ai.fritz.stylepaintingmodels.PaintingStyles;
 import ai.fritz.vision.FritzVision;
 import ai.fritz.vision.FritzVisionImage;
 import ai.fritz.vision.styletransfer.FritzVisionStylePredictor;

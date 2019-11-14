@@ -24,7 +24,7 @@ import java.io.InputStream;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import ai.fritz.core.Fritz;
-import ai.fritz.fritzvisionskysegmentationmodel.SkySegmentationOnDeviceModelFast;
+import ai.fritz.skysegmentationmodelfast.SkySegmentationOnDeviceModelFast;
 import ai.fritz.vision.FritzVision;
 import ai.fritz.vision.FritzVisionImage;
 import ai.fritz.vision.FritzVisionOrientation;

@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.graphics.RectF;
 import android.util.Size;
 
-import ai.fritz.fritzvisionhairsegmentationmodel.HairSegmentationOnDeviceModelFast;
+import ai.fritz.hairsegmentationmodelfast.HairSegmentationOnDeviceModelFast;
 import ai.fritz.aistudio.activities.BaseLiveVideoActivity;
 import ai.fritz.vision.FritzVision;
 import ai.fritz.vision.FritzVisionImage;

@@ -6,7 +6,7 @@ import android.util.Size;
 import java.util.List;
 
 import ai.fritz.core.FritzOnDeviceModel;
-import ai.fritz.fritzvisionobjectmodel.ObjectDetectionOnDeviceModel;
+import ai.fritz.objectdetectionmodelfast.ObjectDetectionOnDeviceModel;
 import ai.fritz.aistudio.activities.BaseLiveVideoActivity;
 import ai.fritz.vision.FritzVision;
 import ai.fritz.vision.FritzVisionImage;

@@ -24,11 +24,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 
 import ai.fritz.core.FritzOnDeviceModel;
-import ai.fritz.fritzvisionstylepaintings.PaintingStyles;
 import ai.fritz.aistudio.R;
 import ai.fritz.aistudio.ui.ChooseModelDialog;
 import ai.fritz.aistudio.ui.OverlayView;
 import ai.fritz.aistudio.utils.VideoProcessingQueue;
+import ai.fritz.stylepaintingmodels.PaintingStyles;
 import ai.fritz.vision.FritzVisionImage;
 import ai.fritz.vision.FritzVisionOrientation;
 import ai.fritz.vision.ImageRotation;
